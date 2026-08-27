@@ -23,7 +23,7 @@ cards = [
   { title = "A story bible that has read your book", body = "Tag a note, give it its aliases, and Skribisto finds it in your prose: the scenes it appears in, and what you have already written about it, quoted back to you." },
   { title = "Nothing gets lost", body = "It saves as you write. The trash restores. Backups run on a schedule and open read-only. The version history puts back what a scene said last week." },
   { title = "Files you can still open in ten years", body = "You write in a rich-text editor; it is stored as Djot, a plain-text format much like Markdown, one file per scene. Nothing in there needs Skribisto to be read." },
-  { title = "Accessible on purpose", body = "A real accessibility tree, so a screen reader can drive it, tested with NVDA and JAWS. A colour pairing below WCAG AA is flagged. A gap here is a bug like any other." },
+  { title = "Accessible on purpose", body = "A real accessibility tree, so a screen reader can drive it. Tested with NVDA, with JAWS, and on a braille display. A gap here is a bug like any other." },
 ]
 
 today_title = "What it does today"

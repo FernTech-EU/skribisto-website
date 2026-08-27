@@ -78,7 +78,7 @@ Skribisto is not a word processor and does not try to be. What it does is hand t
 
 ## 7. Accessible on purpose
 
-An interface a screen reader cannot drive is not finished, it is finished for some people. Skribisto exposes a real accessibility tree, which is what NVDA and JAWS read, and the two it is tested with. Every control has a keyboard route, and the ones that did not have been fixed by driving the application with nothing but injected keystrokes: a regression test now stands where each of those bugs was. When you build yourself a distraction-free theme, a colour pairing below WCAG AA is flagged as you choose it.
+An interface a screen reader cannot drive is not finished, it is finished for some people. Skribisto exposes a real accessibility tree, which is what a screen reader reads. It is tested with NVDA, with JAWS, and on a braille display, because a tree that reads well aloud can still come out as nonsense under the fingers. Every control has a keyboard route, and the ones that did not have been fixed by driving the application with nothing but injected keystrokes: a regression test now stands where each of those bugs was.
 
 None of that makes the application perfect. If you hit a barrier, [report it](https://github.com/jacquetc/skribisto/issues): it is a bug like any other, and it is treated like one.
 

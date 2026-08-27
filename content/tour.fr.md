@@ -78,7 +78,7 @@ Skribisto n’est pas un traitement de texte et n’essaie pas de l’être. Ce 
 
 ## 7. Accessible par principe
 
-Une interface qu’un lecteur d’écran ne peut pas piloter n’est pas finie : elle est finie pour certains. Skribisto expose un véritable arbre d’accessibilité, celui que lisent NVDA et JAWS, les deux avec lesquels elle est testée. Chaque commande a son chemin au clavier, et celles qui n’en avaient pas ont été corrigées en pilotant l’application avec de simples frappes injectées : un test de non-régression se tient désormais là où était chacun de ces bogues. Quand vous composez un thème sans distraction, tout couple de couleurs en deçà du niveau WCAG AA vous est signalé au moment du choix.
+Une interface qu’un lecteur d’écran ne peut pas piloter n’est pas finie : elle est finie pour certains. Skribisto expose un véritable arbre d’accessibilité, celui que lit un lecteur d’écran. Elle est testée avec NVDA, avec JAWS, et sur un afficheur braille, parce qu’un arbre qui s’écoute bien peut rester incompréhensible sous les doigts. Chaque commande a son chemin au clavier, et celles qui n’en avaient pas ont été corrigées en pilotant l’application avec de simples frappes injectées : un test de non-régression se tient désormais là où était chacun de ces bogues.
 
 Rien de tout cela ne rend l’application parfaite. Si vous butez sur un obstacle, [signalez-le](https://github.com/jacquetc/skribisto/issues) : c’est un bogue comme un autre, et il est traité comme tel.
 

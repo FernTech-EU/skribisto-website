@@ -23,7 +23,7 @@ cards = [
   { title = "Une bible qui a lu votre livre", body = "Étiquetez une note, donnez-lui ses alias, et Skribisto la retrouve dans votre texte : les scènes où elle apparaît, et ce que vous en avez déjà écrit, cité." },
   { title = "Rien ne se perd", body = "L’enregistrement suit votre frappe. La corbeille restaure. Les sauvegardes suivent un calendrier et s’ouvrent en lecture seule. L’historique remet les mots de la semaine dernière." },
   { title = "Des fichiers encore lisibles dans dix ans", body = "Vous écrivez dans un éditeur enrichi ; c’est enregistré en Djot, un format texte très proche de Markdown, un fichier par scène. Rien là-dedans n’exige Skribisto pour être lu." },
-  { title = "Accessible par principe", body = "Un véritable arbre d’accessibilité, qu’un lecteur d’écran pilote, testé avec NVDA et JAWS. Un couple de couleurs sous le niveau WCAG AA est signalé. Une lacune ici est un bogue." },
+  { title = "Accessible par principe", body = "Un véritable arbre d’accessibilité, qu’un lecteur d’écran pilote. Testé avec NVDA, avec JAWS, et sur un afficheur braille. Une lacune ici est un bogue." },
 ]
 
 today_title = "Ce qu’il fait aujourd’hui"
