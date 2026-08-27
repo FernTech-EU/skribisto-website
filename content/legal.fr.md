@@ -6,7 +6,9 @@ weight = 20
 
 ## Éditeur
 
-Ce site est publié par **Cyril Jacquet**, auteur et mainteneur de Skribisto.
+Ce site est édité par **FernTech**, qui développe Skribisto.
+
+Directeur de la publication : Cyril Jacquet, auteur et mainteneur.
 
 Contact : <cyril.jacquet@ferntech.eu> · Questions de marque : <trademarks@ferntech.eu>
 
