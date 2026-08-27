@@ -45,7 +45,7 @@
     <h2>{{ section.extra.today_title }}</h2>
     <p class="section-lede">{{ section.extra.today_lede }}</p>
     <ul class="checklist">
-      {% for item in section.extra.today %}<li>{{ item }}</li>{% endfor %}
+      {% for item in section.extra.today %}<li>{{ item | markdown(inline=true) | safe }}</li>{% endfor %}
     </ul>
     <p class="cta-note"><a href="{{ get_url(path='@/tour.md', lang=lang) | safe }}">{{ section.extra.today_link }} →</a></p>
   </div>
