@@ -33,7 +33,7 @@ Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’au
 
 - **Les langues.** Skribisto 2 était traduit dans plus de dix langues. La version 3 en a deux : l’anglais et le français. Le système de traduction est plus simple qu’avant : de simples fichiers texte, aucune chaîne d’outils. C’est donc la contribution la plus facile du projet, et celle dont j’ai le plus besoin. [Comment traduire](@/get-involved.md).
 - **Les greffons.** Les anciennes interfaces de greffons ont disparu ; ce qu’elles apportaient est désormais intégré.
-- **Les habitudes.** L’interface est vraiment différente. Le [manuel](https://manual.skribisto.eu/manual/) est le chemin le plus court, et la [FAQ](https://manual.skribisto.eu/faq/) couvre les questions qui reviennent.
+- **Les habitudes.** L’interface est vraiment différente. F1, dans l’application, est le chemin le plus court, et le [Discord](https://discord.gg/5BSkvQmyVH) est l’endroit où l’on répond aux questions embarrassantes.
 
 ## S’il manque quelque chose dont vous dépendiez
 

@@ -19,9 +19,9 @@ Voilà pour la licence. Ce qui suit est l’engagement, ce qui n’est pas la m�
 
 ## Ce qu’est réellement votre projet
 
-Un projet `.skrib` est une archive zip, ou si vous préférez un dossier déplié, qui contient :
+Vous écrivez dans un éditeur de texte enrichi, et c’est enregistré en texte. Un projet `.skrib` est une archive zip, ou si vous préférez un dossier déplié, qui contient :
 
-- votre prose en fichiers [Djot](https://djot.net), un par ligne, en texte UTF-8 ;
+- votre prose en fichiers [Djot](https://djot.net), un par scène, en texte UTF-8. Djot est assez proche de Markdown pour qu’une scène se lise d’un coup d’œil ;
 - des manifestes en RON, un format texte lisible, qui décrivent la structure ;
 - vos images sous `assets/`, nommées d’après l’empreinte de leurs propres octets.
 
@@ -37,4 +37,4 @@ Les contributions sont bienvenues et acceptées sous un [accord de licence de co
 
 ## Marque
 
-Skribisto™ est une marque de Cyril Jacquet, et la GPL n’accorde aucun droit sur les marques. Dupliquez le code librement, c’est à cela que sert la licence, mais une version dérivée distribuée à d’autres doit porter son propre nom et sa propre identité, comme Iceweasel l’a fait vis-à-vis de Firefox. Dire « bâti sur Skribisto », ou écrire à son sujet, ne demande aucune autorisation. Pour le reste : <trademarks@ferntech.eu>.
+Skribisto™ est une marque de FernTech, et la GPL n’accorde aucun droit sur les marques. Dupliquez le code librement, c’est à cela que sert la licence, mais une version dérivée distribuée à d’autres doit porter son propre nom et sa propre identité, comme Iceweasel l’a fait vis-à-vis de Firefox. Dire « bâti sur Skribisto », ou écrire à son sujet, ne demande aucune autorisation. Pour le reste : <trademarks@ferntech.eu>.

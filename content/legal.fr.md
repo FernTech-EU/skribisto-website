@@ -18,7 +18,7 @@ Le site est un ensemble de fichiers statiques hébergés par **GitHub Pages** (G
 
 - **Skribisto** est un logiciel libre sous [licence GNU General Public License v3.0](https://github.com/jacquetc/skribisto/blob/dev/LICENSE).
 - **Les textes et images de ce site** sont © Cyril Jacquet, et sa source est publiée sous licence MIT.
-- **Skribisto™** est une marque de Cyril Jacquet. La GPL n’accorde aucun droit sur les marques ; voir [la note sur la marque](@/free-software.md).
+- **Skribisto™** est une marque de FernTech. La GPL n’accorde aucun droit sur les marques ; voir [la note sur la marque](@/free-software.md).
 
 ## Signaler un problème sur ce site
 

@@ -19,4 +19,4 @@ Your manuscripts are files on your own machine. Nothing is uploaded anywhere.
 
 ## Other sites linked from here
 
-The manual, GitHub and Discord are separate services with their own policies. Following a link there is between you and them.
+GitHub and Discord are separate services with their own policies. Following a link there is between you and them.

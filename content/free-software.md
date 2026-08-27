@@ -19,9 +19,9 @@ That is the licence. What follows is the commitment, which is a different thing,
 
 ## What your project actually is
 
-A `.skrib` project is a zip archive, or if you prefer an exploded folder, containing:
+You write in a rich-text editor, and it is stored as text. A `.skrib` project is a zip archive, or an exploded folder if you prefer, containing:
 
-- your prose as [Djot](https://djot.net) files, one per row, in plain UTF-8 text;
+- your prose as [Djot](https://djot.net) files, one per scene, in plain UTF-8 text. Djot is close enough to Markdown that you can read a scene at a glance;
 - manifests in RON, a readable text format, describing the structure;
 - your images under `assets/`, named by the hash of their own bytes.
 
@@ -37,4 +37,4 @@ Contributions are welcome, and are accepted under a [Contributor License Agreeme
 
 ## Trademark
 
-Skribisto™ is a trademark of Cyril Jacquet, and the GPL grants no trademark rights. Fork the code freely, which is what the licence is for, but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.
+Skribisto™ is a trademark of FernTech, and the GPL grants no trademark rights. Fork the code freely, which is what the licence is for, but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.

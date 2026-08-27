@@ -5,7 +5,7 @@ weight = 7
 aliases = ["/index.php/donate/"]
 +++
 
-Skribisto is free software, written on my own time, and it will stay that way. Some things around it are not free: this domain, the server that hosts the manual, the machines it is tested on.
+Skribisto is free software, written on my own time, and it will stay that way. Some things around it are not free: this domain, and the machines it is tested on.
 
 If it is useful to you and you would like to help pay for those, you can:
 

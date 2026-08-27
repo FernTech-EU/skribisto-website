@@ -1,12 +1,12 @@
 +++
 title = "Help"
-description = "The manual, the FAQ, and where to ask a human."
+description = "The help is inside the application. Beyond that, there are people."
 weight = 6
 +++
 
-## The manual and the FAQ
+## Press F1
 
-The [user manual](https://manual.skribisto.eu/manual/) and the [FAQ](https://manual.skribisto.eu/faq/) live on their own site, in English, French, German and Spanish. Both are written in the open, so if something is missing or wrong, [the repository](https://github.com/jacquetc/skribisto-help-website) takes pull requests, and that is often the fastest way to fix it for everyone.
+The help lives in the application itself, not on a website that drifts out of date: **F1** opens the help topics, there is a keyboard-shortcut window beside them, and **Ctrl+Shift+P** opens a command palette that finds any command by name when you cannot remember which menu it is under. Because it ships with the application, it describes the version you are actually running.
 
 ## Ask a person
 

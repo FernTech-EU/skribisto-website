@@ -6,33 +6,33 @@ template = "index.html"
 [extra]
 tagline = "a writing application for long-form work"
 hero_title = "Write the book. Format it later."
-hero_lede = "Skribisto organises a manuscript by what each piece is (book, part, chapter, scene, note), and keeps its prose and its synopsis side by side. Everything you write stays in plain text you can open without it."
+hero_lede = "One project holds the lot: your book, or several, the chapters and scenes under them, and the notes and research beside them. Every piece of writing carries a summary of itself, and all of it is saved as text files you can open with anything."
 hero_shot_alt = "The binder tree on the left, a scene's prose and its synopsis side by side in the editor."
 export_shot_alt = "The export window, with a live preview of the compiled manuscript."
 cta_note = "Free software, GPLv3 · Linux, Windows and macOS · current build:"
 
-cards_title = "Three ideas the whole application is built on"
-cards_lede = "They are what makes Skribisto different from a folder of documents, and from every outliner that files your book in boxes."
+cards_title = "Three things worth knowing before you start"
+cards_lede = "They are what makes Skribisto different from a folder of documents, and from an outliner that files your book into somebody else's boxes."
 
 
 
 
 cards = [
-  { title = "Structure comes from meaning", body = "The binder tree is there to keep things tidy, and that is all it does. What makes a row a chapter or a scene is the role you give it, so you can move things around, indent, outdent and regroup without rewriting the shape of the book." },
-  { title = "Prose and synopsis, together", body = "Every writing row owns both its text and a summary of it. That is why the editor has two panes, and why you can read a whole book's synopses as one continuous document when you need to see the plan rather than the prose." },
-  { title = "Plain text you own", body = "A project is a .skrib bundle: Djot prose and readable manifests, kept as a single file or as a folder you can put under version control. No database, no proprietary blob, nothing that needs Skribisto to be read." },
+  { title = "It fits how you write", body = "One project can hold several books, and a book as many chapters as you like, with scenes under them or without. A chapter can be a folder full of scenes, or a single page you write straight down, and both can live in the same book. You can keep more than one binder too, so the manuscript, the story bible and the research need not share a tree." },
+  { title = "A summary beside every scene", body = "Each piece of writing carries a short account of what happens in it, in a box above the page or in a column beside it. Those summaries are what the corkboard puts on its cards, and you can read all of them, a whole book at a time, when you want the plan rather than the prose." },
+  { title = "Files you can still open in ten years", body = "You write in a proper rich-text editor: bold, italics, headings, images. It is stored as Djot, a plain-text format much like Markdown, one file per scene, in a bundle you keep as a single file or as a folder under version control. No database, and nothing that needs Skribisto to be read." },
 ]
 
 today_title = "What it does today"
 today_lede = "Not a roadmap. This is the application as it stands."
 today_link = "See it in more detail"
 today = [
-  "A binder tree with full editing: create, rename, duplicate, move, indent, outdent, promote",
-  "A dual editor pane, with split panes and tabs",
+  "As many binders as a project needs, with full editing: create, rename, duplicate, move, indent, outdent, convert",
+  "Your prose and its summary together, with split views and tabs",
   "Manuscript streams: read a whole chapter, part or book as one document",
-  "Corkboard, overview table, writing sessions and live word count",
+  "A corkboard of summaries, an overview table, writing sessions and a live word count",
   "Pace planning with milestones, holidays and word targets",
-  "Analysis of a book's shape: words per scene, dialogue share, sentence and paragraph length",
+  "Analysis of a book's shape: words per scene, how much of it is dialogue, how much sits in footnotes",
   "Anchored margin comments with threaded replies, and footnotes",
   "Note templates, colour tags, point-of-view marking and a mention index",
   "Images in the prose, carried through every export, and a book cover",

@@ -6,33 +6,33 @@ template = "index.html"
 [extra]
 tagline = "un logiciel d’écriture pour les textes longs"
 hero_title = "Écrivez le livre. La mise en forme viendra après."
-hero_lede = "Skribisto organise un manuscrit selon ce que chaque élément est (livre, partie, chapitre, scène, note), et garde le texte et son synopsis côte à côte. Tout ce que vous écrivez reste dans un texte brut que vous pouvez ouvrir sans lui."
+hero_lede = "Un projet contient tout : votre livre, ou plusieurs, les chapitres et les scènes en dessous, et les notes et la documentation à côté. Chaque texte porte son propre résumé, et tout est enregistré dans des fichiers texte que vous pouvez ouvrir avec n’importe quoi."
 hero_shot_alt = "Le classeur à gauche, le texte d’une scène et son synopsis côte à côte dans l’éditeur."
 export_shot_alt = "La fenêtre d’export, avec un aperçu en direct du manuscrit compilé."
-cta_note = "Logiciel libre, GPLv3 · Linux, Windows et macOS · version en cours :"
+cta_note = "Logiciel libre, GPLv3 · Linux, Windows et macOS · version en cours :"
 
-cards_title = "Trois idées sur lesquelles tout repose"
-cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de documents, et de tous les plans qui rangent votre livre dans des boîtes."
+cards_title = "Trois choses à savoir avant de commencer"
+cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de documents, et d’un logiciel de plan qui range votre livre dans les cases de quelqu’un d’autre."
 
 
 
 
 cards = [
-  { title = "La structure vient du sens", body = "L’arbre du classeur sert à ranger, et c’est tout ce qu’il fait. Ce qui fait d’une ligne un chapitre ou une scène, c’est le rôle que vous lui donnez, et vous pouvez donc déplacer, indenter, désindenter et regrouper sans réécrire la forme du livre." },
-  { title = "Le texte et le synopsis, ensemble", body = "Chaque ligne d’écriture possède son texte et son résumé. C’est pour cela que l’éditeur a deux volets, et que l’on peut lire tous les synopsis d’un livre comme un seul document continu, quand on veut voir le plan plutôt que la prose." },
-  { title = "Du texte brut qui vous appartient", body = "Un projet est un paquet .skrib : de la prose en Djot et des manifestes lisibles, sous la forme d’un fichier unique ou d’un dossier que vous pouvez versionner. Pas de base de données, pas de format opaque, rien qui exige Skribisto pour être lu." },
+  { title = "Il s’adapte à votre façon d’écrire", body = "Un projet peut contenir plusieurs livres, et un livre autant de chapitres que vous voulez, avec des scènes en dessous ou sans. Un chapitre peut être un dossier plein de scènes, ou une simple page que vous écrivez d’un trait, et les deux peuvent coexister dans le même livre. Vous pouvez aussi tenir plusieurs classeurs, pour que le manuscrit, la bible et la documentation ne partagent pas le même arbre." },
+  { title = "Un résumé à côté de chaque scène", body = "Chaque texte porte un court récit de ce qui s’y passe, dans un encadré au-dessus de la page ou dans une colonne à côté. Ce sont ces résumés que le tableau de liège affiche sur ses cartes, et vous pouvez les lire tous, un livre entier à la fois, quand vous voulez le plan plutôt que la prose." },
+  { title = "Des fichiers encore lisibles dans dix ans", body = "Vous écrivez dans un véritable éditeur de texte enrichi : gras, italique, titres, images. C’est enregistré en Djot, un format texte très proche de Markdown, un fichier par scène, dans un paquet que vous gardez en un seul fichier ou en dossier versionnable. Pas de base de données, et rien qui exige Skribisto pour être lu." },
 ]
 
 today_title = "Ce qu’il fait aujourd’hui"
 today_lede = "Ceci n’est pas une feuille de route, mais l’application telle qu’elle est."
 today_link = "Voir cela de plus près"
 today = [
-  "Un classeur entièrement modifiable : créer, renommer, dupliquer, déplacer, indenter, désindenter, convertir",
-  "Un éditeur à deux volets, avec volets divisés et onglets",
+  "Autant de classeurs que le projet en demande, entièrement modifiables : créer, renommer, dupliquer, déplacer, indenter, désindenter, convertir",
+  "Votre texte et son résumé ensemble, avec vues divisées et onglets",
   "Des flux de manuscrit : lire un chapitre, une partie ou un livre entier comme un seul document",
-  "Tableau de liège, vue d’ensemble, sessions d’écriture et compteur de mots en direct",
+  "Un tableau de liège des résumés, une vue d’ensemble, des sessions d’écriture et un compteur de mots en direct",
   "Une planification du rythme avec jalons, jours chômés et objectifs de mots",
-  "L’analyse de la forme d’un livre : mots par scène, part de dialogue, longueur des phrases et des paragraphes",
+  "L’analyse de la forme d’un livre : mots par scène, part de dialogue, mots en notes de bas de page",
   "Des commentaires ancrés en marge avec fils de réponses, et des notes de bas de page",
   "Modèles de notes, étiquettes de couleur, point de vue et index des mentions",
   "Des images dans le texte, conservées dans chaque export, et une couverture",
@@ -59,7 +59,7 @@ promises = [
   "Ni clé, ni serveur, ni permission. Skribisto n’exigera jamais une clé de licence, une activation ou une connexion réseau pour ouvrir ou modifier votre propre travail.",
 ]
 
-coming_title = "Vous venez de Plume Creator ou de Skribisto 2 ?"
+coming_title = "Vous venez de Plume Creator ou de Skribisto 2 ?"
 coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouverture : ouvrez-le et continuez d’écrire. Un projet Plume Creator arrive par Projet ▸ Importer depuis ▸ Plume Creator. Aucun fichier d’origine n’est modifié, et l’interface a suffisamment changé pour mériter cinq minutes de lecture."
 coming_link = "Ce qui change, et à quoi s’attendre"
 +++

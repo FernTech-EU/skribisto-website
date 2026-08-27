@@ -4,7 +4,7 @@ description = "Skribisto est écrit sur du temps libre et donné. Le domaine et 
 weight = 7
 +++
 
-Skribisto est un logiciel libre, écrit sur mon temps libre, et il le restera. Certaines choses autour ne sont pas gratuites : ce domaine, le serveur qui héberge le manuel, les machines sur lesquelles il est testé.
+Skribisto est un logiciel libre, écrit sur mon temps libre, et il le restera. Certaines choses autour ne sont pas gratuites : ce domaine, et les machines sur lesquelles il est testé.
 
 S’il vous est utile et que vous souhaitez aider à les payer, vous pouvez :
 

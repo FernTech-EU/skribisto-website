@@ -17,11 +17,11 @@ crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates}.ftl
 
 Copiez le dossier `en-US` sous le code de votre langue, traduisez les valeurs à droite de chaque `=`, ouvrez une pull request. Rien d’autre ne change : pas de fichiers `.ts`, pas de `lupdate`, pas de compte Transifex. Ce que vous ne traduisez pas retombe sur l’anglais à l’exécution : une traduction partielle est donc réellement utile et peut être terminée plus tard.
 
-Le [manuel et la FAQ](https://github.com/jacquetc/skribisto-help-website) se traduisent séparément et existent déjà en quatre langues.
+Les rubriques d’aide de l’application se traduisent de la même façon, dans les mêmes fichiers : c’est le même genre de contribution.
 
-## Écrire de la documentation
+## Écrire l’aide
 
-Le manuel n’est jamais fini. Pages manquantes, passages obscurs, captures d’écran périmées : tout cela mérite d’être corrigé, dans [le dépôt dédié](https://github.com/jacquetc/skribisto-help-website).
+L’aide n’est jamais finie. Une rubrique qui explique la mauvaise chose, ou qui n’existe pas, mérite autant d’être corrigée qu’un bogue : elle vit dans les sources de l’application, à côté des chaînes ci-dessus.
 
 ## Écrire du code
 

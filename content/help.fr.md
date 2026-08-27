@@ -1,12 +1,12 @@
 +++
 title = "Aide"
-description = "Le manuel, la FAQ, et où poser une question à un être humain."
+description = "L’aide est dans l’application. Au-delà, il y a des gens."
 weight = 6
 +++
 
-## Le manuel et la FAQ
+## Appuyez sur F1
 
-Le [manuel de l’utilisateur](https://manual.skribisto.eu/manual/) et la [FAQ](https://manual.skribisto.eu/faq/) ont leur propre site, en anglais, français, allemand et espagnol. Les deux sont écrits au grand jour : s’il manque quelque chose ou si une page est fausse, [le dépôt](https://github.com/jacquetc/skribisto-help-website) accepte les contributions, et c’est souvent le moyen le plus rapide de corriger cela pour tout le monde.
+L’aide vit dans l’application elle-même, et non sur un site qui se périme : **F1** ouvre les rubriques d’aide, une fenêtre des raccourcis clavier les accompagne, et **Ctrl+Maj+P** ouvre une palette de commandes qui retrouve n’importe quelle commande par son nom quand vous ne savez plus dans quel menu elle se cache. Comme elle est livrée avec l’application, elle décrit la version que vous utilisez réellement.
 
 ## Parler à quelqu’un
 

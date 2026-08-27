@@ -19,4 +19,4 @@ Vos manuscrits sont des fichiers sur votre propre machine. Rien n’est téléve
 
 ## Les autres sites liés depuis ici
 
-Le manuel, GitHub et Discord sont des services distincts, avec leurs propres politiques. Y suivre un lien ne regarde que vous et eux.
+GitHub et Discord sont des services distincts, avec leurs propres politiques. Y suivre un lien ne regarde que vous et eux.

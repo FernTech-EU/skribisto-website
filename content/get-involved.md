@@ -18,11 +18,11 @@ crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates}.ftl
 
 Copy the `en-US` directory to your locale code, translate the values on the right of each `=`, open a pull request. Nothing else changes: no `.ts` files, no `lupdate`, no Transifex account. Anything you do not translate falls back to English at runtime, so a partial translation is genuinely useful and can be finished later.
 
-The [manual and FAQ](https://github.com/jacquetc/skribisto-help-website) are translated separately, and already exist in four languages.
+The help topics inside the application are translated the same way, in the same files, so improving them is the same kind of pull request.
 
-## Write documentation
+## Write help
 
-The manual is never finished. Missing pages, unclear pages and out-of-date screenshots are all worth fixing: [the repository](https://github.com/jacquetc/skribisto-help-website).
+The help is never finished. A topic that explains the wrong thing, or does not exist, is worth as much to fix as a bug: it lives in the application's own source, alongside the strings above.
 
 ## Write code
 
