@@ -1,0 +1,116 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Cyril Jacquet
+
+base_url = "https://www.skribisto.eu"
+title = "Skribisto"
+description = "A writing application for novels, essays and course notes. Free software, plain-text manuscripts, no account and no cloud."
+default_language = "en"
+author = "Cyril Jacquet"
+
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+minify_html = true
+
+# `zola check` runs in CI. Discord invite links answer 405 to a HEAD request.
+[link_checker]
+# Discord invite links answer 405 to a HEAD request. GitHub rewrites every
+# heading id to `user-content-…` in the rendered page and scrolls to it with
+# JavaScript, so its anchors are real in a browser but never found by a checker.
+skip_prefixes = ["https://discord.gg/"]
+skip_anchor_prefixes = ["https://github.com/"]
+
+[markdown]
+smart_punctuation = true
+
+[extra]
+github = "https://github.com/jacquetc/skribisto"
+issues = "https://github.com/jacquetc/skribisto/issues"
+discord = "https://discord.gg/5BSkvQmyVH"
+manual = "https://manual.skribisto.eu/manual/"
+faq = "https://manual.skribisto.eu/faq/"
+help_repo = "https://github.com/jacquetc/skribisto-help-website"
+contact = "cyril.jacquet@ferntech.eu"
+trademark_contact = "trademarks@ferntech.eu"
+flathub = "https://flathub.org/apps/eu.skribisto.skribisto"
+
+[translations]
+nav_tour = "Tour"
+nav_download = "Download"
+nav_news = "News"
+nav_free = "Free software"
+nav_coming = "Coming from 2.x"
+nav_help = "Help"
+nav_involved = "Get involved"
+skip_to_content = "Skip to content"
+alpha_badge = "Alpha"
+alpha_banner = "Skribisto 3 is a rewrite, and it is in alpha. It is not ready to carry a manuscript you cannot afford to lose."
+alpha_banner_link = "What that means"
+cta_download = "Download Skribisto 3"
+cta_status = "How to get it"
+cta_tour = "Take the tour"
+footer_license = "Skribisto is free software under the GNU General Public License v3.0."
+footer_trademark = "Skribisto™ is a trademark of Cyril Jacquet."
+footer_source = "Source code"
+footer_legal = "Legal notice"
+footer_privacy = "Privacy"
+footer_site_source = "This site's source"
+lang_switch = "Langue : français"
+lang_switch_label = "Change language"
+dl_latest = "Latest release"
+dl_published = "Published"
+dl_no_assets_title = "No binaries are published for this release yet"
+dl_no_assets_body = "Nothing is attached to this release, and this page fills itself in the moment something is. What it is waiting on is explained below."
+dl_build_title = "Build it from source"
+dl_checksums = "Checksums"
+dl_size = "Size"
+dl_platform = "Platform"
+dl_file = "File"
+dl_sha = "SHA-256"
+dl_verify = "Verify what you downloaded"
+news_unreleased = "Not released yet"
+news_prerelease = "Pre-release"
+news_version = "Version"
+read_more = "Read on"
+updated_on = "This page was built on"
+
+[languages.fr.translations]
+nav_tour = "Visite"
+nav_download = "Téléchargement"
+nav_news = "Nouveautés"
+nav_free = "Logiciel libre"
+nav_coming = "Venir de la 2.x"
+nav_help = "Aide"
+nav_involved = "Participer"
+skip_to_content = "Aller au contenu"
+alpha_badge = "Alpha"
+alpha_banner = "Skribisto 3 est une réécriture, et elle est en alpha. Elle n’est pas prête à porter un manuscrit que vous ne pouvez pas vous permettre de perdre."
+alpha_banner_link = "Ce que cela veut dire"
+cta_download = "Télécharger Skribisto 3"
+cta_status = "Comment l’obtenir"
+cta_tour = "Faire la visite"
+footer_license = "Skribisto est un logiciel libre sous licence GNU General Public License v3.0."
+footer_trademark = "Skribisto™ est une marque de Cyril Jacquet."
+footer_source = "Code source"
+footer_legal = "Mentions légales"
+footer_privacy = "Vie privée"
+footer_site_source = "Source de ce site"
+lang_switch = "Language: English"
+lang_switch_label = "Changer de langue"
+dl_latest = "Dernière version"
+dl_published = "Publiée le"
+dl_no_assets_title = "Aucun binaire n’est encore publié pour cette version"
+dl_no_assets_body = "Rien n’est joint à cette version, et cette page se remplira d’elle-même dès que ce sera le cas. Ce qu’elle attend est expliqué ci-dessous."
+dl_build_title = "Compiler depuis les sources"
+dl_checksums = "Sommes de contrôle"
+dl_size = "Taille"
+dl_platform = "Plateforme"
+dl_file = "Fichier"
+dl_sha = "SHA-256"
+dl_verify = "Vérifier ce que vous avez téléchargé"
+news_unreleased = "Pas encore publiée"
+news_prerelease = "Préversion"
+news_version = "Version"
+read_more = "Lire la suite"
+updated_on = "Page générée le"

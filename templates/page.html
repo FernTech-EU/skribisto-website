@@ -1,0 +1,14 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — Skribisto{% endblock %}
+{% block og_title %}{{ page.title }} — Skribisto{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block og_description %}{{ page.description | default(value=config.description) }}{% endblock %}
+{% block content %}
+<article class="wrap prose">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+  {{ page.content | safe }}
+</article>
+{% endblock %}

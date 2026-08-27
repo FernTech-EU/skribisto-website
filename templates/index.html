@@ -1,0 +1,81 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+{% extends "base.html" %}
+{% block title %}Skribisto — {{ section.extra.tagline }}{% endblock %}
+{% block og_title %}Skribisto — {{ section.extra.tagline }}{% endblock %}
+{% block content %}
+{%- set release = load_data(path="data/release.toml") -%}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>{{ section.extra.hero_title }}</h1>
+      <p class="hero-lede">{{ section.extra.hero_lede }}</p>
+      {%- set has_assets = (release.assets | default(value=[]) | length) > 0 -%}
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ get_url(path='@/download.md', lang=lang) | safe }}">{% if has_assets %}{{ trans(key="cta_download", lang=lang) }}{% else %}{{ trans(key="cta_status", lang=lang) }}{% endif %}</a>
+        <a class="btn btn-ghost" href="{{ get_url(path='@/tour.md', lang=lang) | safe }}">{{ trans(key="cta_tour", lang=lang) }}</a>
+      </div>
+      <p class="cta-note">{{ section.extra.cta_note }} — <span class="muted">{{ release.version }}</span></p>
+    </div>
+    <figure class="shot">
+      <img src="{{ get_url(path='img/binder-and-editor.png', trailing_slash=false) | safe }}"
+           alt="{{ section.extra.hero_shot_alt }}" width="1440" height="960" loading="eager">
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>{{ section.extra.cards_title }}</h2>
+    <p class="section-lede">{{ section.extra.cards_lede }}</p>
+    <div class="cards">
+      {% for card in section.extra.cards %}
+      <div class="card">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band band-tint">
+  <div class="wrap">
+    <h2>{{ section.extra.today_title }}</h2>
+    <p class="section-lede">{{ section.extra.today_lede }}</p>
+    <ul class="checklist">
+      {% for item in section.extra.today %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    <p class="cta-note"><a href="{{ get_url(path='@/tour.md', lang=lang) | safe }}">{{ section.extra.today_link }} →</a></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap hero-grid">
+    <div>
+      <h2>{{ section.extra.promises_title }}</h2>
+      <p class="section-lede">{{ section.extra.promises_lede }}</p>
+      <ul class="promises">
+        {% for promise in section.extra.promises %}<li>{{ promise }}</li>{% endfor %}
+      </ul>
+      <p class="cta-note"><a href="{{ get_url(path='@/free-software.md', lang=lang) | safe }}">{{ section.extra.promises_link }} →</a></p>
+    </div>
+    <figure class="shot">
+      <img src="{{ get_url(path='img/export-preview.png', trailing_slash=false) | safe }}"
+           alt="{{ section.extra.export_shot_alt }}" width="1440" height="960" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="band band-tint">
+  <div class="wrap">
+    <div class="callout">
+      <h3>{{ section.extra.coming_title }}</h3>
+      <p>{{ section.extra.coming_body }}</p>
+      <p><a href="{{ get_url(path='@/coming-from-skribisto-2.md', lang=lang) | safe }}">{{ section.extra.coming_link }} →</a></p>
+    </div>
+    {{ section.content | safe }}
+  </div>
+</section>
+{% endblock %}

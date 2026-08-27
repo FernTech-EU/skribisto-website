@@ -1,0 +1,11 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+{% extends "base.html" %}
+{% block title %}Page not found — Skribisto{% endblock %}
+{% block content %}
+<article class="wrap prose">
+  <h1>Page not found</h1>
+  <p class="lede">This page moved when the site was rebuilt for Skribisto 3. <span lang="fr">Cette page a changé d'adresse lors de la refonte du site pour Skribisto 3.</span></p>
+  <p><a href="{{ get_url(path='/') | safe }}">Home</a> · <a href="{{ get_url(path='@/download.md') | safe }}">Download</a> · <a href="{{ config.extra.manual }}">User manual</a> · <a href="{{ get_url(path='/', lang='fr') | safe }}" lang="fr">Version française</a></p>
+</article>
+{% endblock %}

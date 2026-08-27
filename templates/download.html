@@ -1,0 +1,50 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — Skribisto{% endblock %}
+{% block og_title %}{{ page.title }} — Skribisto{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block og_description %}{{ page.description }}{% endblock %}
+{% block content %}
+{%- set release = load_data(path="data/release.toml") -%}
+<article class="wrap prose">
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.description }}</p>
+
+  <div class="release-head">
+    <span class="release-version">{{ release.version }}</span>
+    {% if release.prerelease %}<span class="badge">{{ trans(key="alpha_badge", lang=lang) }}</span>{% endif %}
+    <span class="release-date">{{ trans(key="dl_published", lang=lang) }} {{ release.published_at }}</span>
+  </div>
+
+  {% set assets = release.assets | default(value=[]) %}
+  {% if assets | length > 0 %}
+    <div class="dl-list">
+      {% for asset in assets %}
+      <div class="dl-item">
+        <div>
+          <div>{{ asset.label }}</div>
+          <div class="dl-name">{{ asset.name }}</div>
+          <div class="dl-meta">{{ trans(key="dl_size", lang=lang) }}: {{ asset.size / 1048576 | round(precision=1) }} MB</div>
+          {% if asset.sha256 %}<div class="sha">{{ trans(key="dl_sha", lang=lang) }} {{ asset.sha256 }}</div>{% endif %}
+        </div>
+        <a class="btn btn-primary" href="{{ asset.url }}">{{ trans(key="nav_download", lang=lang) }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% if release.checksums_url %}
+      <p class="small muted"><a href="{{ release.checksums_url }}">{{ trans(key="dl_checksums", lang=lang) }} (SHA256SUMS.txt)</a></p>
+    {% endif %}
+  {% else %}
+    <div class="callout">
+      <h3>{{ trans(key="dl_no_assets_title", lang=lang) }}</h3>
+      <p>{{ trans(key="dl_no_assets_body", lang=lang) }}</p>
+      <p class="small muted"><a href="{{ release.url }}">{{ release.tag }}</a> · <a href="{{ config.extra.github }}/releases">{{ config.extra.github }}/releases</a></p>
+    </div>
+  {% endif %}
+
+  {{ page.content | safe }}
+
+  <p class="small muted">{{ trans(key="updated_on", lang=lang) }} {{ release.generated_at }}.</p>
+</article>
+{% endblock %}

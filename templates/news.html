@@ -1,0 +1,45 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — Skribisto{% endblock %}
+{% block og_title %}{{ page.title }} — Skribisto{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block og_description %}{{ page.description }}{% endblock %}
+{% block content %}
+{%- set news = load_data(path="data/news.toml") -%}
+<article class="wrap prose">
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.description }}</p>
+  {{ page.content | safe }}
+
+  {% for entry in news.entries %}
+    {% set major = entry.version | split(pat=".") | first %}
+    {% if major == "3" %}
+      <section class="release-entry">
+        <h2 class="release-title">
+          {{ trans(key="news_version", lang=lang) }} {{ entry.version }}
+          {% if not entry.released %}<span class="badge">{{ trans(key="news_unreleased", lang=lang) }}</span>
+          {% elif entry.prerelease %}<span class="badge quiet">{{ trans(key="news_prerelease", lang=lang) }}</span>{% endif %}
+        </h2>
+        <p class="release-date">{{ entry.date }}</p>
+        <ul>{% for item in entry.items %}<li>{{ item }}</li>{% endfor %}</ul>
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  <details class="older-toggle">
+    <summary>{{ page.extra.older_summary }}</summary>
+    {% for entry in news.entries %}
+      {% set major = entry.version | split(pat=".") | first %}
+      {% if major != "3" %}
+        <section class="release-entry">
+          <h3 class="release-title">{{ trans(key="news_version", lang=lang) }} {{ entry.version }}
+            <span class="release-date">{{ entry.date }}</span>
+          </h3>
+          <ul>{% for item in entry.items %}<li>{{ item }}</li>{% endfor %}</ul>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </details>
+</article>
+{% endblock %}
