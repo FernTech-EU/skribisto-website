@@ -18,4 +18,4 @@ S’il vous est utile et que vous souhaitez aider à les payer, vous pouvez :
 
 Rien n’est chargé depuis PayPal tant que vous n’avez pas appuyé sur ce bouton.
 
-Il n’y a pas d’offre payante, un don ne déverrouille rien, et aucune fonction n’attend derrière. Si vous préférez donner du temps plutôt que de l’argent, [cela vaut davantage](@/get-involved.md), en particulier la traduction et les rapports de bogues.
+Il n’y a pas d’offre payante, un don ne déverrouille rien, et aucune fonction n’attend derrière. Si vous préférez donner du temps plutôt que de l’argent, [cela aide davantage](@/get-involved.md), en particulier la traduction et les rapports de bogues.

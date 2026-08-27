@@ -10,7 +10,7 @@ A project opens on a **binder**: the list down the side holding your book, its c
 
 One project is not one book. You can write several in the same project, and you can keep more than one binder, so a manuscript, a story bible and a heap of research do not have to share a tree.
 
-Inside a binder you decide how much structure you want. A book can go straight to its chapters or through parts first. A chapter can be a folder holding scenes, or a single page you write straight down, and both kinds can sit in the same book. Notes and note folders go wherever you need them: a character, a place, a page of research, a chapter you have not written yet.
+Inside a binder you decide how much structure you want. A book can go straight to its chapters or through parts first. A chapter can be a folder holding scenes, or a single page you write straight down, and both kinds can sit in the same book. Notes and note folders go wherever you need them: a character, a place, a page of research.
 
 <figure class="shot">
   <img src="/img/binder-and-editor.png" alt="The binder on the left, a scene's text and its summary in the editor." width="1440" height="960" loading="lazy">
@@ -42,10 +42,27 @@ A book is easier to write when you can stand back from it.
 - **Analysis.** Words per scene, how much of the book is dialogue, and how many words sit in the footnotes, measured against the book's own numbers rather than against somebody's idea of a norm.
 - **Pace.** A plan with a deadline, milestones and the days you are not writing, against the words you actually wrote.
 - **Comments.** Anchored in the margin, the way a word processor does it, with threaded replies, a dock for the whole project and one for the document in front of you.
-- **Tags, point of view and mentions.** Colour tags with ready-made sets by genre, the character whose eyes a scene is seen through, and an index of every place a tagged character or location is named in the prose.
-- **Timeline and version history.** What a scene said last Tuesday, read out of the backups you already have, with the differences marked.
+- **Tags and point of view.** Colour tags with ready-made sets by genre, and the character whose eyes a scene is seen through.
 
-## 4. Finish
+## 4. The story bible
+
+A bible entry is not a new kind of thing: it is a note, with a colour tag, a few aliases and whatever you write in it. What makes it a bible is that Skribisto reads the manuscript back to you through it.
+
+- **Make one from the prose.** Select the name you just invented, pick its tag, and it becomes a filed note in one click, in the folder that tag files things into, from the template that tag uses.
+- **A place for them.** Any folder of notes gets a story-bible view: cards grouped by tag, each with its aliases and the number of scenes it appears in. With more than one book in the project, entries can be filed under a book, or under none.
+- **Every entry is three pages.** The note itself; **Details**, which puts what you are stating on the left and what you have already written about them on the right, quoted from your own manuscript; and **In prose**, the scenes that entry is declared present in, editable there rather than somewhere else.
+- **Names are marked where they are written.** A mentioned character is washed in their own colour in the prose, counted in the page header, and stepped through in reading order, aliases included, so "Lizzy" is not walked past on the way to "Elizabeth".
+
+## 5. Lose nothing
+
+The whole point of a manuscript is that it survives. Four layers, none of which you have to remember to use.
+
+- **It saves as you write**, and the status bar says whether what you see is on disk.
+- **The trash restores**, and the restore is undoable, as is everything else the binder does.
+- **Backups** with a retention policy, several destinations and a scheduler, taken on a schedule and when you close a project. Any backup opens read-only, so you can read last month's draft with today's still open.
+- **Version history.** What a scene said last Tuesday, read out of the backups you already have and out of the project's own save history, with the differences marked and the old words put back if that is what you decide. A project timeline shows the same thing for the whole book, so you can find the day a chapter changed.
+
+## 6. Finish
 
 Skribisto is not a word processor and does not try to be. What it does is hand the book over already laid out the way the people receiving it expect.
 
@@ -57,8 +74,13 @@ Skribisto is not a word processor and does not try to be. What it does is hand t
 - **Nine formats**: DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview of what will come out and a saved style per format: page size and margins, the face, its size and its leading, indents, where a chapter starts, how a scene break is drawn, whether the title page carries a word count.
 - **The editorial round trip closes.** Send a chapter out as DOCX or ODT, get it back marked up, and it comes home to the book it left instead of landing beside it as a second copy. Every row is recognised by a mark carried inside the file, along with a fingerprint of the prose as it was sent, so the comparison can tell who changed what.
 - **You decide row by row what comes back.** The last step of the import puts your own tree on one side and what the file says about each row on the other, including the chapter your editor inserted where you had nothing. For each row: take the change, keep what you have, bring back the comments only, create a new row, or ignore it, with a compare view when you want to look before you choose. Comments only is the case it exists for, since it brings an editor's remarks home without re-importing ninety thousand words.
-- **Backups** with a retention policy, several destinations and a scheduler; any backup opens read-only, so you can look without putting the live project at risk.
 - **Your project, without Skribisto.** A `.skrib` file is a zip of Djot files, which are plain text much like Markdown, plus readable manifests. Keep it as one file, or as an exploded folder if the manuscript lives in git. Open a scene in any text editor and it is your prose, with your images in a folder beside it.
+
+## 7. Accessible on purpose
+
+An interface a screen reader cannot drive is not finished, it is finished for some people. Skribisto exposes a real accessibility tree, which is what NVDA and JAWS read, and the two it is tested with. Every control has a keyboard route, and the ones that did not have been fixed by driving the application with nothing but injected keystrokes: a regression test now stands where each of those bugs was. When you build yourself a distraction-free theme, a colour pairing below WCAG AA is flagged as you choose it.
+
+None of that makes the application perfect. If you hit a barrier, [report it](https://github.com/jacquetc/skribisto/issues): it is a bug like any other, and it is treated like one.
 
 <div class="callout">
   <h3>Not in the box</h3>

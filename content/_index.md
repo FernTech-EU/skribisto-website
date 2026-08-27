@@ -7,20 +7,23 @@ template = "index.html"
 tagline = "a writing application for long-form work"
 hero_title = "Write the book. Format it later."
 hero_lede = "One project holds the lot: your book, or several, the chapters and scenes under them, and the notes and research beside them. Every piece of writing carries a summary of itself, and all of it is saved as text files you can open with anything."
-hero_shot_alt = "The binder tree on the left, a scene's prose and its synopsis side by side in the editor."
+hero_shot_alt = "The binder tree on the left, a scene’s prose and its synopsis side by side in the editor."
 export_shot_alt = "The export window, with a live preview of the compiled manuscript."
 cta_note = "Free software, GPLv3 · Linux, Windows and macOS · current build:"
 
-cards_title = "Three things worth knowing before you start"
-cards_lede = "They are what makes Skribisto different from a folder of documents, and from an outliner that files your book into somebody else's boxes."
+cards_title = "Six things to know before you start"
+cards_lede = "They are what makes Skribisto different from a folder of documents."
 
 
 
 
 cards = [
-  { title = "It fits how you write", body = "One project can hold several books, and a book as many chapters as you like, with scenes under them or without. A chapter can be a folder full of scenes, or a single page you write straight down, and both can live in the same book. You can keep more than one binder too, so the manuscript, the story bible and the research need not share a tree." },
-  { title = "A summary beside every scene", body = "Each piece of writing carries a short account of what happens in it, in a box above the page or in a column beside it. Those summaries are what the corkboard puts on its cards, and you can read all of them, a whole book at a time, when you want the plan rather than the prose." },
-  { title = "Files you can still open in ten years", body = "You write in a proper rich-text editor: bold, italics, headings, images. It is stored as Djot, a plain-text format much like Markdown, one file per scene, in a bundle you keep as a single file or as a folder under version control. No database, and nothing that needs Skribisto to be read." },
+  { title = "It fits how you write", body = "Several books in one project. Chapters as folders of scenes, or as single pages, in the same book. More than one binder, so the research need not sit in the manuscript’s tree." },
+  { title = "A summary beside every scene", body = "Every piece of writing carries a short account of what happens in it. The corkboard puts those on cards, and a whole book’s worth reads as one page." },
+  { title = "A story bible that has read your book", body = "Tag a note, give it its aliases, and Skribisto finds it in your prose: the scenes it appears in, and what you have already written about it, quoted back to you." },
+  { title = "Nothing gets lost", body = "It saves as you write. The trash restores. Backups run on a schedule and open read-only. The version history puts back what a scene said last week." },
+  { title = "Files you can still open in ten years", body = "You write in a rich-text editor; it is stored as Djot, a plain-text format much like Markdown, one file per scene. Nothing in there needs Skribisto to be read." },
+  { title = "Accessible on purpose", body = "A real accessibility tree, so a screen reader can drive it, tested with NVDA and JAWS. A colour pairing below WCAG AA is flagged. A gap here is a bug like any other." },
 ]
 
 today_title = "What it does today"
@@ -33,7 +36,7 @@ today = [
   "**Streams**: a chapter, a part or a whole book as one page.",
   "**Corkboard** cards you can read, edit and reorder.",
   "An **overview** table of everything below a folder.",
-  "**Analysis** of a book's shape, against its own numbers.",
+  "**Analysis** of a book’s shape, against its own numbers.",
   "**Pace** planning, with milestones and days off.",
   "A live **word count**, and writing sessions.",
   "**Comments** in the margin, with threaded replies.",
@@ -65,7 +68,7 @@ promises = [
 ]
 
 coming_title = "Coming from Plume Creator, or from Skribisto 2?"
-coming_body = "A Skribisto 2 project is upgraded as it loads: open it and keep writing. A Plume Creator project comes in through Work ▸ Import from ▸ Plume Creator. Neither original file is modified, and the interface has changed enough that it is worth five minutes of reading first."
+coming_body = "A Skribisto 2 project is upgraded as it loads: open it and keep writing. A Plume Creator project comes in through Work ▸ Import from ▸ Plume Creator. Neither original file is modified, and the interface has changed enough that five minutes of reading first will save you an hour."
 coming_link = "What changed, and what to expect"
 +++
 

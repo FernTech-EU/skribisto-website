@@ -15,7 +15,7 @@ The help lives in the application itself, not on a website that drifts out of da
 
 ## Reporting a bug well
 
-Skribisto is a spare-time project given away for free, so support is voluntary, which makes a good report worth a great deal. The useful ones say:
+Skribisto is a spare-time project given away for free, so support is voluntary, which puts a great deal of weight on a good report. The useful ones say:
 
 - which build you are running, and on which system;
 - what you did, what you expected, and what happened instead;

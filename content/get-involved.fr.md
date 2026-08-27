@@ -21,7 +21,7 @@ Les rubriques d’aide de l’application se traduisent de la même façon, dans
 
 ## Écrire l’aide
 
-L’aide n’est jamais finie. Une rubrique qui explique la mauvaise chose, ou qui n’existe pas, mérite autant d’être corrigée qu’un bogue : elle vit dans les sources de l’application, à côté des chaînes ci-dessus.
+L’aide n’est jamais finie. Une rubrique qui explique la mauvaise chose, ou qui n’existe pas du tout, est un défaut comme un autre. Elle vit dans les sources de l’application, à côté des chaînes ci-dessus.
 
 ## Écrire du code
 
@@ -31,7 +31,7 @@ Les tickets marqués [good first issue](https://github.com/jacquetc/skribisto/is
 
 ## L’utiliser et râler
 
-Très sérieusement : un rapport de bogue venant de quelqu’un qui écrit un vrai livre vaut plus qu’une demande de fonction venant de quelqu’un qui en imagine un. [Les tickets](https://github.com/jacquetc/skribisto/issues), ou [Discord](https://discord.gg/5BSkvQmyVH).
+Très sérieusement : un rapport de bogue venant de quelqu’un qui écrit un vrai livre passe avant une demande de fonction venant de quelqu’un qui en imagine un. [Les tickets](https://github.com/jacquetc/skribisto/issues), ou [Discord](https://discord.gg/5BSkvQmyVH).
 
 ## Ou aider à payer le serveur
 

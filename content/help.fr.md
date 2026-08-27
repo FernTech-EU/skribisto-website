@@ -15,7 +15,7 @@ L’aide vit dans l’application elle-même, et non sur un site qui se périme�
 
 ## Bien signaler un bogue
 
-Skribisto est un projet de temps libre, donné gratuitement : le support est donc bénévole, ce qui rend un bon rapport très précieux. Les rapports utiles indiquent :
+Skribisto est un projet de temps libre, donné gratuitement : le support est donc bénévole, et tout repose donc sur la qualité du rapport. Les rapports utiles indiquent :
 
 - quelle version vous utilisez, et sur quel système ;
 - ce que vous avez fait, ce que vous attendiez, et ce qui s’est produit à la place ;

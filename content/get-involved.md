@@ -22,7 +22,7 @@ The help topics inside the application are translated the same way, in the same 
 
 ## Write help
 
-The help is never finished. A topic that explains the wrong thing, or does not exist, is worth as much to fix as a bug: it lives in the application's own source, alongside the strings above.
+The help is never finished. A topic that explains the wrong thing, or does not exist at all, is a defect like any other. It lives in the application's own source, alongside the strings above.
 
 ## Write code
 
@@ -32,7 +32,7 @@ Issues tagged [good first issue](https://github.com/jacquetc/skribisto/issues?q=
 
 ## Use it and complain
 
-Genuinely: a bug report from someone writing a real book is worth more than a feature request from someone imagining one. [Issues](https://github.com/jacquetc/skribisto/issues), or [Discord](https://discord.gg/5BSkvQmyVH).
+Genuinely: a bug report from someone writing a real book beats a feature request from someone imagining one. [Issues](https://github.com/jacquetc/skribisto/issues), or [Discord](https://discord.gg/5BSkvQmyVH).
 
 ## Or help pay for the server
 

@@ -10,7 +10,7 @@ Un projet s’ouvre sur un **classeur** : la liste, sur le côté, qui contient
 
 Un projet n’est pas un livre. Vous pouvez en écrire plusieurs dans le même projet, et tenir plusieurs classeurs, pour qu’un manuscrit, une bible et une pile de documentation ne partagent pas le même arbre.
 
-Dans un classeur, c’est vous qui décidez de la quantité de structure. Un livre peut aller droit à ses chapitres, ou passer d’abord par des parties. Un chapitre peut être un dossier contenant des scènes, ou une simple page que vous écrivez d’un trait, et les deux peuvent coexister dans le même livre. Les notes et les dossiers de notes se placent là où vous en avez besoin : un personnage, un lieu, une page de documentation, un chapitre que vous n’avez pas encore écrit.
+Dans un classeur, c’est vous qui décidez de la quantité de structure. Un livre peut aller droit à ses chapitres, ou passer d’abord par des parties. Un chapitre peut être un dossier contenant des scènes, ou une simple page que vous écrivez d’un trait, et les deux peuvent coexister dans le même livre. Les notes et les dossiers de notes se placent là où vous en avez besoin : un personnage, un lieu, une page de documentation.
 
 <figure class="shot">
   <img src="/img/binder-and-editor.png" alt="Le classeur à gauche, le texte d’une scène et son résumé dans l’éditeur." width="1440" height="960" loading="lazy">
@@ -42,10 +42,27 @@ Un livre s’écrit mieux quand on peut prendre du recul.
 - **L’analyse.** Les mots par scène, la part de dialogue dans le livre, et le nombre de mots en notes de bas de page, mesurés à l’aune des chiffres du livre lui-même plutôt que d’une norme venue d’ailleurs.
 - **Le rythme.** Un plan avec échéance, jalons et jours non travaillés, comparé aux mots réellement écrits.
 - **Les commentaires.** Ancrés en marge, comme dans un traitement de texte, avec fils de réponses, un panneau pour tout le projet et un pour le document sous vos yeux.
-- **Étiquettes, point de vue et mentions.** Des étiquettes de couleur avec des jeux prêts à l’emploi par genre, le personnage par les yeux duquel une scène est vue, et un index de chaque endroit où un personnage ou un lieu étiqueté est nommé dans le texte.
-- **Chronologie et historique des versions.** Ce qu’une scène disait mardi dernier, lu dans les sauvegardes que vous avez déjà, avec les différences marquées.
+- **Étiquettes et point de vue.** Des étiquettes de couleur avec des jeux prêts à l’emploi par genre, et le personnage par les yeux duquel une scène est vue.
 
-## 4. Terminer
+## 4. La bible
+
+Une entrée de bible n’est pas une nouvelle sorte d’objet : c’est une note, avec une étiquette de couleur, quelques alias et ce que vous écrivez dedans. Ce qui en fait une bible, c’est que Skribisto vous relit le manuscrit à travers elle.
+
+- **Créez-la depuis le texte.** Sélectionnez le nom que vous venez d’inventer, choisissez son étiquette, et il devient une note classée en un clic, dans le dossier où cette étiquette range ses notes, à partir du modèle qu’elle utilise.
+- **Un endroit pour elles.** Tout dossier de notes reçoit une vue bible : des cartes groupées par étiquette, chacune avec ses alias et le nombre de scènes où elle apparaît. Avec plusieurs livres dans le projet, une entrée peut être rattachée à un livre, ou à aucun.
+- **Chaque entrée tient en trois pages.** La note elle-même ; **Détails**, qui place à gauche ce que vous affirmez et à droite ce que vous avez déjà écrit à son sujet, cité depuis votre propre manuscrit ; et **Dans le texte**, les scènes où cette entrée est déclarée présente, modifiables depuis là plutôt qu’ailleurs.
+- **Les noms sont marqués là où ils sont écrits.** Un personnage mentionné est teinté de sa propre couleur dans le texte, compté dans l’en-tête de la page, et parcouru dans l’ordre de lecture, alias compris : on ne passe pas devant « Lizzy » en cherchant « Elizabeth ».
+
+## 5. Rien ne se perd
+
+Tout l’intérêt d’un manuscrit, c’est qu’il survive. Quatre couches, dont aucune ne vous demande d’y penser.
+
+- **L’enregistrement se fait pendant que vous écrivez**, et la barre d’état dit si ce que vous voyez est sur le disque.
+- **La corbeille restaure**, et la restauration s’annule, comme tout ce que fait le classeur.
+- **Les sauvegardes**, avec politique de rétention, plusieurs destinations et un planificateur, prises selon votre calendrier et à la fermeture d’un projet. Chacune s’ouvre en lecture seule : vous relisez le brouillon du mois dernier sans fermer celui d’aujourd’hui.
+- **L’historique des versions.** Ce qu’une scène disait mardi dernier, lu dans les sauvegardes que vous avez déjà et dans l’historique d’enregistrement du projet, avec les différences marquées et les anciens mots remis en place si vous le décidez. Une chronologie du projet montre la même chose pour le livre entier, pour retrouver le jour où un chapitre a changé.
+
+## 6. Terminer
 
 Skribisto n’est pas un traitement de texte et n’essaie pas de l’être. Ce qu’il fait, c’est remettre le livre déjà mis en forme comme l’attendent ceux à qui vous l’envoyez.
 
@@ -57,8 +74,13 @@ Skribisto n’est pas un traitement de texte et n’essaie pas de l’être. Ce 
 - **Neuf formats** : DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX et texte brut, avec un aperçu en direct de ce qui va sortir et un style enregistré par format : format de page et marges, police, corps et interligne, alinéas, où commence un chapitre, comment se dessine une séparation de scène, si la page de titre porte un nombre de mots.
 - **L’aller-retour éditorial se referme.** Envoyez un chapitre en DOCX ou en ODT, récupérez-le annoté : il revient dans le livre qu’il a quitté, au lieu de se poser à côté en seconde copie. Chaque ligne est reconnue par une marque portée dans le fichier lui-même, avec une empreinte du texte tel qu’il est parti, si bien que la comparaison sait qui a changé quoi.
 - **Vous décidez ligne par ligne de ce qui revient.** La dernière étape de l’import place votre arbre d’un côté et ce que le fichier dit de chaque ligne de l’autre, y compris le chapitre que votre éditeur a inséré là où vous n’aviez rien. Pour chaque ligne : prendre la modification, garder ce que vous avez, ne rapatrier que les commentaires, créer une nouvelle ligne, ou ignorer, avec une vue comparée quand vous voulez regarder avant de choisir. Ne rapatrier que les commentaires est le cas pour lequel tout cela existe : les remarques de votre éditeur reviennent sans réimporter quatre-vingt-dix mille mots.
-- **Des sauvegardes** avec politique de rétention, plusieurs destinations et un planificateur ; chaque sauvegarde s’ouvre en lecture seule, pour regarder sans mettre en danger le projet vivant.
 - **Votre projet, sans Skribisto.** Un fichier `.skrib` est un zip de fichiers Djot, du texte brut très proche de Markdown, plus des manifestes lisibles. Gardez-le en un seul fichier, ou en dossier déplié si le manuscrit vit dans git. Ouvrez une scène dans n’importe quel éditeur de texte : c’est votre prose, avec vos images dans un dossier à côté.
+
+## 7. Accessible par principe
+
+Une interface qu’un lecteur d’écran ne peut pas piloter n’est pas finie : elle est finie pour certains. Skribisto expose un véritable arbre d’accessibilité, celui que lisent NVDA et JAWS, les deux avec lesquels elle est testée. Chaque commande a son chemin au clavier, et celles qui n’en avaient pas ont été corrigées en pilotant l’application avec de simples frappes injectées : un test de non-régression se tient désormais là où était chacun de ces bogues. Quand vous composez un thème sans distraction, tout couple de couleurs en deçà du niveau WCAG AA vous est signalé au moment du choix.
+
+Rien de tout cela ne rend l’application parfaite. Si vous butez sur un obstacle, [signalez-le](https://github.com/jacquetc/skribisto/issues) : c’est un bogue comme un autre, et il est traité comme tel.
 
 <div class="callout">
   <h3>Ce qu’il n’y a pas</h3>

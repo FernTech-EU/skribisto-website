@@ -37,4 +37,4 @@ Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’au
 
 ## S’il manque quelque chose dont vous dépendiez
 
-Dites-le. Une fonction qui comptait pour un vrai manuscrit vaut plus qu’une fonction qui sonnait bien dans un plan : [le suivi des tickets](https://github.com/jacquetc/skribisto/issues) ou [le Discord](https://discord.gg/5BSkvQmyVH).
+Dites-le. Une fonction qui comptait pour un vrai manuscrit passe avant une fonction qui sonnait bien dans un plan : [le suivi des tickets](https://github.com/jacquetc/skribisto/issues) ou [le Discord](https://discord.gg/5BSkvQmyVH).

@@ -1,6 +1,6 @@
 +++
 title = "News"
-description = "Every release, from the newest back to the beginning. Generated from the project's own NEWS file."
+description = "Every release, from the newest back to the beginning. Generated from the project’s own NEWS file."
 template = "news.html"
 weight = 3
 aliases = ["/index.php/category/news/"]

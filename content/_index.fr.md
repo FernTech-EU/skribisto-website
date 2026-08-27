@@ -11,16 +11,19 @@ hero_shot_alt = "Le classeur à gauche, le texte d’une scène et son synopsis 
 export_shot_alt = "La fenêtre d’export, avec un aperçu en direct du manuscrit compilé."
 cta_note = "Logiciel libre, GPLv3 · Linux, Windows et macOS · version en cours :"
 
-cards_title = "Trois choses à savoir avant de commencer"
-cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de documents, et d’un logiciel de plan qui range votre livre dans les cases de quelqu’un d’autre."
+cards_title = "Six choses à savoir avant de commencer"
+cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de documents."
 
 
 
 
 cards = [
-  { title = "Il s’adapte à votre façon d’écrire", body = "Un projet peut contenir plusieurs livres, et un livre autant de chapitres que vous voulez, avec des scènes en dessous ou sans. Un chapitre peut être un dossier plein de scènes, ou une simple page que vous écrivez d’un trait, et les deux peuvent coexister dans le même livre. Vous pouvez aussi tenir plusieurs classeurs, pour que le manuscrit, la bible et la documentation ne partagent pas le même arbre." },
-  { title = "Un résumé à côté de chaque scène", body = "Chaque texte porte un court récit de ce qui s’y passe, dans un encadré au-dessus de la page ou dans une colonne à côté. Ce sont ces résumés que le tableau de liège affiche sur ses cartes, et vous pouvez les lire tous, un livre entier à la fois, quand vous voulez le plan plutôt que la prose." },
-  { title = "Des fichiers encore lisibles dans dix ans", body = "Vous écrivez dans un véritable éditeur de texte enrichi : gras, italique, titres, images. C’est enregistré en Djot, un format texte très proche de Markdown, un fichier par scène, dans un paquet que vous gardez en un seul fichier ou en dossier versionnable. Pas de base de données, et rien qui exige Skribisto pour être lu." },
+  { title = "Il s’adapte à votre façon d’écrire", body = "Plusieurs livres dans un projet. Des chapitres en dossiers de scènes, ou en simples pages, dans le même livre. Plusieurs classeurs, pour que la documentation ne siège pas dans l’arbre du manuscrit." },
+  { title = "Un résumé à côté de chaque scène", body = "Chaque texte porte un court récit de ce qui s’y passe. Le tableau de liège en fait des cartes, et un livre entier de résumés se lit d’une traite." },
+  { title = "Une bible qui a lu votre livre", body = "Étiquetez une note, donnez-lui ses alias, et Skribisto la retrouve dans votre texte : les scènes où elle apparaît, et ce que vous en avez déjà écrit, cité." },
+  { title = "Rien ne se perd", body = "L’enregistrement suit votre frappe. La corbeille restaure. Les sauvegardes suivent un calendrier et s’ouvrent en lecture seule. L’historique remet les mots de la semaine dernière." },
+  { title = "Des fichiers encore lisibles dans dix ans", body = "Vous écrivez dans un éditeur enrichi ; c’est enregistré en Djot, un format texte très proche de Markdown, un fichier par scène. Rien là-dedans n’exige Skribisto pour être lu." },
+  { title = "Accessible par principe", body = "Un véritable arbre d’accessibilité, qu’un lecteur d’écran pilote, testé avec NVDA et JAWS. Un couple de couleurs sous le niveau WCAG AA est signalé. Une lacune ici est un bogue." },
 ]
 
 today_title = "Ce qu’il fait aujourd’hui"
@@ -65,7 +68,7 @@ promises = [
 ]
 
 coming_title = "Vous venez de Plume Creator ou de Skribisto 2 ?"
-coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouverture : ouvrez-le et continuez d’écrire. Un projet Plume Creator arrive par Projet ▸ Importer depuis ▸ Plume Creator. Aucun fichier d’origine n’est modifié, et l’interface a suffisamment changé pour mériter cinq minutes de lecture."
+coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouverture : ouvrez-le et continuez d’écrire. Un projet Plume Creator arrive par Projet ▸ Importer depuis ▸ Plume Creator. Aucun fichier d’origine n’est modifié, et l’interface a suffisamment changé pour que cinq minutes de lecture vous fassent gagner une heure."
 coming_link = "Ce qui change, et à quoi s’attendre"
 +++
 

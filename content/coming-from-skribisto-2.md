@@ -37,4 +37,4 @@ Being honest about a rewrite matters more than being enthusiastic about one.
 
 ## If something is missing that you relied on
 
-Say so. A feature that mattered to a real manuscript is worth more than one that sounded good in a plan: [the issue tracker](https://github.com/jacquetc/skribisto/issues) or [the Discord](https://discord.gg/5BSkvQmyVH).
+Say so. A feature that mattered to a real manuscript beats one that sounded good in a plan: [the issue tracker](https://github.com/jacquetc/skribisto/issues) or [the Discord](https://discord.gg/5BSkvQmyVH).

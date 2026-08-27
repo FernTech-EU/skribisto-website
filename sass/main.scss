@@ -151,7 +151,7 @@ figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); 
 .band > .wrap > h2:first-child { margin-top: 0; }
 .section-lede { color: var(--muted); max-width: 40rem; font-size: 1.08rem; }
 
-.cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin-top: 2rem; }
+.cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); margin-top: 2rem; }
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 1.4rem 1.5rem;

@@ -19,4 +19,4 @@ If it is useful to you and you would like to help pay for those, you can:
 
 Nothing is loaded from PayPal until you press that button.
 
-There is no paid tier, nothing is unlocked by donating, and no feature waits behind one. If you would rather give time than money, [that is worth more](@/get-involved.md), translation and bug reports especially.
+There is no paid tier, nothing is unlocked by donating, and no feature waits behind one. If you would rather give time than money, [that helps more](@/get-involved.md), translation and bug reports especially.
