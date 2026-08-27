@@ -47,14 +47,16 @@ A book is easier to write when you can stand back from it.
 
 ## 4. Finish
 
-Skribisto is not a word processor and does not try to be. It compiles the manuscript and hands it to whichever program you finish in.
+Skribisto is not a word processor and does not try to be. What it does is hand the book over already laid out the way the people receiving it expect.
 
 <figure class="shot">
   <img src="/img/export-preview.png" alt="The export window, with a live preview of the compiled manuscript." width="1440" height="960" loading="lazy">
 </figure>
 
-- **Nine formats**: DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview of what will come out and saved styles per format.
-- **The editorial round trip closes.** Send a chapter out as DOCX or ODT, get it back marked up, and the comments come home to the scenes they belong to, matched against the prose that is actually stored rather than against a line number.
+- **The conventions of the place you are sending it.** A project can be laid out from the start with the front and back matter its tradition expects: a US trade novel, a UK trade novel, un roman français, ein deutscher Roman, each in that tradition's own words. Afterwards they are ordinary rows, so move them, rename them or throw them away.
+- **Nine formats**: DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview of what will come out and a saved style per format: page size and margins, the face, its size and its leading, indents, where a chapter starts, how a scene break is drawn, whether the title page carries a word count.
+- **The editorial round trip closes.** Send a chapter out as DOCX or ODT, get it back marked up, and it comes home to the book it left instead of landing beside it as a second copy. Every row is recognised by a mark carried inside the file, along with a fingerprint of the prose as it was sent, so the comparison can tell who changed what.
+- **You decide row by row what comes back.** The last step of the import puts your own tree on one side and what the file says about each row on the other, including the chapter your editor inserted where you had nothing. For each row: take the change, keep what you have, bring back the comments only, create a new row, or ignore it, with a compare view when you want to look before you choose. Comments only is the case it exists for, since it brings an editor's remarks home without re-importing ninety thousand words.
 - **Backups** with a retention policy, several destinations and a scheduler; any backup opens read-only, so you can look without putting the live project at risk.
 - **Your project, without Skribisto.** A `.skrib` file is a zip of Djot files, which are plain text much like Markdown, plus readable manifests. Keep it as one file, or as an exploded folder if the manuscript lives in git. Open a scene in any text editor and it is your prose, with your images in a folder beside it.
 
