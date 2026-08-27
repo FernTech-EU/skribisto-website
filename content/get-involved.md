@@ -16,7 +16,7 @@ crates/teksilo_ui/locales/en-US/{main,tooltips,tags,templates}.ftl
 crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates}.ftl
 ```
 
-Copy the `en-US` directory to your locale code, translate the values on the right of each `=`, open a pull request. Nothing else changes — no `.ts` files, no `lupdate`, no Transifex account. Anything you do not translate falls back to English at runtime, so a partial translation is genuinely useful and can be finished later.
+Copy the `en-US` directory to your locale code, translate the values on the right of each `=`, open a pull request. Nothing else changes: no `.ts` files, no `lupdate`, no Transifex account. Anything you do not translate falls back to English at runtime, so a partial translation is genuinely useful and can be finished later.
 
 The [manual and FAQ](https://github.com/jacquetc/skribisto-help-website) are translated separately, and already exist in four languages.
 

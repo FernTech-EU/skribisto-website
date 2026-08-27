@@ -12,14 +12,14 @@ That is the licence. What follows is the commitment, which is a different thing,
 
 <ul class="promises">
   <li><strong>Everything you need to write a book is GPLv3, permanently.</strong> Creating, editing, opening, saving and exporting a manuscript, in every format Skribisto supports, is free-software work and stays there.</li>
-  <li><strong>Your project stays readable.</strong> The <code>.skrib</code> bundle format is open and documented, and a project remains readable, editable and exportable by free software — whatever else ever touches it.</li>
+  <li><strong>Your project stays readable.</strong> The <code>.skrib</code> bundle format is open and documented, and a project remains readable, editable and exportable by free software, whatever else ever touches it.</li>
   <li><strong>Nothing is taken back.</strong> No feature that has shipped will ever be removed and put somewhere you have to pay to reach.</li>
   <li><strong>No key, no server, no permission.</strong> Skribisto will never require a licence key, an activation step, or a network connection to open or edit your own work.</li>
 </ul>
 
 ## What your project actually is
 
-A `.skrib` project is a zip archive — or, if you prefer, an exploded folder — containing:
+A `.skrib` project is a zip archive, or if you prefer an exploded folder, containing:
 
 - your prose as [Djot](https://djot.net) files, one per row, in plain UTF-8 text;
 - manifests in RON, a readable text format, describing the structure;
@@ -37,4 +37,4 @@ Contributions are welcome, and are accepted under a [Contributor License Agreeme
 
 ## Trademark
 
-Skribisto™ is a trademark of Cyril Jacquet, and the GPL grants no trademark rights. Fork the code freely — that is what the licence is for — but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.
+Skribisto™ is a trademark of Cyril Jacquet, and the GPL grants no trademark rights. Fork the code freely, which is what the licence is for, but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.

@@ -1,8 +1,8 @@
 {# SPDX-License-Identifier: MIT #}
 {# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
 {% extends "base.html" %}
-{% block title %}Skribisto — {{ section.extra.tagline }}{% endblock %}
-{% block og_title %}Skribisto — {{ section.extra.tagline }}{% endblock %}
+{% block title %}Skribisto · {{ section.extra.tagline }}{% endblock %}
+{% block og_title %}Skribisto · {{ section.extra.tagline }}{% endblock %}
 {% block content %}
 {%- set release = load_data(path="data/release.toml") -%}
 
@@ -16,7 +16,7 @@
         <a class="btn btn-primary" href="{{ get_url(path='@/download.md', lang=lang) | safe }}">{% if has_assets %}{{ trans(key="cta_download", lang=lang) }}{% else %}{{ trans(key="cta_status", lang=lang) }}{% endif %}</a>
         <a class="btn btn-ghost" href="{{ get_url(path='@/tour.md', lang=lang) | safe }}">{{ trans(key="cta_tour", lang=lang) }}</a>
       </div>
-      <p class="cta-note">{{ section.extra.cta_note }} — <span class="muted">{{ release.version }}</span></p>
+      <p class="cta-note">{{ section.extra.cta_note }} <span class="muted">{{ release.version }}</span></p>
     </div>
     <figure class="shot">
       <img src="{{ get_url(path='img/binder-and-editor.png', trailing_slash=false) | safe }}"

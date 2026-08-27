@@ -169,7 +169,7 @@ figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); 
 .checklist { list-style: none; padding: 0; columns: 2; column-gap: 2.5rem; font-size: 0.98rem; }
 @media (max-width: 44rem) { .checklist { columns: 1; } }
 .checklist li { break-inside: avoid; padding-left: 1.4rem; position: relative; }
-.checklist li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+.checklist li::before { content: "·"; position: absolute; left: 0; color: var(--accent); }
 
 .promises { list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 1.5rem; }
 .promises li { padding-left: 1.6rem; position: relative; }
