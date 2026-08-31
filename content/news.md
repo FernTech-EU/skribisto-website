@@ -9,4 +9,4 @@ aliases = ["/index.php/category/news/"]
 older_summary = "Earlier releases: Skribisto 2.x and 1.9.x"
 +++
 
-Nothing on this page is written by hand. It is generated from `NEWS.yml` in the source repository and from the list of releases actually published on GitHub, so an entry written ahead of its release is marked as unreleased rather than dressed up as shipped.
+Nothing on this page is written by hand: it comes from the project's own release notes, and from the list of releases that have actually been published. A version still being worked on says so, rather than looking as though it had already arrived.

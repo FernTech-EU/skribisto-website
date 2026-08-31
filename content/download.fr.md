@@ -1,38 +1,36 @@
 +++
 title = "Obtenir Skribisto 3"
-description = "Ce qui est publié aujourd’hui, ce qui ne l’est pas, et comment être là quand ce sera le cas."
+description = "Skribisto 3 est une version candidate. Il existe des versions pour Linux et pour Windows."
 template = "download.html"
 weight = 2
 +++
 
-## Il n’y a encore rien à installer
+## Ce que veut dire « version candidate »
 
-Cette version ne comporte aucun paquet, et aucune version antérieure non plus. La chaîne de publication est écrite et produit un paquet Flatpak, un installeur Windows, une archive portable et une image disque macOS, mais elle ne peut pas aller à son terme tant que **Teksilo**, la bibliothèque graphique sur laquelle Skribisto 3 est bâti, n’est pas publiée. D’ici là, compiler depuis les sources n’est pas non plus à la portée de tout le monde.
+Tout est en place : l’écriture, les notes, la bible, les sauvegardes, les exports. Sauf imprévu sérieux, c’est ce que sera la version 3. Elle est prête pour un vrai manuscrit, et c’est un vrai manuscrit qui trouvera les derniers problèmes.
 
-Cette page est engendrée à partir de l’API des versions de GitHub. Dès qu’une version portera des fichiers, ils apparaîtront ci-dessus, avec leur taille et leur empreinte, et cette section disparaîtra.
+Gardez vos sauvegardes habituelles, comme avec tout ce qui détient votre livre. Skribisto fait aussi les siennes, aussi souvent que vous le lui demandez, et vous pouvez en ouvrir une pour la lire sans déranger celle dans laquelle vous travaillez.
 
-**Pour le savoir à ce moment-là** : suivez [le dépôt](https://github.com/jacquetc/skribisto) sur GitHub, où les nouvelles versions vous seront notifiées, ou rejoignez [le Discord](https://discord.gg/5BSkvQmyVH), où cela sera dit en premier.
+## Linux
 
-## Ce qui sera publié
+Décompressez l’archive et lancez-la. Si votre distribution préfère un Flatpak, celui-ci n’est pas encore prêt : il attend un élément en cours de publication, et il arrivera ici à ce moment-là.
 
-| Plateforme | Paquet | Remarques |
-|---|---|---|
-| Linux | paquet Flatpak | la manière prise en charge sous Linux |
-| Windows | installeur NSIS, plus une archive portable | l’installeur est celui qui est pris en charge |
-| macOS | `.dmg` universel | non signé pour l’instant : Gatekeeper protestera |
+Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous trouverez la **1.9.41**, datant de 2022. C’est un autre programme, d’une autre époque, qui n’est plus développé, et ce n’est pas celui-ci.
 
-Un rapport de bogue est surtout utile s’il provient d’une version reproductible, c’est-à-dire en pratique le Flatpak sous Linux et l’installeur sous Windows.
+## Windows
 
-## Ce que vous pouvez installer aujourd’hui
+Prenez l’installeur, sauf raison contraire.
 
-Une seule chose, et elle est ancienne : **Skribisto 1.9.41** sur Flathub, datant de 2022. Ce n’est ni la version 3 ni la version 2, elle n’est plus développée, et ce n’est pas l’application décrite sur ce site.
+La version portable est le même programme, qui garde tout dans son propre dossier. C’est ce qu’il vous faut sur un ordinateur où vous n’avez pas le droit d’installer, ou sur une clé USB que vous transportez de l’un à l’autre.
 
-```
-flatpak install flathub eu.skribisto.skribisto
-```
+## macOS
 
-Skribisto 2.0.7 fut la dernière version de l’implémentation en C++ et Qt. Le lien de son installeur Windows ne répond plus. La version 3 est une réécriture complète en Rust, avec un nouveau format de projet, et c’est là que tout se passe désormais. Vos projets 2.x [s’y ouvrent](@/coming-from-skribisto-2.md).
+Pas encore. Quand elle arrivera, macOS protestera à la première ouverture, parce que le fichier ne porte pas encore la signature qu’Apple réclame.
 
-## Ce que « alpha » veut dire ici
+## Si quelque chose ne va pas
 
-Le format de projet est arrêté, il est documenté, et il met à niveau les anciens projets à l’ouverture. L’application autour n’a pas encore connu de version stable. Quand vous pourrez la faire tourner, gardez des sauvegardes de ce que vous ne pouvez pas vous permettre de perdre. Skribisto fait les siennes, et toute sauvegarde s’ouvre en lecture seule, mais un manuscrit mérite bretelles et ceinture.
+Dites-le-moi. Le plus utile est de préciser laquelle de ces versions vous utilisiez, sur quel type d’ordinateur, ce que vous faisiez, et ce que vous attendiez à la place. [Où le dire](@/help.md).
+
+## Si vous veniez de Skribisto 2
+
+La version 3 n’est pas une mise à jour : c’est un autre programme, avec un nouveau format de fichier. Vos anciens projets s’y ouvrent quand même, et sont repris au chargement, sans toucher à l’original. [Ce qui change par ailleurs](@/coming-from-skribisto-2.md).

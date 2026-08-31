@@ -52,9 +52,9 @@
   {% if release.prerelease %}
   <div class="alpha-strip">
     <div class="wrap">
-      <span class="badge">{{ trans(key="alpha_badge", lang=lang) }}</span>
-      <p>{{ trans(key="alpha_banner", lang=lang) }}
-        <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">{{ trans(key="alpha_banner_link", lang=lang) }} →</a>
+      <span class="badge">{{ trans(key="stage_badge_" ~ release.stage, lang=lang) }}</span>
+      <p>{{ trans(key="stage_banner_" ~ release.stage, lang=lang) }}
+        <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">{{ trans(key="banner_link", lang=lang) }} →</a>
       </p>
     </div>
   </div>

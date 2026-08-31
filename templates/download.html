@@ -13,7 +13,7 @@
 
   <div class="release-head">
     <span class="release-version">{{ release.version }}</span>
-    {% if release.prerelease %}<span class="badge">{{ trans(key="alpha_badge", lang=lang) }}</span>{% endif %}
+    {% if release.prerelease %}<span class="badge">{{ trans(key="stage_badge_" ~ release.stage, lang=lang) }}</span>{% endif %}
     <span class="release-date">{{ trans(key="dl_published", lang=lang) }} {{ release.published_at }}</span>
   </div>
 
@@ -25,7 +25,7 @@
         <div>
           <div>{{ asset.label }}</div>
           <div class="dl-name">{{ asset.name }}</div>
-          <div class="dl-meta">{{ trans(key="dl_size", lang=lang) }}: {{ asset.size / 1048576 | round(precision=1) }} MB</div>
+          <div class="dl-meta">{{ trans(key="dl_size", lang=lang) }} {% if lang == "fr" %}{{ asset.size_mb | replace(from=".", to=",") }}{% else %}{{ asset.size_mb }}{% endif %} {{ trans(key="dl_size_unit", lang=lang) }}</div>
           {% if asset.sha256 %}<div class="sha">{{ trans(key="dl_sha", lang=lang) }} {{ asset.sha256 }}</div>{% endif %}
         </div>
         <a class="btn btn-primary" href="{{ asset.url }}">{{ trans(key="nav_download", lang=lang) }}</a>

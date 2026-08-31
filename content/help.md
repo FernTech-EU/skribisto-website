@@ -17,10 +17,8 @@ The help lives in the application itself, not on a website that drifts out of da
 
 Skribisto is a spare-time project given away for free, so support is voluntary, which puts a great deal of weight on a good report. The useful ones say:
 
-- which build you are running, and on which system;
+- which version you are running, and on what kind of computer;
 - what you did, what you expected, and what happened instead;
 - whether it happens again on a fresh project.
-
-Once packages are published, reports are most actionable against the Flatpak on Linux and the installer on Windows, because those can be reproduced exactly.
 
 Never attach a manuscript you would mind strangers reading: an issue tracker is public. A project trimmed down to the rows that reproduce the problem is better evidence anyway.

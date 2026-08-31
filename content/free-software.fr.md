@@ -22,7 +22,7 @@ Voilà pour la licence. Ce qui suit est l’engagement, ce qui n’est pas la m�
 Vous écrivez dans un éditeur de texte enrichi, et c’est enregistré en texte. Un projet `.skrib` est une archive zip, ou si vous préférez un dossier déplié, qui contient :
 
 - votre prose en fichiers [Djot](https://djot.net), un par scène, en texte UTF-8. Djot est assez proche de Markdown pour qu’une scène se lise d’un coup d’œil ;
-- des manifestes en RON, un format texte lisible, qui décrivent la structure ;
+- à côté d’eux, un index lisible de la structure, en texte lui aussi ;
 - vos images sous `assets/`, nommées d’après l’empreinte de leurs propres octets.
 
 Ouvrez-le avec un éditeur de texte. Pointez `git` sur sa forme dépliée et obtenez de vraies différences sur votre roman. Rien là-dedans n’a besoin de Skribisto pour être compris, et c’est tout l’enjeu : un logiciel ne devrait pas pouvoir retenir votre livre en otage, celui-ci compris.

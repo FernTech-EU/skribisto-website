@@ -57,7 +57,7 @@ A bible entry is not a new kind of thing: it is a note, with a colour tag, a few
 
 The whole point of a manuscript is that it survives. Four layers, none of which you have to remember to use.
 
-- **It saves as you write**, and the status bar says whether what you see is on disk.
+- **It saves as you write**, and tells you at a glance whether what is on the screen has been written down.
 - **The trash restores**, and the restore is undoable, as is everything else the binder does.
 - **Backups** with a retention policy, several destinations and a scheduler, taken on a schedule and when you close a project. Any backup opens read-only, so you can read last month's draft with today's still open.
 - **Version history.** What a scene said last Tuesday, read out of the backups you already have and out of the project's own save history, with the differences marked and the old words put back if that is what you decide. A project timeline shows the same thing for the whole book, so you can find the day a chapter changed.
@@ -71,14 +71,14 @@ Skribisto is not a word processor and does not try to be. What it does is hand t
 </figure>
 
 - **The conventions of the place you are sending it.** A project can be laid out from the start with the front and back matter its tradition expects: a US trade novel, a UK trade novel, un roman français, ein deutscher Roman, each in that tradition's own words. Afterwards they are ordinary rows, so move them, rename them or throw them away.
-- **Nine formats**: DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview of what will come out and a saved style per format: page size and margins, the face, its size and its leading, indents, where a chapter starts, how a scene break is drawn, whether the title page carries a word count.
+- **Nine formats**: DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview of what will come out and a saved style per format: page size and margins, the typeface, its size, the line spacing, the indents, where a chapter starts, how a scene break is drawn, whether the title page carries a word count.
 - **The editorial round trip closes.** Send a chapter out as DOCX or ODT, get it back marked up, and it comes home to the book it left instead of landing beside it as a second copy. Every row is recognised by a mark carried inside the file, along with a fingerprint of the prose as it was sent, so the comparison can tell who changed what.
 - **You decide row by row what comes back.** The last step of the import puts your own tree on one side and what the file says about each row on the other, including the chapter your editor inserted where you had nothing. For each row: take the change, keep what you have, bring back the comments only, create a new row, or ignore it, with a compare view when you want to look before you choose. Comments only is the case it exists for, since it brings an editor's remarks home without re-importing ninety thousand words.
 - **Your project, without Skribisto.** A `.skrib` file is a zip of Djot files, which are plain text much like Markdown, plus readable manifests. Keep it as one file, or as an exploded folder if the manuscript lives in git. Open a scene in any text editor and it is your prose, with your images in a folder beside it.
 
 ## 7. Accessible on purpose
 
-An interface a screen reader cannot drive is not finished, it is finished for some people. Skribisto exposes a real accessibility tree, which is what a screen reader reads. It is tested with NVDA, with JAWS, and on a braille display, because a tree that reads well aloud can still come out as nonsense under the fingers. Every control has a keyboard route, and the ones that did not have been fixed by driving the application with nothing but injected keystrokes: a regression test now stands where each of those bugs was.
+An interface a screen reader cannot drive is not finished, it is finished for some people. Skribisto exposes a real accessibility tree, which is what a screen reader reads. It is tested with NVDA, with JAWS, and on a braille display, because a tree that reads well aloud can still come out as nonsense under the fingers. Everything can be reached from the keyboard, and the places where it could not have been found by working through the whole application with the keyboard alone. Each of them is now checked automatically, so it cannot quietly come back.
 
 None of that makes the application perfect. If you hit a barrier, [report it](https://github.com/jacquetc/skribisto/issues): it is a bug like any other, and it is treated like one.
 

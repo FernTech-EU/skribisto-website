@@ -57,7 +57,7 @@ Une entrée de bible n’est pas une nouvelle sorte d’objet : c’est une not
 
 Tout l’intérêt d’un manuscrit, c’est qu’il survive. Quatre couches, dont aucune ne vous demande d’y penser.
 
-- **L’enregistrement se fait pendant que vous écrivez**, et la barre d’état dit si ce que vous voyez est sur le disque.
+- **L’enregistrement se fait pendant que vous écrivez**, et vous voyez d’un coup d’œil si ce qui est à l’écran est bien consigné.
 - **La corbeille restaure**, et la restauration s’annule, comme tout ce que fait le classeur.
 - **Les sauvegardes**, avec politique de rétention, plusieurs destinations et un planificateur, prises selon votre calendrier et à la fermeture d’un projet. Chacune s’ouvre en lecture seule : vous relisez le brouillon du mois dernier sans fermer celui d’aujourd’hui.
 - **L’historique des versions.** Ce qu’une scène disait mardi dernier, lu dans les sauvegardes que vous avez déjà et dans l’historique d’enregistrement du projet, avec les différences marquées et les anciens mots remis en place si vous le décidez. Une chronologie du projet montre la même chose pour le livre entier, pour retrouver le jour où un chapitre a changé.
@@ -71,14 +71,14 @@ Skribisto n’est pas un traitement de texte et n’essaie pas de l’être. Ce 
 </figure>
 
 - **Les usages du pays où vous l’envoyez.** Un projet peut être mis en place dès le départ avec les pages liminaires et finales qu’attend sa tradition : un roman français, un US trade novel, un UK trade novel, ein deutscher Roman, chacun dans les mots de sa propre tradition. Ensuite, ce sont des lignes comme les autres : déplacez-les, renommez-les ou jetez-les.
-- **Neuf formats** : DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX et texte brut, avec un aperçu en direct de ce qui va sortir et un style enregistré par format : format de page et marges, police, corps et interligne, alinéas, où commence un chapitre, comment se dessine une séparation de scène, si la page de titre porte un nombre de mots.
+- **Neuf formats** : DOCX, ODT, EPUB, PDF, HTML, Markdown, Djot, LaTeX et texte brut, avec un aperçu en direct de ce qui va sortir et un style enregistré par format : format de page et marges, la police, son corps, l’interligne, les alinéas, où commence un chapitre, comment se dessine une séparation de scène, si la page de titre porte un nombre de mots.
 - **L’aller-retour éditorial se referme.** Envoyez un chapitre en DOCX ou en ODT, récupérez-le annoté : il revient dans le livre qu’il a quitté, au lieu de se poser à côté en seconde copie. Chaque ligne est reconnue par une marque portée dans le fichier lui-même, avec une empreinte du texte tel qu’il est parti, si bien que la comparaison sait qui a changé quoi.
 - **Vous décidez ligne par ligne de ce qui revient.** La dernière étape de l’import place votre arbre d’un côté et ce que le fichier dit de chaque ligne de l’autre, y compris le chapitre que votre éditeur a inséré là où vous n’aviez rien. Pour chaque ligne : prendre la modification, garder ce que vous avez, ne rapatrier que les commentaires, créer une nouvelle ligne, ou ignorer, avec une vue comparée quand vous voulez regarder avant de choisir. Ne rapatrier que les commentaires est le cas pour lequel tout cela existe : les remarques de votre éditeur reviennent sans réimporter quatre-vingt-dix mille mots.
 - **Votre projet, sans Skribisto.** Un fichier `.skrib` est un zip de fichiers Djot, du texte brut très proche de Markdown, plus des manifestes lisibles. Gardez-le en un seul fichier, ou en dossier déplié si le manuscrit vit dans git. Ouvrez une scène dans n’importe quel éditeur de texte : c’est votre prose, avec vos images dans un dossier à côté.
 
 ## 7. Accessible par principe
 
-Une interface qu’un lecteur d’écran ne peut pas piloter n’est pas finie : elle est finie pour certains. Skribisto expose un véritable arbre d’accessibilité, celui que lit un lecteur d’écran. Elle est testée avec NVDA, avec JAWS, et sur un afficheur braille, parce qu’un arbre qui s’écoute bien peut rester incompréhensible sous les doigts. Chaque commande a son chemin au clavier, et celles qui n’en avaient pas ont été corrigées en pilotant l’application avec de simples frappes injectées : un test de non-régression se tient désormais là où était chacun de ces bogues.
+Une interface qu’un lecteur d’écran ne peut pas piloter n’est pas finie : elle est finie pour certains. Skribisto expose un véritable arbre d’accessibilité, celui que lit un lecteur d’écran. Elle est testée avec NVDA, avec JAWS, et sur un afficheur braille, parce qu’un arbre qui s’écoute bien peut rester incompréhensible sous les doigts. Tout s’atteint au clavier, et les endroits où ce n’était pas le cas ont été trouvés en parcourant l’application entière au clavier seul. Chacun d’eux est désormais vérifié automatiquement, pour qu’il ne revienne pas en silence.
 
 Rien de tout cela ne rend l’application parfaite. Si vous butez sur un obstacle, [signalez-le](https://github.com/jacquetc/skribisto/issues) : c’est un bogue comme un autre, et il est traité comme tel.
 

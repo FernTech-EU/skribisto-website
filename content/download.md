@@ -1,39 +1,37 @@
 +++
-title = "Getting Skribisto 3"
-description = "What is published today, what is not, and how to be there when it is."
+title = "Get Skribisto 3"
+description = "Skribisto 3 is a release candidate. There are builds for Linux and for Windows."
 template = "download.html"
 weight = 2
 aliases = ["/index.php/download/"]
 +++
 
-## There is nothing to install yet
+## What a release candidate means
 
-That release carries no packaged build, and no earlier one does either. The release pipeline is written and produces a Flatpak bundle, a Windows installer, a portable zip and a macOS disk image, but it cannot run to completion until **Teksilo**, the GUI framework Skribisto 3 is built on, is published. Until then, building from source is not open to everyone either.
+Everything is in place: the writing, the notes, the story bible, the backups, the exports. Unless something serious turns up, this is what version 3 will be. It is ready for a real manuscript, and a real manuscript is what finds the last problems.
 
-This page is generated from the GitHub releases API. The moment a release carries files, they appear above, with their sizes and checksums, and this section goes away.
+Keep your usual backups, as you would with anything that holds your book. Skribisto also takes its own, as often as you tell it to, and you can open any of them to read without disturbing the one you are working in.
 
-**To know when that happens:** watch [the repository](https://github.com/jacquetc/skribisto) on GitHub, where releases will notify you, or join [the Discord](https://discord.gg/5BSkvQmyVH), where it will be said first.
+## Linux
 
-## What will be published
+Unpack the archive and run it. If your distribution asks for a Flatpak instead, that one is not ready yet: it waits on a piece that is still being published, and it will turn up here when it is.
 
-| Platform | Package | Notes |
-|---|---|---|
-| Linux | Flatpak bundle | the supported way to run it on Linux |
-| Windows | NSIS installer, plus a portable zip | the installer is the supported one |
-| macOS | universal `.dmg` | unsigned for now; expect Gatekeeper to object |
+One warning. If you search for Skribisto in your software centre you will find **1.9.41**, from 2022. That is a different program from a different era, no longer developed, and it is not this.
 
-Bug reports are most useful from a build that can be reproduced, which in practice means the Flatpak on Linux and the installer on Windows.
+## Windows
 
-## What you can install today
+Take the installer unless you have a reason not to.
 
-Only one thing, and it is old: **Skribisto 1.9.41** on Flathub, from 2022. It is neither version 3 nor version 2, it is not developed any more, and it is not the application described on this site.
+The portable version is the same program, keeping everything inside its own folder. It is what you want on a computer where you are not allowed to install things, or on a USB stick you carry between two of them.
 
-```
-flatpak install flathub eu.skribisto.skribisto
-```
+## macOS
 
-Skribisto 2.0.7 was the last release of the C++ and Qt implementation. Its Windows installer link no longer resolves. Version 3 is a full rewrite in Rust with a new project format, and it is where everything since has gone. Your 2.x projects [open in it](@/coming-from-skribisto-2.md).
+Not yet. When it arrives, macOS will complain the first time you open it, because the file does not yet carry the signature Apple asks for.
 
-## What "alpha" means here
+## If something goes wrong
 
-The project format is settled, it is documented, and it upgrades older projects when it opens them. The application around it has not had a stable release. When you can run it, keep backups of anything you cannot afford to lose. Skribisto takes its own, and any backup opens read-only, but a manuscript deserves belt and braces.
+Tell me. The most useful thing you can say is which of these you were running, on what kind of computer, what you were doing, and what you expected instead. [Where to say it](@/help.md).
+
+## If you used Skribisto 2
+
+Version 3 is not an update, it is a different program with a new file format. Your old projects still open in it, and are brought over as they load, without touching the original. [What else changed](@/coming-from-skribisto-2.md).

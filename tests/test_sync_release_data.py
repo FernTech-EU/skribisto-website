@@ -9,6 +9,7 @@ no assets, an entry written ahead of its release, and a failed fetch.
 
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -62,11 +63,36 @@ class TestAssetClassification(unittest.TestCase):
             sync.classify("Skribisto-portable.zip")[1],
         )
 
+    def test_a_linux_tarball_is_a_download(self):
+        # rc1 shipped a tarball rather than the Flatpak bundle the pipeline was written
+        # for, and an unmatched asset is silently dropped from the page.
+        kind = sync.classify("skribisto-v3.0.0-rc1-linux-x86_64.tar.gz")
+        self.assertIsNotNone(kind)
+        self.assertEqual(kind[0], "linux")
+
+    def test_a_windows_portable_zip_is_not_read_as_a_linux_archive(self):
+        self.assertEqual(sync.classify("Skribisto-portable.zip")[0], "windows")
+
     def test_a_checksum_file_is_not_a_download(self):
         self.assertIsNone(sync.classify("SHA256SUMS.txt"))
 
     def test_an_unknown_file_is_not_a_download(self):
         self.assertIsNone(sync.classify("release_notes.md"))
+
+
+class TestStage(unittest.TestCase):
+    def test_the_tag_names_the_stage(self):
+        for tag, expected in (
+            ("v3.0.0-alpha2", "alpha"),
+            ("v3.0.0-beta1", "beta"),
+            ("v3.0.0-rc1", "rc"),
+            ("v3.0.0", ""),
+        ):
+            self.assertEqual(sync.stage_of(release(tag, "2026-08-31T00:00:00Z")), expected)
+
+    def test_an_unrecognised_prerelease_still_says_so(self):
+        r = release("v3.0.0.pre", "2026-08-31T00:00:00Z", prerelease=True)
+        self.assertEqual(sync.stage_of(r), "prerelease")
 
 
 class TestChecksums(unittest.TestCase):
@@ -104,6 +130,7 @@ class TestReleaseData(unittest.TestCase):
         self.assertIn('version = "3.0.0-alpha2"', data)
         self.assertIn('published_at = "2026-07-15"', data)
         self.assertIn("prerelease = true", data)
+        self.assertIn('stage = "alpha"', data)
         self.assertNotIn("[[assets]]", data)
 
     def test_assets_carry_their_checksum(self):
@@ -123,6 +150,38 @@ class TestReleaseData(unittest.TestCase):
         self.assertIn('checksums_url = "https://example.invalid/SHA256SUMS.txt"', data)
         # The checksum file itself is not offered as a platform download.
         self.assertEqual(data.count("[[assets]]"), 1)
+
+    def test_a_size_is_formatted_for_the_page(self):
+        data = sync.build_release_data(
+            [release("v3.0.0-rc1", "2026-08-31T00:00:00Z", assets=[("skribisto-linux.tar.gz", 45658335)])],
+            {},
+        )
+        self.assertIn('size_mb = "43.5"', data)
+
+    def test_downloads_are_ordered_by_platform_not_by_upload_time(self):
+        data = sync.build_release_data(
+            [
+                release(
+                    "v3.0.0-rc1",
+                    "2026-08-31T00:00:00Z",
+                    assets=[
+                        ("Skribisto-portable.zip", 1),
+                        ("Skribisto-setup.exe", 2),
+                        ("skribisto-v3.0.0-rc1-linux-x86_64.tar.gz", 3),
+                    ],
+                )
+            ],
+            {},
+        )
+        names = re.findall(r'name = "([^"]+)"', data)
+        self.assertEqual(
+            names,
+            [
+                "skribisto-v3.0.0-rc1-linux-x86_64.tar.gz",
+                "Skribisto-setup.exe",
+                "Skribisto-portable.zip",
+            ],
+        )
 
     def test_quotes_in_a_name_cannot_break_the_toml(self):
         self.assertEqual(sync.toml_string('a"b'), '"a\\"b"')

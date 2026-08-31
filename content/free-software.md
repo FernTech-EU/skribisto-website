@@ -22,7 +22,7 @@ That is the licence. What follows is the commitment, which is a different thing,
 You write in a rich-text editor, and it is stored as text. A `.skrib` project is a zip archive, or an exploded folder if you prefer, containing:
 
 - your prose as [Djot](https://djot.net) files, one per scene, in plain UTF-8 text. Djot is close enough to Markdown that you can read a scene at a glance;
-- manifests in RON, a readable text format, describing the structure;
+- a readable index of the structure beside them, in plain text as well;
 - your images under `assets/`, named by the hash of their own bytes.
 
 Point a text editor at it. Point `git` at the folder form and get real diffs of your novel. Nothing in there needs Skribisto to be understood, which is the whole point: an application should not be able to hold your book hostage, including this one.

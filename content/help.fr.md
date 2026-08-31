@@ -17,10 +17,8 @@ L’aide vit dans l’application elle-même, et non sur un site qui se périme�
 
 Skribisto est un projet de temps libre, donné gratuitement : le support est donc bénévole, et tout repose donc sur la qualité du rapport. Les rapports utiles indiquent :
 
-- quelle version vous utilisez, et sur quel système ;
+- quelle version vous utilisez, et sur quel genre d’ordinateur ;
 - ce que vous avez fait, ce que vous attendiez, et ce qui s’est produit à la place ;
 - si cela se reproduit sur un projet neuf.
-
-Une fois les paquets publiés, les rapports les plus exploitables viendront du Flatpak sous Linux et de l’installeur sous Windows, parce que ceux-là se reproduisent à l’identique.
 
 N’attachez jamais un manuscrit que vous ne voudriez pas voir lu par des inconnus : un suivi de tickets est public. Un projet réduit aux lignes qui reproduisent le problème est de toute façon une meilleure preuve.

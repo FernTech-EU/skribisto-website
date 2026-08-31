@@ -8,4 +8,4 @@ weight = 3
 older_summary = "Versions antérieures : Skribisto 2.x et 1.9.x"
 +++
 
-Rien sur cette page n’est écrit à la main : tout provient du fichier `NEWS.yml` du dépôt et de la liste des versions réellement publiées sur GitHub. Une entrée rédigée avant sa publication est donc signalée comme non publiée, plutôt que présentée comme livrée.
+Rien sur cette page n’est écrit à la main : tout vient des notes de version du projet et de la liste des versions réellement publiées. Une version encore en travaux le dit, au lieu de se présenter comme déjà arrivée.

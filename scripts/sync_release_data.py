@@ -40,11 +40,17 @@ TIMEOUT = 30
 # installer rule, and SHA256SUMS.txt is not a platform download at all.
 ASSET_RULES: list[tuple[str, str, str]] = [
     (r"-setup\.exe$", "windows", "Windows installer"),
-    (r"portable.*\.zip$", "windows", "Windows portable zip"),
-    (r"\.flatpak$", "linux", "Linux Flatpak bundle"),
-    (r"\.AppImage$", "linux", "Linux AppImage"),
+    (r"portable.*\.zip$", "windows", "Windows, portable"),
+    (r"\.flatpak$", "linux", "Linux, Flatpak"),
+    (r"\.AppImage$", "linux", "Linux, AppImage"),
+    (r"linux.*\.tar\.(gz|xz|zst)$", "linux", "Linux, archive"),
     (r"\.dmg$", "macos", "macOS disk image"),
 ]
+
+# A pre-release says which stage it is in, so the site can call a release candidate a
+# release candidate without anyone editing a string. Derived from the tag, which is the
+# only part of a release that cannot be wrong about this.
+STAGES = ("alpha", "beta", "rc")
 CHECKSUM_NAMES = ("SHA256SUMS.txt", "SHA256SUMS", "checksums.txt")
 
 
@@ -71,12 +77,28 @@ def toml_string(value: str) -> str:
     return f'"{escaped}"'
 
 
+PLATFORM_ORDER = ("linux", "windows", "macos")
+
+
 def classify(name: str) -> tuple[str, str] | None:
     """Map an asset filename to a (platform, label) pair, or None if it is not a download."""
     for pattern, platform, label in ASSET_RULES:
         if re.search(pattern, name, re.IGNORECASE):
             return platform, label
     return None
+
+
+def download_order(asset: dict) -> tuple[int, int]:
+    """Sort key: platform first, then the rule order, which puts an installer above a zip.
+
+    The API returns assets in upload order, which is whichever CI job finished first. The
+    page should not reshuffle itself between releases, and neither should the diff.
+    """
+    name = asset["name"]
+    for index, (pattern, platform, _) in enumerate(ASSET_RULES):
+        if re.search(pattern, name, re.IGNORECASE):
+            return PLATFORM_ORDER.index(platform), index
+    return len(PLATFORM_ORDER), 0
 
 
 def parse_checksums(text: str) -> dict[str, str]:
@@ -87,6 +109,15 @@ def parse_checksums(text: str) -> dict[str, str]:
         if len(parts) >= 2 and re.fullmatch(r"[0-9a-f]{64}", parts[0], re.IGNORECASE):
             digests[parts[-1].lstrip("*")] = parts[0].lower()
     return digests
+
+
+def stage_of(release: dict) -> str:
+    """`alpha`, `beta`, `rc`, a bare `prerelease`, or empty for a final release."""
+    tag = release.get("tag_name", "")
+    for stage in STAGES:
+        if re.search(rf"-{stage}", tag, re.IGNORECASE):
+            return stage
+    return "prerelease" if is_prerelease(release) else ""
 
 
 def is_prerelease(release: dict) -> bool:
@@ -123,6 +154,7 @@ def build_release_data(releases: list[dict], checksums: dict[str, str]) -> str:
         f"version = {toml_string(version)}",
         f"published_at = {toml_string(published)}",
         f"prerelease = {'true' if is_prerelease(latest) else 'false'}",
+        f"stage = {toml_string(stage_of(latest))}",
         f"url = {toml_string(latest.get('html_url', ''))}",
     ]
 
@@ -132,7 +164,7 @@ def build_release_data(releases: list[dict], checksums: dict[str, str]) -> str:
             checksum_url = asset["browser_download_url"]
     lines.append(f"checksums_url = {toml_string(checksum_url)}")
 
-    for asset in latest.get("assets", []):
+    for asset in sorted(latest.get("assets", []), key=download_order):
         kind = classify(asset["name"])
         if kind is None:
             continue
@@ -145,6 +177,9 @@ def build_release_data(releases: list[dict], checksums: dict[str, str]) -> str:
             f"name = {toml_string(asset['name'])}",
             f"url = {toml_string(asset['browser_download_url'])}",
             f"size = {int(asset.get('size', 0))}",
+            # Formatted here rather than in the template: Tera has no number formatter,
+            # and a page should not be doing arithmetic to print a file size.
+            f"size_mb = {toml_string(f"{int(asset.get('size', 0)) / 1048576:.1f}")}",
             f"sha256 = {toml_string(checksums.get(asset['name'], ''))}",
         ]
     return "\n".join(lines) + "\n"
