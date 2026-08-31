@@ -9,8 +9,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # A deploy must never be cancelled half-way; queue instead.
 concurrency:
@@ -35,9 +33,11 @@ jobs:
       - name: Build
         run: zola build
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
+          name: public
           path: public
+          if-no-files-found: error
 
   deploy:
     needs: build
