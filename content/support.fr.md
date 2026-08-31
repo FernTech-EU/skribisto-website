@@ -1,21 +1,19 @@
 +++
 title = "Soutenir le projet"
-description = "Skribisto est écrit sur du temps libre et donné. Le domaine et le serveur, eux, ne sont pas gratuits."
+description = "Il n’y a pas de moyen de faire un don pour l’instant, et cette page le dira tant que ce sera le cas."
 weight = 7
 +++
 
-Skribisto est un logiciel libre, écrit sur mon temps libre, et il le restera. Certaines choses autour ne sont pas gratuites : ce domaine, et les machines sur lesquelles il est testé.
+## Il n’y a encore rien à quoi donner
 
-S’il vous est utile et que vous souhaitez aider à les payer, vous pouvez :
+L’ancien site avait un bouton de don. Il a disparu, et rien ne l’a encore remplacé : aucun compte n’est en place pour recevoir quoi que ce soit, et un bouton ici serait donc un bouton qui ne mène nulle part.
 
-<form action="https://www.paypal.com/donate" method="post" target="_top" class="cta-row">
-  <input type="hidden" name="business" value="M2LPKWE9V4UX8">
-  <input type="hidden" name="no_recurring" value="0">
-  <input type="hidden" name="item_name" value="Support Skribisto development">
-  <input type="hidden" name="currency_code" value="EUR">
-  <button type="submit" class="btn btn-primary">Faire un don avec PayPal</button>
-</form>
+Si cela change, ce sera dit sur cette page, et ce sera pour ce qui coûte réellement de l’argent : un nom de domaine et les machines sur lesquelles Skribisto est testé. Skribisto lui-même est écrit sur mon temps libre et donné, et aucune de ses parties n’attend derrière un paiement.
 
-Rien n’est chargé depuis PayPal tant que vous n’avez pas appuyé sur ce bouton.
+## Ce qui aide plus que l’argent, de toute façon
 
-Il n’y a pas d’offre payante, un don ne déverrouille rien, et aucune fonction n’attend derrière. Si vous préférez donner du temps plutôt que de l’argent, [cela aide davantage](@/get-involved.md), en particulier la traduction et les rapports de bogues.
+- **Écrivez un livre avec**, et dites-moi ce qui vous a gêné. Un problème trouvé dans un vrai manuscrit en vaut dix trouvés en cliquant au hasard.
+- **Traduisez-le.** L’interface tient dans des fichiers texte, et une langue à moitié faite sert déjà.
+- **Corrigez une rubrique d’aide** qui explique la mauvaise chose, ou écrivez celle qui manque.
+
+Les trois sont [par ici](@/get-involved.md).

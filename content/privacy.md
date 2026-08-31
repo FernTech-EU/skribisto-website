@@ -8,7 +8,7 @@ weight = 21
 
 - **No cookies.** None, of any kind, which is why there is no consent banner.
 - **No analytics.** No visitor counting, no tracking pixels, no fingerprinting. I do not know who you are or how many of you there are.
-- **No third-party requests.** No fonts, scripts or images are loaded from anyone else's server, so no other company learns that you read this page. The only exception is one you have to press: the PayPal donation button on the [support page](@/support.md), which contacts PayPal only when you submit it.
+- **No third-party requests.** No fonts, scripts or images are loaded from anyone else's server, so no other company learns that you read this page. There is no exception: nothing on this site talks to anybody but the machine serving it.
 - **Server logs.** The site is served by GitHub Pages, which keeps its own access logs. That is outside my control; see [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
 ## The application

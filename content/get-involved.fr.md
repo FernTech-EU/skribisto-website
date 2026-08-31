@@ -42,6 +42,6 @@ Les tickets marqués [good first issue](https://github.com/jacquetc/skribisto/is
 
 Très sérieusement : un rapport de bogue venant de quelqu’un qui écrit un vrai livre passe avant une demande de fonction venant de quelqu’un qui en imagine un. [Les tickets](https://github.com/jacquetc/skribisto/issues), ou [Discord](https://discord.gg/5BSkvQmyVH).
 
-## Ou aider à payer le serveur
+## L’argent
 
-[Il y a un bouton](@/support.md), et rien n’est verrouillé derrière.
+Il n’y a nulle part où l’envoyer, [et voici pourquoi](@/support.md).

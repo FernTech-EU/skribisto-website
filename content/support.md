@@ -1,22 +1,20 @@
 +++
 title = "Support the work"
-description = "Skribisto is written in spare time and given away. The domain and the server are not free."
+description = "There is no way to donate at the moment, and this page will say so until there is."
 weight = 7
 aliases = ["/index.php/donate/"]
 +++
 
-Skribisto is free software, written on my own time, and it will stay that way. Some things around it are not free: this domain, and the machines it is tested on.
+## There is nothing to give money to yet
 
-If it is useful to you and you would like to help pay for those, you can:
+The old site had a donation button. It is gone, and nothing has replaced it yet: no account is set up to receive anything, so a button here would be a button that goes nowhere.
 
-<form action="https://www.paypal.com/donate" method="post" target="_top" class="cta-row">
-  <input type="hidden" name="business" value="M2LPKWE9V4UX8">
-  <input type="hidden" name="no_recurring" value="0">
-  <input type="hidden" name="item_name" value="Support Skribisto development">
-  <input type="hidden" name="currency_code" value="EUR">
-  <button type="submit" class="btn btn-primary">Donate with PayPal</button>
-</form>
+If that changes, it will be said on this page, and it will be for the things that genuinely cost money, which is a domain name and the machines Skribisto is tested on. Skribisto itself is written on my own time and given away, and no part of it waits behind a payment.
 
-Nothing is loaded from PayPal until you press that button.
+## What helps more than money would anyway
 
-There is no paid tier, nothing is unlocked by donating, and no feature waits behind one. If you would rather give time than money, [that helps more](@/get-involved.md), translation and bug reports especially.
+- **Write a book in it**, and tell me what got in your way. A problem found in a real manuscript is worth ten found by clicking around.
+- **Translate it.** The interface is plain text files, and a half-finished language is still useful.
+- **Fix a help topic** that explains the wrong thing, or write the one that is missing.
+
+All three are [here](@/get-involved.md).

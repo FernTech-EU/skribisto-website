@@ -43,6 +43,6 @@ Issues tagged [good first issue](https://github.com/jacquetc/skribisto/issues?q=
 
 Genuinely: a bug report from someone writing a real book beats a feature request from someone imagining one. [Issues](https://github.com/jacquetc/skribisto/issues), or [Discord](https://discord.gg/5BSkvQmyVH).
 
-## Or help pay for the server
+## Money
 
-[There is a button](@/support.md), and nothing behind it is locked.
+There is nowhere to send any, [and this is why](@/support.md).
