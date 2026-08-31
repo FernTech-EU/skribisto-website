@@ -2,12 +2,14 @@
 {# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
 {%- set release = load_data(path="data/release.toml") -%}
 {%- set other_lang = "fr" if lang == "en" else "en" -%}
-{%- set_global alt_url = get_url(path="/", lang=other_lang) -%}
+{%- set_global alt_url = get_url(path="/", lang=other_lang) | replace(from=config.base_url, to="") -%}
+{%- if alt_url == "" -%}{%- set_global alt_url = "/" -%}{%- endif -%}
 {%- if page is defined -%}
-  {%- for t in page.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink -%}{%- endif -%}{%- endfor -%}
+  {%- for t in page.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink | replace(from=config.base_url, to="") -%}{%- endif -%}{%- endfor -%}
 {%- elif section is defined -%}
-  {%- for t in section.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink -%}{%- endif -%}{%- endfor -%}
+  {%- for t in section.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink | replace(from=config.base_url, to="") -%}{%- endif -%}{%- endfor -%}
 {%- endif -%}
+{%- if alt_url == "" -%}{%- set_global alt_url = "/" -%}{%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -15,16 +17,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
-  <link rel="stylesheet" href="{{ get_url(path='main.css', trailing_slash=false) | safe }}">
-  <link rel="icon" href="{{ get_url(path='img/favicon.png', trailing_slash=false) | safe }}" type="image/png">
+  <link rel="stylesheet" href="{{<url.href base={config.base_url} path="main.css" lang={config.default_language} trailing_slash={false} />}}">
+  <link rel="icon" href="{{<url.href base={config.base_url} path="img/favicon.png" lang={config.default_language} trailing_slash={false} />}}" type="image/png">
   <link rel="alternate" hreflang="{{ other_lang }}" href="{{ alt_url | safe }}">
-  <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml', lang=lang, trailing_slash=false) | safe }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{<url.href base={config.base_url} path="atom.xml" lang={lang} trailing_slash={false} />}}">
   <meta property="og:site_name" content="Skribisto">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="{{ 'en_GB' if lang == 'en' else 'fr_FR' }}">
   <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock %}">
   <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
-  <meta property="og:image" content="{{ get_url(path='img/og-cover.png', trailing_slash=false) | safe }}">
+  <meta property="og:image" content="{{ get_url(path='img/og-cover.png', lang=config.default_language, trailing_slash=false) | safe }}">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -32,16 +34,16 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="wordmark" href="{{ get_url(path='/', lang=lang) | safe }}">
-        <img src="{{ get_url(path='img/skribisto.png', trailing_slash=false) | safe }}" alt="" width="32" height="32">
+      <a class="wordmark" href="{{<url.href base={config.base_url} path="/" lang={lang} />}}">
+        <img src="{{<url.href base={config.base_url} path="img/skribisto.png" lang={config.default_language} trailing_slash={false} />}}" alt="" width="32" height="32">
         <span>Skribisto</span>
       </a>
       <nav class="site-nav" aria-label="{{ config.title }}">
-        <a href="{{ get_url(path='@/tour.md', lang=lang) | safe }}">{{ trans(key="nav_tour", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/download.md', lang=lang) | safe }}">{{ trans(key="nav_download", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/news.md', lang=lang) | safe }}">{{ trans(key="nav_news", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/free-software.md', lang=lang) | safe }}">{{ trans(key="nav_free", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/help.md', lang=lang) | safe }}">{{ trans(key="nav_help", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/tour.md" lang={lang} />}}">{{ trans(key="nav_tour", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">{{ trans(key="nav_download", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/news.md" lang={lang} />}}">{{ trans(key="nav_news", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/free-software.md" lang={lang} />}}">{{ trans(key="nav_free", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/help.md" lang={lang} />}}">{{ trans(key="nav_help", lang=lang) }}</a>
         <a class="lang-switch" href="{{ alt_url | safe }}" lang="{{ other_lang }}" aria-label="{{ trans(key='lang_switch_label', lang=lang) }}">{{ trans(key="lang_switch", lang=lang) }}</a>
       </nav>
     </div>
@@ -52,7 +54,7 @@
     <div class="wrap">
       <span class="badge">{{ trans(key="alpha_badge", lang=lang) }}</span>
       <p>{{ trans(key="alpha_banner", lang=lang) }}
-        <a href="{{ get_url(path='@/download.md', lang=lang) | safe }}">{{ trans(key="alpha_banner_link", lang=lang) }} →</a>
+        <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">{{ trans(key="alpha_banner_link", lang=lang) }} →</a>
       </p>
     </div>
   </div>
@@ -69,15 +71,15 @@
         <p class="muted">{{ trans(key="footer_trademark", lang=lang) }}</p>
       </div>
       <nav aria-label="{{ trans(key='nav_involved', lang=lang) }}">
-        <a href="{{ get_url(path='@/coming-from-skribisto-2.md', lang=lang) | safe }}">{{ trans(key="nav_coming", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/get-involved.md', lang=lang) | safe }}">{{ trans(key="nav_involved", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/coming-from-skribisto-2.md" lang={lang} />}}">{{ trans(key="nav_coming", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/get-involved.md" lang={lang} />}}">{{ trans(key="nav_involved", lang=lang) }}</a>
         <a href="{{ config.extra.github }}">{{ trans(key="footer_source", lang=lang) }}</a>
         <a href="{{ config.extra.discord }}">Discord</a>
       </nav>
       <nav aria-label="{{ trans(key='footer_legal', lang=lang) }}">
-        <a href="{{ get_url(path='@/legal.md', lang=lang) | safe }}">{{ trans(key="footer_legal", lang=lang) }}</a>
-        <a href="{{ get_url(path='@/privacy.md', lang=lang) | safe }}">{{ trans(key="footer_privacy", lang=lang) }}</a>
-        <a href="{{ get_url(path='atom.xml', lang=lang, trailing_slash=false) | safe }}">Atom</a>
+        <a href="{{<url.href base={config.base_url} path="@/legal.md" lang={lang} />}}">{{ trans(key="footer_legal", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="@/privacy.md" lang={lang} />}}">{{ trans(key="footer_privacy", lang=lang) }}</a>
+        <a href="{{<url.href base={config.base_url} path="atom.xml" lang={lang} trailing_slash={false} />}}">Atom</a>
       </nav>
     </div>
   </footer>

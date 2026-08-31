@@ -1,0 +1,12 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+
+{# Root-relative form of a permalink or get_url() result. In-page assets and
+   links must resolve on whatever host is serving the HTML (pages.dev, apex,
+   www), not only on config.base_url. #}
+
+{% component url.href(path: string, lang: string, trailing_slash: bool = true, base: string) -%}
+{%- set abs = get_url(path=path, lang=lang, trailing_slash=trailing_slash) -%}
+{%- set tail = abs | replace(from=base, to="") -%}
+{%- if tail == "" -%}/{%- else -%}{{ tail | safe }}{%- endif -%}
+{%- endcomponent %}

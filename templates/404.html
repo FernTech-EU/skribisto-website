@@ -6,6 +6,6 @@
 <article class="wrap prose">
   <h1>Page not found</h1>
   <p class="lede">This page moved when the site was rebuilt for Skribisto 3. <span lang="fr">Cette page a changé d'adresse lors de la refonte du site pour Skribisto 3.</span></p>
-  <p><a href="{{ get_url(path='/') | safe }}">Home</a> · <a href="{{ get_url(path='@/download.md') | safe }}">Download</a> · <a href="{{ get_url(path='@/tour.md') | safe }}">Tour</a> · <a href="{{ get_url(path='/', lang='fr') | safe }}" lang="fr">Version française</a></p>
+  <p><a href="{{<url.href base={config.base_url} path="/" lang={lang} />}}">Home</a> · <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">Download</a> · <a href="{{<url.href base={config.base_url} path="@/tour.md" lang={lang} />}}">Tour</a> · <a href="{{<url.href base={config.base_url} path="/" lang="fr" />}}" lang="fr">Version française</a></p>
 </article>
 {% endblock %}
