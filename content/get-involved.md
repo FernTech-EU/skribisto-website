@@ -7,22 +7,31 @@ aliases = ["/index.php/contribute/"]
 
 ## Translate it
 
-This is the most useful thing anyone can do right now, and it needs no build system and no Rust.
+This is the most useful thing anyone can do right now, and the translating itself needs no programming.
 
-The interface is translated with [Fluent](https://projectfluent.org). Each language is a directory of four plain text files:
+Each language is a folder of five plain text files, in [Fluent](https://projectfluent.org) format:
 
 ```
-crates/teksilo_ui/locales/en-US/{main,tooltips,tags,templates}.ftl
-crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates}.ftl
+crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates,story_bible}.ftl
 ```
 
-Copy the `en-US` directory to your locale code, translate the values on the right of each `=`, open a pull request. Nothing else changes: no `.ts` files, no `lupdate`, no Transifex account. Anything you do not translate falls back to English at runtime, so a partial translation is genuinely useful and can be finished later.
+Copy the `en-US` folder to your language code and translate the text to the right of each `=`. Anything you have not got to yet falls back to English while you work, so a half-finished language is genuinely useful, and can be finished later or by somebody else.
 
-The help topics inside the application are translated the same way, in the same files, so improving them is the same kind of pull request.
+**You can watch your work appear as you save it.** A build you have compiled yourself will watch your folder and reload the language every time you write a file, so Skribisto stays open beside your text editor:
+
+```
+cargo run -p teksilo_ui -- --translation-dev fr-FR=crates/teksilo_ui/locales/fr-FR
+```
+
+Point it at the folder, never at a single file inside it. A language is those five files taken together, and reloading one of them alone would empty the other four, which looks exactly like your translation being deleted. The flag refuses a file rather than let you find that out the hard way, and it is for development builds only.
+
+The longer help pages are separate: ten pages per language, written in plain Djot rather than Fluent, under `crates/teksilo_ui/help/`.
+
+A brand-new language also has to be declared in three places in the source before its strings are built into the application. That is three short edits, spelled out in the [README](https://github.com/jacquetc/skribisto/blob/dev/README.md#translation), and no build system to learn.
 
 ## Write help
 
-The help is never finished. A topic that explains the wrong thing, or does not exist at all, is a defect like any other. It lives in the application's own source, alongside the strings above.
+The help is never finished. A topic that explains the wrong thing, or does not exist at all, is a defect like any other. The pages sit beside the translations, in the application's own source, and they are ordinary text: if you can spot what is missing, you can write it.
 
 ## Write code
 

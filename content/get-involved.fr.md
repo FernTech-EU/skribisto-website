@@ -6,22 +6,31 @@ weight = 8
 
 ## Traduire
 
-C’est aujourd’hui la contribution la plus utile, et elle ne demande ni chaîne de compilation ni Rust.
+C’est aujourd’hui la contribution la plus utile, et traduire ne demande aucune programmation.
 
-L’interface est traduite avec [Fluent](https://projectfluent.org). Chaque langue est un dossier de quatre fichiers texte :
+Chaque langue est un dossier de cinq fichiers texte, au format [Fluent](https://projectfluent.org) :
 
 ```
-crates/teksilo_ui/locales/en-US/{main,tooltips,tags,templates}.ftl
-crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates}.ftl
+crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates,story_bible}.ftl
 ```
 
-Copiez le dossier `en-US` sous le code de votre langue, traduisez les valeurs à droite de chaque `=`, ouvrez une pull request. Rien d’autre ne change : pas de fichiers `.ts`, pas de `lupdate`, pas de compte Transifex. Ce que vous ne traduisez pas retombe sur l’anglais à l’exécution : une traduction partielle est donc réellement utile et peut être terminée plus tard.
+Copiez le dossier `en-US` sous le code de votre langue et traduisez le texte à droite de chaque `=`. Ce que vous n’avez pas encore fait retombe sur l’anglais pendant votre travail : une langue à moitié faite est donc réellement utile, et peut être terminée plus tard, ou par quelqu’un d’autre.
 
-Les rubriques d’aide de l’application se traduisent de la même façon, dans les mêmes fichiers : c’est le même genre de contribution.
+**Vous pouvez voir votre travail apparaître au fil des enregistrements.** Une version que vous avez compilée vous-même surveille votre dossier et recharge la langue à chaque fichier écrit : Skribisto reste ouvert à côté de votre éditeur de texte.
+
+```
+cargo run -p teksilo_ui -- --translation-dev fr-FR=crates/teksilo_ui/locales/fr-FR
+```
+
+Indiquez le dossier, jamais un seul fichier à l’intérieur. Une langue, ce sont ces cinq fichiers pris ensemble, et n’en recharger qu’un viderait les quatre autres, ce qui ressemble exactement à une traduction effacée. L’option refuse un fichier plutôt que de vous le laisser découvrir, et elle n’existe que dans les versions de développement.
+
+Les pages d’aide, plus longues, sont à part : dix pages par langue, écrites en Djot et non en Fluent, sous `crates/teksilo_ui/help/`.
+
+Une langue entièrement nouvelle doit en outre être déclarée à trois endroits du code avant que ses textes ne soient intégrés à l’application. Ce sont trois courtes modifications, détaillées dans le [README](https://github.com/jacquetc/skribisto/blob/dev/README.md#translation), et aucun système de compilation à apprendre.
 
 ## Écrire l’aide
 
-L’aide n’est jamais finie. Une rubrique qui explique la mauvaise chose, ou qui n’existe pas du tout, est un défaut comme un autre. Elle vit dans les sources de l’application, à côté des chaînes ci-dessus.
+L’aide n’est jamais finie. Une rubrique qui explique la mauvaise chose, ou qui n’existe pas du tout, est un défaut comme un autre. Les pages sont rangées à côté des traductions, dans les sources de l’application, et ce sont de simples textes : si vous voyez ce qui manque, vous pouvez l’écrire.
 
 ## Écrire du code
 
