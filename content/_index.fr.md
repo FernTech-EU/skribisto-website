@@ -10,6 +10,7 @@ hero_lede = "Un projet contient tout : votre livre, ou plusieurs, les chapitres
 hero_shot_alt = "Le classeur à gauche, le texte d’une scène et son synopsis côte à côte dans l’éditeur."
 export_shot_alt = "La fenêtre d’export, avec un aperçu en direct du manuscrit compilé."
 cta_note = "Logiciel libre, GPLv3 · Linux, Windows et macOS · version en cours :"
+name_note = "Skribisto veut dire « Écrivain » en espéranto."
 
 cards_title = "Six choses à savoir avant de commencer"
 cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de documents."

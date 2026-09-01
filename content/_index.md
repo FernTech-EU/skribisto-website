@@ -10,6 +10,7 @@ hero_lede = "One project holds the lot: your book, or several, the chapters and 
 hero_shot_alt = "The binder tree on the left, a scene’s prose and its synopsis side by side in the editor."
 export_shot_alt = "The export window, with a live preview of the compiled manuscript."
 cta_note = "Free software, GPLv3 · Linux, Windows and macOS · current build:"
+name_note = "Skribisto means “Writer” in Esperanto."
 
 cards_title = "Six things to know before you start"
 cards_lede = "They are what makes Skribisto different from a folder of documents."

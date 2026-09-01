@@ -17,6 +17,7 @@
         <a class="btn btn-ghost" href="{{<url.href base={config.base_url} path="@/tour.md" lang={lang} />}}">{{ trans(key="cta_tour", lang=lang) }}</a>
       </div>
       <p class="cta-note">{{ section.extra.cta_note }} <span class="muted">{{ release.version }}</span></p>
+      <p class="name-note">{{ section.extra.name_note }}</p>
     </div>
     <figure class="shot">
       <img src="{{<url.href base={config.base_url} path="img/binder-and-editor.png" lang={config.default_language} trailing_slash={false} />}}"

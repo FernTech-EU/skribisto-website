@@ -136,6 +136,7 @@ pre {
 .btn-primary { background: var(--accent); color: var(--accent-ink); &:hover { background: var(--accent-hover); color: var(--accent-ink); } }
 .btn-ghost { border-color: var(--border); color: var(--ink); background: var(--surface); &:hover { border-color: var(--accent); color: var(--accent); } }
 .cta-note { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-top: 0.9rem; }
+.name-note { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-top: 0.35rem; }
 
 figure { margin: 0; }
 .shot {
