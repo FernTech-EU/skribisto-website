@@ -1,6 +1,6 @@
 +++
 title = "Obtenir Skribisto 3"
-description = "Skribisto 3 est une version candidate. Il existe des versions pour Linux et pour Windows."
+description = "Skribisto 3 est une version candidate. Il existe des versions pour Linux, pour Windows et pour macOS."
 template = "download.html"
 weight = 2
 +++
@@ -21,11 +21,11 @@ Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous trouve
 
 Prenez l’installeur, sauf raison contraire.
 
-La version portable est le même programme, qui garde tout dans son propre dossier. C’est ce qu’il vous faut sur un ordinateur où vous n’avez pas le droit d’installer, ou sur une clé USB que vous transportez de l’un à l’autre.
-
 ## macOS
 
-Pas encore. Quand elle arrivera, macOS protestera à la première ouverture, parce que le fichier ne porte pas encore la signature qu’Apple réclame.
+Ouvrez l’image disque et glissez Skribisto dans votre dossier Applications.
+
+macOS protestera à la première ouverture, parce que le fichier ne porte pas encore la signature qu’Apple réclame. Autorisez-le depuis *Réglages Système ▸ Confidentialité et sécurité*, où il apparaît juste après le refus.
 
 ## Si quelque chose ne va pas
 

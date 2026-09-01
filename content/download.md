@@ -1,6 +1,6 @@
 +++
 title = "Get Skribisto 3"
-description = "Skribisto 3 is a release candidate. There are builds for Linux and for Windows."
+description = "Skribisto 3 is a release candidate. There are builds for Linux, for Windows and for macOS."
 template = "download.html"
 weight = 2
 aliases = ["/index.php/download/"]
@@ -22,11 +22,11 @@ One warning. If you search for Skribisto in your software centre you will find *
 
 Take the installer unless you have a reason not to.
 
-The portable version is the same program, keeping everything inside its own folder. It is what you want on a computer where you are not allowed to install things, or on a USB stick you carry between two of them.
-
 ## macOS
 
-Not yet. When it arrives, macOS will complain the first time you open it, because the file does not yet carry the signature Apple asks for.
+Open the disk image and drag Skribisto into your Applications folder.
+
+macOS will complain the first time you open it, because the file does not yet carry the signature Apple asks for. Let it through from *System Settings ▸ Privacy & Security*, where it appears just after the refusal.
 
 ## If something goes wrong
 
