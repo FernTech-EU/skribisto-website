@@ -19,7 +19,7 @@ cards_lede = "They are what makes Skribisto different from a folder of documents
 
 cards = [
   { title = "It fits how you write", body = "Several books in one project. Chapters as folders of scenes, or as single pages, in the same book. More than one binder, so the research need not sit in the manuscript’s tree." },
-  { title = "A summary beside every scene", body = "Every piece of writing carries a short account of what happens in it. The corkboard puts those on cards, and a whole book’s worth reads as one page." },
+  { title = "Send a chapter out, get it back in", body = "Export a chapter as DOCX or ODT, have it marked up, and it merges back into the book it left. Item by item: Take this version, Keep mine, Comments only." },
   { title = "A story bible that has read your book", body = "Tag a note, give it its aliases, and Skribisto finds it in your prose: the scenes it appears in, and what you have already written about it, quoted back to you." },
   { title = "Nothing gets lost", body = "It saves as you write. The trash restores. Backups run on a schedule and open read-only. The version history puts back what a scene said last week." },
   { title = "Files you can still open in ten years", body = "You write in a rich-text editor; it is stored as Djot, a plain-text format much like Markdown, one file per scene. Nothing in there needs Skribisto to be read." },

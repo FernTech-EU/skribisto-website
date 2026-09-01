@@ -19,7 +19,7 @@ cards_lede = "Ce sont elles qui distinguent Skribisto d’un dossier de document
 
 cards = [
   { title = "Il s’adapte à votre façon d’écrire", body = "Plusieurs livres dans un projet. Des chapitres en dossiers de scènes, ou en simples pages, dans le même livre. Plusieurs classeurs, pour que la documentation ne siège pas dans l’arbre du manuscrit." },
-  { title = "Un résumé à côté de chaque scène", body = "Chaque texte porte un court récit de ce qui s’y passe. Le tableau de liège en fait des cartes, et un livre entier de résumés se lit d’une traite." },
+  { title = "Un chapitre part, un chapitre revient", body = "Exportez un chapitre en DOCX ou en ODT, faites-le annoter : il fusionne dans le livre qu’il a quitté. Élément par élément : Prendre cette version, Garder la mienne, Commentaires seulement." },
   { title = "Une bible qui a lu votre livre", body = "Étiquetez une note, donnez-lui ses alias, et Skribisto la retrouve dans votre texte : les scènes où elle apparaît, et ce que vous en avez déjà écrit, cité." },
   { title = "Rien ne se perd", body = "L’enregistrement suit votre frappe. La corbeille restaure. Les sauvegardes suivent un calendrier et s’ouvrent en lecture seule. L’historique remet les mots de la semaine dernière." },
   { title = "Des fichiers encore lisibles dans dix ans", body = "Vous écrivez dans un éditeur enrichi ; c’est enregistré en Djot, un format texte très proche de Markdown, un fichier par scène. Rien là-dedans n’exige Skribisto pour être lu." },
