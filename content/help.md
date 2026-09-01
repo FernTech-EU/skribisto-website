@@ -21,4 +21,4 @@ Skribisto is a spare-time project given away for free, so support is voluntary, 
 - what you did, what you expected, and what happened instead;
 - whether it happens again on a fresh project.
 
-Never attach a manuscript you would mind strangers reading: an issue tracker is public. A project trimmed down to the rows that reproduce the problem is better evidence anyway.
+Never attach a manuscript you would mind strangers reading: an issue tracker is public. A project trimmed down to the items that reproduce the problem is better evidence anyway.

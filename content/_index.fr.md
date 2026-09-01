@@ -68,7 +68,7 @@ promises = [
 ]
 
 coming_title = "Vous venez de Plume Creator ou de Skribisto 2 ?"
-coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouverture : ouvrez-le et continuez d’écrire. Un projet Plume Creator arrive par Projet ▸ Importer depuis ▸ Plume Creator. Aucun fichier d’origine n’est modifié, et l’interface a suffisamment changé pour que cinq minutes de lecture vous fassent gagner une heure."
+coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouverture : ouvrez-le et continuez d’écrire. Un projet Plume Creator arrive par Œuvre ▸ Importer depuis ▸ Plume Creator. Aucun fichier d’origine n’est modifié, et l’interface a suffisamment changé pour que cinq minutes de lecture vous fassent gagner une heure."
 coming_link = "Ce qui change, et à quoi s’attendre"
 +++
 

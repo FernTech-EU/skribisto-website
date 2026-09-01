@@ -10,9 +10,9 @@ Skribisto 3 n’est pas Skribisto 2 repeint : c’est une réécriture : nouve
 
 Un **projet Skribisto 2**, l’ancien fichier `.skrib` en SQLite, est reconnu à l’ouverture et mis à niveau au chargement vers le nouveau format. Le fichier d’origine n’est pas modifié : vous obtenez un nouveau projet à côté. Ouvrez-le et continuez d’écrire.
 
-Un **projet Plume Creator** arrive par *Projet ▸ Importer depuis ▸ Plume Creator*, quelle que soit la version du format de Plume, et est converti vers un `.skrib` à jour. Là non plus, rien n’est réécrit dans l’original.
+Un **projet Plume Creator** arrive par *Œuvre ▸ Importer depuis ▸ Plume Creator*, quelle que soit la version du format de Plume, et est converti vers un `.skrib` à jour. Là non plus, rien n’est réécrit dans l’original.
 
-Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’autre : les fichiers Markdown, texte brut, DOCX et ODT entrent par *Projet ▸ Importer depuis ▸ Documents*, qui vous montre chaque ligne qu’il compte créer, et ce qu’il a dû deviner, avant que rien ne soit écrit.
+Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’autre : les fichiers Markdown, texte brut, DOCX et ODT entrent par *Œuvre ▸ Importer depuis ▸ Documents*, qui vous montre chaque élément qu’il compte créer, et ce qu’il a dû deviner, avant que rien ne soit écrit.
 
 <figure class="shot">
   <img src="/img/launcher.png" alt="Le lanceur, avec les projets récents et les exemples fournis." width="984" height="708" loading="lazy">
@@ -21,7 +21,7 @@ Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’au
 ## Ce qui est franchement mieux
 
 - **Votre manuscrit est redevenu du texte brut.** Pas une base de données : des fichiers Djot et des manifestes lisibles, dans un zip ou dans un dossier que vous pouvez garder dans git.
-- **La structure est explicite.** Une ligne est un chapitre ou une scène parce que vous l’avez dit, pas à cause de sa place dans l’arbre, et réorganiser l’arbre ne peut donc pas changer le livre.
+- **La structure est explicite.** Un élément est un chapitre ou une scène parce que vous l’avez dit, pas à cause de sa place dans l’arbre, et réorganiser l’arbre ne peut donc pas changer le livre.
 - **Le texte et le synopsis ne font qu’un**, partout : dans l’éditeur, dans le tableau de liège, et sous forme de flux que l’on lit d’un bout à l’autre.
 - **Commentaires, notes de bas de page, images, étiquettes, point de vue, mentions** : rien de tout cela n’existait dans la lignée 2.x.
 - **L’export est un véritable compilateur** : neuf formats, un aperçu en direct, et un aller-retour éditorial qui ramène un DOCX ou un ODT de chez votre relecteur avec ses commentaires intacts.

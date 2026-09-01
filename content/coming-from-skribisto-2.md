@@ -12,7 +12,7 @@ A **Skribisto 2 project**, the old SQLite `.skrib` file, is recognised when you 
 
 A **Plume Creator project** comes in through *Work ▸ Import from ▸ Plume Creator*, from any version of Plume's own format, and is converted to a current `.skrib`. Again, nothing is written back to the original.
 
-You can also import a book that never lived in either: Markdown, plain text, DOCX and ODT files come in through *Work ▸ Import from ▸ Documents*, which shows you every row it intends to create, and what it had to guess, before anything is written.
+You can also import a book that never lived in either: Markdown, plain text, DOCX and ODT files come in through *Work ▸ Import from ▸ Documents*, which shows you every item it intends to create, and what it had to guess, before anything is written.
 
 <figure class="shot">
   <img src="/img/launcher.png" alt="The launcher, listing recent projects and the bundled examples." width="984" height="708" loading="lazy">
@@ -21,7 +21,7 @@ You can also import a book that never lived in either: Markdown, plain text, DOC
 ## What is genuinely better
 
 - **Your manuscript is plain text again.** Not a database: Djot files and readable manifests, in a zip or in a folder you can keep in git.
-- **Structure is explicit.** A row is a chapter or a scene because you said so, not because of where it sits in the tree, so reorganising the tree cannot change the book.
+- **Structure is explicit.** An item is a chapter or a scene because you said so, not because of where it sits in the tree, so reorganising the tree cannot change the book.
 - **Prose and synopsis are one unit**, everywhere: in the editor, in the corkboard, and as whole-book streams you can read end to end.
 - **Comments, footnotes, images, tags, point of view, mentions**, none of which the 2.x line had.
 - **Export is a real compiler**: nine formats, a live preview, and an editorial round trip that brings a DOCX or ODT back from your editor with their comments intact.

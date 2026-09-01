@@ -21,4 +21,4 @@ Skribisto est un projet de temps libre, donné gratuitement : le support est do
 - ce que vous avez fait, ce que vous attendiez, et ce qui s’est produit à la place ;
 - si cela se reproduit sur un projet neuf.
 
-N’attachez jamais un manuscrit que vous ne voudriez pas voir lu par des inconnus : un suivi de tickets est public. Un projet réduit aux lignes qui reproduisent le problème est de toute façon une meilleure preuve.
+N’attachez jamais un manuscrit que vous ne voudriez pas voir lu par des inconnus : un suivi de tickets est public. Un projet réduit aux éléments qui reproduisent le problème est de toute façon une meilleure preuve.
