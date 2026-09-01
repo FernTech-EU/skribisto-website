@@ -13,7 +13,7 @@ Un projet n’est pas un livre. Vous pouvez en écrire plusieurs dans le même p
 Dans un classeur, c’est vous qui décidez de la quantité de structure. Un livre peut aller droit à ses chapitres, ou passer d’abord par des parties. Un chapitre peut être un dossier contenant des scènes, ou une simple page que vous écrivez d’un trait, et les deux peuvent coexister dans le même livre. Les notes et les dossiers de notes se placent là où vous en avez besoin : un personnage, un lieu, une page de documentation.
 
 <figure class="shot">
-  <img src="/img/binder-and-editor.png" alt="Le classeur à gauche, le texte d’une scène et son résumé dans l’éditeur." width="1440" height="960" loading="lazy">
+  <img src="/img/binder-and-editor.png" alt="Le classeur à gauche, le texte d’une scène et son résumé dans l’éditeur." width="1509" height="922" loading="lazy">
 </figure>
 
 Rien n’est figé. Déplacez une scène, indentez-la, réunissez une suite de scènes en un chapitre, transformez une scène en note ou un chapitre simple en dossier de scènes : le texte suit, et le livre garde sa forme.
@@ -23,6 +23,10 @@ Et quand vous voulez lire plutôt que ranger, un chapitre, une partie ou un livr
 ## 2. Écrire
 
 Chaque texte porte deux choses : le texte lui-même, et un court résumé de ce qui s’y passe. Le résumé se place dans un encadré au-dessus de la page, ou dans une colonne à côté si vous préférez lire l’un contre l’autre. Chacun a sa police, son corps, son interligne et son alinéa, parce qu’un résumé ne se lit pas comme une scène.
+
+<figure class="shot">
+  <img src="/img/distraction-free.png" alt="Le mode sans distraction, avec le texte de la scène et son résumé dans une colonne à côté." width="1801" height="937" loading="lazy">
+</figure>
 
 Autour de cela :
 
@@ -37,6 +41,10 @@ Autour de cela :
 
 Un livre s’écrit mieux quand on peut prendre du recul.
 
+<figure class="shot">
+  <img src="/img/analysis-shape.png" alt="La vue Analyse, avec une barre de mots pour chaque scène, mesurée à l’aune de la médiane du livre." width="1388" height="860" loading="lazy">
+</figure>
+
 - **Le tableau de liège.** Les résumés d’un chapitre ou d’une partie sous forme de cartes que l’on lit, modifie et réordonne.
 - **La vue d’ensemble.** Un tableau de tout ce qui se trouve sous un dossier : titre, type, libellé, étiquettes, mots propres, mots au total, commentaires ouverts.
 - **L’analyse.** Les mots par scène, la part de dialogue dans le livre, et le nombre de mots en notes de bas de page, mesurés à l’aune des chiffres du livre lui-même plutôt que d’une norme venue d’ailleurs.
@@ -47,6 +55,10 @@ Un livre s’écrit mieux quand on peut prendre du recul.
 ## 4. La bible
 
 Une entrée de bible n’est pas une nouvelle sorte d’objet : c’est une note, avec une étiquette de couleur, quelques alias et ce que vous écrivez dedans. Ce qui en fait une bible, c’est que Skribisto vous relit le manuscrit à travers elle.
+
+<figure class="shot">
+  <img src="/img/story-bible.png" alt="La page Détails d’une entrée de bible : ce que vous affirmez à gauche, les citations du manuscrit à droite." width="1509" height="922" loading="lazy">
+</figure>
 
 - **Créez-la depuis le texte.** Sélectionnez le nom que vous venez d’inventer, choisissez son étiquette, et il devient une note classée en un clic, dans le dossier où cette étiquette range ses notes, à partir du modèle qu’elle utilise.
 - **Un endroit pour elles.** Tout dossier de notes reçoit une vue bible : des cartes groupées par étiquette, chacune avec ses alias et le nombre de scènes où elle apparaît. Avec plusieurs livres dans le projet, une entrée peut être rattachée à un livre, ou à aucun.

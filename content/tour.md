@@ -13,7 +13,7 @@ One project is not one book. You can write several in the same project, and you 
 Inside a binder you decide how much structure you want. A book can go straight to its chapters or through parts first. A chapter can be a folder holding scenes, or a single page you write straight down, and both kinds can sit in the same book. Notes and note folders go wherever you need them: a character, a place, a page of research.
 
 <figure class="shot">
-  <img src="/img/binder-and-editor.png" alt="The binder on the left, a scene's text and its summary in the editor." width="1440" height="960" loading="lazy">
+  <img src="/img/binder-and-editor.png" alt="The binder on the left, a scene's text and its summary in the editor." width="1509" height="922" loading="lazy">
 </figure>
 
 Nothing is set in stone. Move a scene, indent it, gather a run of scenes into a chapter, turn a scene into a note or a flat chapter into a folder of scenes: the writing comes with it, and the book keeps its shape.
@@ -23,6 +23,10 @@ And when you want to read rather than arrange, a chapter, a part or a whole book
 ## 2. Write
 
 Every piece of writing carries two things: the text, and a short summary of what happens in it. The summary sits in a box above the page, or in a column beside it if you would rather read one against the other. Each has its own typeface, size, line spacing and indent, because a summary is not read the way a scene is.
+
+<figure class="shot">
+  <img src="/img/distraction-free.png" alt="Distraction-free mode, with the scene's text and its summary in a column beside it." width="1801" height="937" loading="lazy">
+</figure>
 
 Around that:
 
@@ -37,6 +41,10 @@ Around that:
 
 A book is easier to write when you can stand back from it.
 
+<figure class="shot">
+  <img src="/img/analysis-shape.png" alt="The Analysis view, with a bar of words for every scene measured against the book's own median." width="1388" height="860" loading="lazy">
+</figure>
+
 - **Corkboard.** The summaries of a chapter or a part as cards you can read, edit and reorder.
 - **Overview.** A table of everything below a folder: title, type, label, tags, its own words, its total words, open comments.
 - **Analysis.** Words per scene, how much of the book is dialogue, and how many words sit in the footnotes, measured against the book's own numbers rather than against somebody's idea of a norm.
@@ -47,6 +55,10 @@ A book is easier to write when you can stand back from it.
 ## 4. The story bible
 
 A bible entry is not a new kind of thing: it is a note, with a colour tag, a few aliases and whatever you write in it. What makes it a bible is that Skribisto reads the manuscript back to you through it.
+
+<figure class="shot">
+  <img src="/img/story-bible.png" alt="A bible entry's Details page: what you are stating on the left, quoted from the manuscript on the right." width="1509" height="922" loading="lazy">
+</figure>
 
 - **Make one from the prose.** Select the name you just invented, pick its tag, and it becomes a filed note in one click, in the folder that tag files things into, from the template that tag uses.
 - **A place for them.** Any folder of notes gets a story-bible view: cards grouped by tag, each with its aliases and the number of scenes it appears in. With more than one book in the project, entries can be filed under a book, or under none.
