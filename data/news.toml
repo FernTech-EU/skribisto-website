@@ -9,7 +9,7 @@
 version = "3.0.0"
 date = "2026-07-19"
 type = "stable"
-released = false
+released = true
 prerelease = false
 items = [
   "Skribisto has been rewritten from scratch in Rust, with a new interface",
