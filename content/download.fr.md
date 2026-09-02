@@ -1,19 +1,19 @@
 +++
 title = "Obtenir Skribisto 3"
-description = "Skribisto 3 est une version candidate. Il existe des versions pour Linux, pour Windows et pour macOS."
+description = "Skribisto 3 est disponible. Il existe des versions pour Linux, pour Windows et pour macOS."
 template = "download.html"
 weight = 2
 +++
 
-## Ce que veut dire « version candidate »
+## Ce que vous obtenez
 
-Tout est en place : l’écriture, les notes, la bible, les sauvegardes, les exports. Sauf imprévu sérieux, c’est ce que sera la version 3. Elle est prête pour un vrai manuscrit, et c’est un vrai manuscrit qui trouvera les derniers problèmes.
+Tout est en place : l’écriture, les notes, la bible, les sauvegardes, les exports. C’est la version 3, elle est publiée, et elle est prête pour un vrai manuscrit.
 
 Gardez vos sauvegardes habituelles, comme avec tout ce qui détient votre livre. Skribisto fait aussi les siennes, aussi souvent que vous le lui demandez, et vous pouvez en ouvrir une pour la lire sans déranger celle dans laquelle vous travaillez.
 
 ## Linux
 
-Décompressez l’archive et lancez-la. Si votre distribution préfère un Flatpak, celui-ci n’est pas encore prêt : il attend un élément en cours de publication, et il arrivera ici à ce moment-là.
+Décompressez l’archive et lancez-la, ou prenez le Flatpak si c’est ce que votre distribution attend.
 
 Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous trouverez la **1.9.41**, datant de 2022. C’est un autre programme, d’une autre époque, qui n’est plus développé, et ce n’est pas celui-ci.
 

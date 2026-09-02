@@ -1,20 +1,20 @@
 +++
 title = "Get Skribisto 3"
-description = "Skribisto 3 is a release candidate. There are builds for Linux, for Windows and for macOS."
+description = "Skribisto 3 is out. There are builds for Linux, for Windows and for macOS."
 template = "download.html"
 weight = 2
 aliases = ["/index.php/download/"]
 +++
 
-## What a release candidate means
+## What you are getting
 
-Everything is in place: the writing, the notes, the story bible, the backups, the exports. Unless something serious turns up, this is what version 3 will be. It is ready for a real manuscript, and a real manuscript is what finds the last problems.
+Everything is in place: the writing, the notes, the story bible, the backups, the exports. This is version 3, released, and ready for a real manuscript.
 
 Keep your usual backups, as you would with anything that holds your book. Skribisto also takes its own, as often as you tell it to, and you can open any of them to read without disturbing the one you are working in.
 
 ## Linux
 
-Unpack the archive and run it. If your distribution asks for a Flatpak instead, that one is not ready yet: it waits on a piece that is still being published, and it will turn up here when it is.
+Unpack the archive and run it, or take the Flatpak if that is what your distribution expects.
 
 One warning. If you search for Skribisto in your software centre you will find **1.9.41**, from 2022. That is a different program from a different era, no longer developed, and it is not this.
 
