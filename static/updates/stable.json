@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-03",
+  "download": {
+    "en": "https://www.skribisto.eu/download/",
+    "fr": "https://www.skribisto.eu/fr/download/"
+  },
+  "feed": 1,
+  "notes": {
+    "en": "https://www.skribisto.eu/news/",
+    "fr": "https://www.skribisto.eu/fr/news/"
+  },
+  "tag": "v3.0.1",
+  "version": "3.0.1"
+}

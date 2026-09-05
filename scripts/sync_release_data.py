@@ -28,13 +28,26 @@ from pathlib import Path
 
 REPO = "jacquetc/skribisto"
 API = f"https://api.github.com/repos/{REPO}/releases?per_page=50"
-# NEWS.yml is read from the working branch, not from `master`: `master` still holds the
-# 2.x history, and an entry written ahead of its release is rendered as unreleased
-# rather than hidden. Point `--news-ref` at `master` once 3.0 has landed there.
-NEWS_REF = "dev"
+# 3.0 has landed on master (`dev` is merged into it and the 3.x tags are cut there), so
+# this now reads the branch releases are actually made from. An entry written ahead of
+# its release is still rendered as unreleased rather than hidden, which is what lets a
+# NEWS.yml block be committed before the tag exists.
+NEWS_REF = "master"
 NEWS_RAW = "https://raw.githubusercontent.com/{repo}/{ref}/NEWS.yml"
 USER_AGENT = "skribisto-website-sync/1.0"
 TIMEOUT = 30
+
+# Where the generated pages live, for the links the update feed hands the application.
+BASE_URL = "https://www.skribisto.eu"
+
+# The languages the site publishes. English is Zola's `default_language`, so it has no
+# prefix; every other language is served under `/<code>/`.
+FEED_LANGUAGES = ("en", "fr")
+
+# Bumped only for a change a already-shipped client could not survive. Adding a field is
+# not such a change: the client is required to ignore what it does not know, and to
+# refuse a `feed` value higher than the one it was built for.
+FEED_SCHEMA = 1
 
 # Filename patterns, most specific first: a portable zip must not be caught by the
 # installer rule, and SHA256SUMS.txt is not a platform download at all.
@@ -130,12 +143,107 @@ def is_prerelease(release: dict) -> bool:
     return bool(release.get("prerelease")) or "-" in release.get("tag_name", "")
 
 
+def version_key(tag: str) -> tuple:
+    """A sort key ordering tags by semver precedence, newest last.
+
+    Publication date is not that order, and this repository already proves it: `v1.9.43`
+    was published at 16:49 on 2026-02-21 and `v2.0.7` at 14:43 the same day, so sorting
+    by `published_at` ranks the older codebase's last tag above the newer one. Any
+    re-publication of an old release does the same thing again.
+
+    Two semver rules are load-bearing here. A version carrying a pre-release ranks
+    *below* the same version without one, which is what stops `3.1.0-rc1` outranking
+    `3.1.0`. Build metadata is ignored entirely.
+    """
+    core, _, pre = tag.lstrip("v").partition("-")
+    pre = pre.split("+", 1)[0]
+
+    nums: list[int] = []
+    for part in core.split("."):
+        digits = re.match(r"^(\d+)", part)
+        nums.append(int(digits.group(1)) if digits else 0)
+    while len(nums) < 3:
+        nums.append(0)
+
+    if not pre:
+        # 1 outranks the 0 every pre-release carries, so 3.1.0 > 3.1.0-rc1.
+        return (nums[:3], 1, [])
+
+    # Numeric identifiers rank below alphanumeric ones and compare numerically.
+    identifiers: list[tuple[int, int, str]] = []
+    for ident in pre.split("."):
+        if ident.isdigit():
+            identifiers.append((0, int(ident), ""))
+        else:
+            identifiers.append((1, 0, ident))
+    return (nums[:3], 0, identifiers)
+
+
 def pick_latest(releases: list[dict]) -> dict:
+    """The newest published release, pre-releases included.
+
+    The download page deliberately shows a pre-release when one is the newest thing
+    published: it has a stage badge for exactly that. What it must not do is get the
+    ordering wrong, hence [`version_key`] rather than the publication date.
+    """
     published = [r for r in releases if not r.get("draft")]
     if not published:
         raise SyncError("the repository has no published release")
-    published.sort(key=lambda r: r.get("published_at") or "", reverse=True)
+    published.sort(
+        key=lambda r: (version_key(r.get("tag_name", "")), r.get("published_at") or ""),
+        reverse=True,
+    )
     return published[0]
+
+
+def pick_latest_stable(releases: list[dict]) -> dict | None:
+    """The newest published *final* release, or `None` if there has never been one.
+
+    This is what the application's update feed is built from, and the difference from
+    [`pick_latest`] is the whole reason the feed is generated here rather than read from
+    GitHub by the application itself. Every release of this repository, `v3.0.0-rc1` and
+    `v3.0.0-rc2` and `v3.0.0-alpha1` included, is flagged `"prerelease": false` on the
+    API, so `/releases/latest` served a release candidate as the current version for the
+    two days those tags were newest. [`is_prerelease`] reads the tag instead, which
+    cannot be wrong about it.
+    """
+    finals = [r for r in releases if not r.get("draft") and not is_prerelease(r)]
+    if not finals:
+        return None
+    finals.sort(
+        key=lambda r: (version_key(r.get("tag_name", "")), r.get("published_at") or ""),
+        reverse=True,
+    )
+    return finals[0]
+
+
+def build_updates_feed(latest_stable: dict) -> str:
+    """The file the running application reads to learn that a newer version exists.
+
+    Small on purpose. It is fetched by every installation that has the check enabled, it
+    is answered from Cloudflare's edge, and everything in it is a fact the download page
+    already publishes. It carries no counter, no identifier and nothing about the client.
+
+    The links are per language rather than one canonical URL, because the application
+    knows its own interface locale and a reader sent to a page in a language they do not
+    read has not been helped. Unknown languages fall back to `en` on the client side.
+    """
+    tag = latest_stable["tag_name"]
+    feed = {
+        "feed": FEED_SCHEMA,
+        "version": tag.lstrip("v"),
+        "tag": tag,
+        "date": (latest_stable.get("published_at") or "")[:10],
+        "notes": {lang: page_url(lang, "news") for lang in FEED_LANGUAGES},
+        "download": {lang: page_url(lang, "download") for lang in FEED_LANGUAGES},
+    }
+    return json.dumps(feed, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+
+
+def page_url(lang: str, page: str) -> str:
+    """`https://www.skribisto.eu/download/`, or `/fr/download/` for a non-default language."""
+    prefix = "" if lang == "en" else f"/{lang}"
+    return f"{BASE_URL}{prefix}/{page}/"
 
 
 def build_release_data(releases: list[dict], checksums: dict[str, str]) -> str:
@@ -266,6 +374,11 @@ def write_if_changed(path: Path, content: str) -> bool:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", default="data", help="directory to write the data files into")
+    parser.add_argument(
+        "--static",
+        default="static",
+        help="directory Zola copies verbatim; the update feed is written under it",
+    )
     parser.add_argument("--releases-json", help="read the releases list from this file instead of the API")
     parser.add_argument("--news-yml", help="read NEWS.yml from this file instead of the repository")
     parser.add_argument("--news-ref", default=NEWS_REF, help="branch or tag to read NEWS.yml from")
@@ -293,6 +406,11 @@ def main(argv: list[str] | None = None) -> int:
 
         release_toml = build_release_data(releases, checksums)
         news_toml = build_news_data(news_text, releases)
+        # `None` before the first final release ever ships. The feed is then left
+        # exactly as it was rather than written empty: an application reading a feed with
+        # no version in it has to guess, and the safe guess is the one it already made.
+        latest_stable = pick_latest_stable(releases)
+        updates_json = build_updates_feed(latest_stable) if latest_stable else None
     except SyncError as exc:
         print(f"sync failed, data files left untouched: {exc}", file=sys.stderr)
         return 1
@@ -303,7 +421,14 @@ def main(argv: list[str] | None = None) -> int:
     out = Path(args.out)
     changed = write_if_changed(out / "release.toml", release_toml)
     changed |= write_if_changed(out / "news.toml", news_toml)
-    print(f"{'updated' if changed else 'unchanged'}: {out}/release.toml, {out}/news.toml")
+    written = [f"{out}/release.toml", f"{out}/news.toml"]
+
+    if updates_json is not None:
+        feed_path = Path(args.static) / "updates" / "stable.json"
+        changed |= write_if_changed(feed_path, updates_json)
+        written.append(str(feed_path))
+
+    print(f"{'updated' if changed else 'unchanged'}: {', '.join(written)}")
     return 0
 
 
