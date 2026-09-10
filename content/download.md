@@ -24,7 +24,7 @@ Take the installer unless you have a reason not to.
 
 ## macOS
 
-Open the disk image and drag Skribisto into your Applications folder. It is built for Apple Silicon; there is no Intel build.
+Open the disk image and drag Skribisto into your Applications folder. It is a universal build: it runs on Apple Silicon and on Intel Macs alike.
 
 macOS will complain the first time you open it, because the file does not yet carry the signature Apple asks for. Let it through from *System Settings ▸ Privacy & Security*, where it appears just after the refusal.
 

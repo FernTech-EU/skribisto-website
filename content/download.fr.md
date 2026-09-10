@@ -23,7 +23,7 @@ Prenez l’installeur, sauf raison contraire.
 
 ## macOS
 
-Ouvrez l’image disque et glissez Skribisto dans votre dossier Applications. Elle est compilée pour Apple Silicon : il n’existe pas de version Intel.
+Ouvrez l’image disque et glissez Skribisto dans votre dossier Applications. C’est une version universelle : elle fonctionne aussi bien sur les Mac Apple Silicon que sur les Mac Intel.
 
 macOS protestera à la première ouverture, parce que le fichier ne porte pas encore la signature qu’Apple réclame. Autorisez-le depuis *Réglages Système ▸ Confidentialité et sécurité*, où il apparaît juste après le refus.
 
