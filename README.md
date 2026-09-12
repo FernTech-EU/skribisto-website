@@ -74,11 +74,11 @@ tests/              its tests
 
 ## Cutover checklist
 
-- [ ] Push to `jacquetc/skribisto-website`, default branch `main`.
+- [ ] Push to `FernTech-EU/skribisto-website`, default branch `main`.
 - [ ] Settings ▸ Pages ▸ Source: **GitHub Actions**.
 - [ ] Custom domain `www.skribisto.eu` (`static/CNAME` already declares it), then
       wait for the certificate and tick *Enforce HTTPS*.
-- [ ] DNS: `www` CNAME to `jacquetc.github.io`, apex A/AAAA to GitHub's Pages
+- [ ] DNS: `www` CNAME to `ferntech-eu.github.io`, apex A/AAAA to GitHub's Pages
       addresses (or an ALIAS to the same host) so `skribisto.eu` redirects.
 - [ ] Export and archive the WordPress content **before** decommissioning it.
 - [ ] Confirm the old URLs still resolve: `/index.php/download/`,
