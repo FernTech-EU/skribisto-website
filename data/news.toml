@@ -6,6 +6,28 @@
 # written ahead of its release can never render as if it had shipped.
 
 [[entries]]
+version = "3.0.2"
+date = "2026-09-04"
+type = "stable"
+released = false
+prerelease = false
+items = [
+  "The folder Skribisto keeps its backups in is created when the app starts, so the location shown in Settings is really there before the first backup is taken",
+  "Show folder, in Settings under Backup defaults, opens that folder itself instead of the one above it",
+]
+
+[[entries]]
+version = "3.0.1"
+date = "2026-09-03"
+type = "stable"
+released = true
+prerelease = false
+items = [
+  "Windows now tell the desktop which application they belong to, so Skribisto keeps its own name and icon in the task switcher and its notifications are attributed to it",
+  "Packaging fixes for the Flathub build and its store listing",
+]
+
+[[entries]]
 version = "3.0.0"
 date = "2026-07-19"
 type = "stable"
