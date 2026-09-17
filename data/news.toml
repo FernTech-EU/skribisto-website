@@ -6,6 +6,17 @@
 # written ahead of its release can never render as if it had shipped.
 
 [[entries]]
+version = "3.0.4"
+date = "2026-09-16"
+type = "stable"
+released = true
+prerelease = false
+items = [
+  "Skribisto made Gnome user session crash, fixed upstream in Teksilo 0.12.0",
+  "The left arrow key moves the caret again wherever two writing areas are open at once, which is every scene and every note, since each shows its synopsis beside its text. The key was being taken for a request to close a menu and never reached the words",
+]
+
+[[entries]]
 version = "3.0.3"
 date = "2026-09-14"
 type = "stable"
@@ -72,7 +83,7 @@ items = [
   "Trash with restore and undo",
   "Backups with a retention policy, several destinations, a scheduler, and read-only opening",
   "Import projects from Plume Creator",
-  "Export to Word (DOCX), OpenDocument (ODT), EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text, with a live preview",
+  "Export to Word (DOCX), OpenDocument (ODT), EPUB, PDF, HTML, Markdown, Djot, LaTeX and plain text",
   "Spell checking with downloadable dictionaries",
   "Light and dark themes, and per-editor typography",
   "Open several projects side by side, each in its own window",
