@@ -13,7 +13,9 @@ Gardez vos sauvegardes habituelles, comme avec tout ce qui détient votre livre.
 
 ## Linux
 
-Décompressez l’archive et lancez-la, ou prenez le Flatpak si c’est ce que votre distribution attend.
+Sur Ubuntu, Debian, Linux Mint et les distributions qui en dérivent, prenez le paquet qui correspond à votre ordinateur (x86-64 pour la plupart, ARM64 pour une machine ARM) et ouvrez-le avec votre logithèque, ou lancez `sudo apt install ./` suivi du nom du fichier. Il demande Ubuntu 24.04 ou Debian 13, ou plus récent. Une version ultérieure s’installe de la même façon, et Skribisto vous prévient quand il y en a une.
+
+Ailleurs, décompressez l’archive et lancez-la, ou prenez le Flatpak si c’est ce que votre distribution attend.
 
 Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous trouverez la **1.9.41**, datant de 2022. C’est un autre programme, d’une autre époque, qui n’est plus développé, et ce n’est pas celui-ci.
 

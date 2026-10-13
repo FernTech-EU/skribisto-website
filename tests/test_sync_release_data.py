@@ -70,6 +70,38 @@ class TestAssetClassification(unittest.TestCase):
         self.assertIsNotNone(kind)
         self.assertEqual(kind[0], "linux")
 
+    def test_each_debian_package_is_a_linux_download_with_its_own_label(self):
+        # The release attaches one .deb per architecture. An unmatched asset is
+        # silently dropped from the page, and two rows with the same label would
+        # leave a reader guessing which one their machine takes.
+        amd64 = sync.classify("skribisto_3.1.0-1_amd64.deb")
+        arm64 = sync.classify("skribisto_3.1.0-1_arm64.deb")
+        self.assertEqual(amd64[0], "linux")
+        self.assertEqual(arm64[0], "linux")
+        self.assertNotEqual(amd64[1], arm64[1])
+        # A pre-release keeps the tag's spelling in the file name.
+        self.assertEqual(sync.classify("skribisto_3.2.0-rc1-1_arm64.deb"), arm64)
+
+    def test_the_debian_packages_sit_between_the_flatpak_and_the_archive(self):
+        names = [
+            "Skribisto-3.1.0-x86_64-linux.tar.gz",
+            "skribisto_3.1.0-1_arm64.deb",
+            "Skribisto-setup.exe",
+            "skribisto.flatpak",
+            "skribisto_3.1.0-1_amd64.deb",
+        ]
+        ordered = [a["name"] for a in sorted(({"name": n} for n in names), key=sync.download_order)]
+        self.assertEqual(
+            ordered,
+            [
+                "skribisto.flatpak",
+                "skribisto_3.1.0-1_amd64.deb",
+                "skribisto_3.1.0-1_arm64.deb",
+                "Skribisto-3.1.0-x86_64-linux.tar.gz",
+                "Skribisto-setup.exe",
+            ],
+        )
+
     def test_a_windows_portable_zip_is_not_read_as_a_linux_archive(self):
         self.assertEqual(sync.classify("Skribisto-portable.zip")[0], "windows")
 

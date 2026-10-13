@@ -55,6 +55,10 @@ ASSET_RULES: list[tuple[str, str, str]] = [
     (r"-setup\.exe$", "windows", "Windows installer"),
     (r"portable.*\.zip$", "windows", "Windows, portable"),
     (r"\.flatpak$", "linux", "Linux, Flatpak"),
+    # One rule per architecture, so the two packages do not share a label. The
+    # suffix is Debian's own architecture name, which the file name always ends with.
+    (r"_amd64\.deb$", "linux", "Linux, Debian and Ubuntu (x86-64)"),
+    (r"_arm64\.deb$", "linux", "Linux, Debian and Ubuntu (ARM64)"),
     (r"\.AppImage$", "linux", "Linux, AppImage"),
     (r"linux.*\.tar\.(gz|xz|zst)$", "linux", "Linux, archive"),
     (r"\.dmg$", "macos", "macOS disk image"),

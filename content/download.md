@@ -14,7 +14,9 @@ Keep your usual backups, as you would with anything that holds your book. Skribi
 
 ## Linux
 
-Unpack the archive and run it, or take the Flatpak if that is what your distribution expects.
+On Ubuntu, Debian, Linux Mint and the other distributions built on them, take the package that matches your computer (x86-64 for most of them, ARM64 for an ARM machine) and open it with your software centre, or run `sudo apt install ./` followed by the file name. It needs Ubuntu 24.04 or Debian 13, or newer. A later version installs the same way, and Skribisto tells you when there is one.
+
+Elsewhere, unpack the archive and run it, or take the Flatpak if that is what your distribution expects.
 
 One warning. If you search for Skribisto in your software centre you will find **1.9.41**, from 2022. That is a different program from a different era, no longer developed, and it is not this.
 
