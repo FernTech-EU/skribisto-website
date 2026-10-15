@@ -51,7 +51,7 @@ today = [
   "Une **corbeille** et la restauration, avec annulation.",
   "Un **historique des versions**, et une chronologie du projet.",
   "Des **sauvegardes** planifiées, qui s’ouvrent en lecture seule.",
-  "L’**import** depuis Plume Creator, Markdown, DOCX et ODT.",
+  "L’**import** depuis Scrivener, Manuskript, Plume Creator, Markdown, DOCX et ODT.",
   "L’**export** vers neuf formats, avec aperçu en direct.",
   "La **correction orthographique**, avec dictionnaires téléchargeables.",
   "Des thèmes **clair et sombre**, et une taille de texte réglable.",

@@ -12,7 +12,9 @@ Un **projet Skribisto 2**, l’ancien fichier `.skrib` en SQLite, est reconnu à
 
 Un **projet Plume Creator** arrive par *Œuvre ▸ Importer depuis ▸ Plume Creator*, quelle que soit la version du format de Plume, et est converti vers un `.skrib` à jour. Là non plus, rien n’est réécrit dans l’original.
 
-Vous pouvez aussi importer un livre qui n’a jamais vécu dans l’un ou l’autre : les fichiers Markdown, texte brut, DOCX et ODT entrent par *Œuvre ▸ Importer depuis ▸ Documents*, qui vous montre chaque élément qu’il compte créer, et ce qu’il a dû deviner, avant que rien ne soit écrit.
+Un **projet Scrivener** arrive par *Œuvre ▸ Importer depuis ▸ Scrivener*, qu’il vienne de Scrivener 3 ou 2 sur Mac, de Scrivener pour Windows, de la version bêta pour Linux ou d’une sauvegarde `.zip`. Vous voyez à quoi ressemblera votre classeur avant que rien ne soit créé, et un rapport vous dit ensuite quoi vérifier. Un **projet Manuskript**, sous l’une ou l’autre de ses deux formes, arrive de la même façon par *Œuvre ▸ Importer depuis ▸ Manuskript*. Aucun des deux originaux n’est modifié.
+
+Vous pouvez aussi importer un livre qui n’a jamais vécu dans aucun de ces logiciels : les fichiers Markdown, texte brut, DOCX et ODT entrent par *Œuvre ▸ Importer depuis ▸ Documents*, qui vous montre chaque élément qu’il compte créer, et ce qu’il a dû deviner, avant que rien ne soit écrit.
 
 <figure class="shot">
   <img src="/img/launcher.png" alt="Le lanceur, avec les projets récents et les exemples fournis." width="984" height="708" loading="lazy">

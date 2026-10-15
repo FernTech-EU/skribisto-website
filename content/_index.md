@@ -51,7 +51,7 @@ today = [
   "**Trash** and restore, with undo.",
   "**Version history**, and a timeline of the project.",
   "**Backups** on a schedule, each opening read-only.",
-  "**Import** from Plume Creator, Markdown, DOCX and ODT.",
+  "**Import** from Scrivener, Manuskript, Plume Creator, Markdown, DOCX and ODT.",
   "**Export** to nine formats, with a live preview.",
   "**Spell checking**, with dictionaries you download.",
   "**Light and dark** themes, and adjustable text size.",

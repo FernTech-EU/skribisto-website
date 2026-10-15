@@ -12,7 +12,9 @@ A **Skribisto 2 project**, the old SQLite `.skrib` file, is recognised when you 
 
 A **Plume Creator project** comes in through *Work ▸ Import from ▸ Plume Creator*, from any version of Plume's own format, and is converted to a current `.skrib`. Again, nothing is written back to the original.
 
-You can also import a book that never lived in either: Markdown, plain text, DOCX and ODT files come in through *Work ▸ Import from ▸ Documents*, which shows you every item it intends to create, and what it had to guess, before anything is written.
+A **Scrivener project** comes in through *Work ▸ Import from ▸ Scrivener*, whether it comes from Scrivener 3 or 2 on the Mac, Scrivener for Windows, the Linux beta or a backup `.zip`. You see how your binder will look before anything is created, and a report afterwards tells you what to check. A **Manuskript project**, in either of its two formats, comes in the same way through *Work ▸ Import from ▸ Manuskript*. Neither original is modified.
+
+You can also import a book that never lived in any of these: Markdown, plain text, DOCX and ODT files come in through *Work ▸ Import from ▸ Documents*, which shows you every item it intends to create, and what it had to guess, before anything is written.
 
 <figure class="shot">
   <img src="/img/launcher.png" alt="The launcher, listing recent projects and the bundled examples." width="984" height="708" loading="lazy">
