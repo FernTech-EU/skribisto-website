@@ -55,7 +55,7 @@ today = [
   "**Export** to nine formats, with a live preview.",
   "**Spell checking**, with dictionaries you download.",
   "**Light and dark** themes, and adjustable text size.",
-  "**English and French**, and a screen-reader accessibility tree.",
+  "**24 interface languages**, and a screen-reader accessibility tree.",
 ]
 
 promises_title = "Free software, and it stays that way"

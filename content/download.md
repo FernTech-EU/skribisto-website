@@ -18,7 +18,7 @@ On Ubuntu, Debian, Linux Mint and the other distributions built on them, take th
 
 Elsewhere, unpack the archive and run it, or take the Flatpak if that is what your distribution expects.
 
-One warning. If you search for Skribisto in your software centre you will find **1.9.41**, from 2022. That is a different program from a different era, no longer developed, and it is not this.
+One warning. If you search for Skribisto in your software centre you could find **1.9.41**, from 2022. That is a different program from a different era, no longer developed, and it is not this.
 
 ## Windows
 

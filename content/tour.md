@@ -96,5 +96,5 @@ None of that makes the application perfect. If you hit a barrier, [report it](ht
 
 <div class="callout">
   <h3>Not in the box</h3>
-  <p>There is no cloud sync, no collaborative editing, no account, and no plugin system; the last of these existed in Skribisto 2 and was not rebuilt. The interface is available in English and French only.</p>
+  <p>There is no cloud sync, no collaborative editing, no account, and no plugin system; the last of these existed in Skribisto 2 and was not rebuilt. The interface comes in 24 languages, but the longer help articles only in English, French, German, Italian, Spanish, Portuguese and Polish; the other languages show them in English.</p>
 </div>

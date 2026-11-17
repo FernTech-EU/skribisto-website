@@ -55,7 +55,7 @@ today = [
   "L’**export** vers neuf formats, avec aperçu en direct.",
   "La **correction orthographique**, avec dictionnaires téléchargeables.",
   "Des thèmes **clair et sombre**, et une taille de texte réglable.",
-  "L’**anglais et le français**, et un arbre d’accessibilité.",
+  "**24 langues** d’interface, et un arbre d’accessibilité.",
 ]
 
 promises_title = "Un logiciel libre, et qui le reste"

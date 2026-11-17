@@ -96,5 +96,5 @@ Rien de tout cela ne rend l’application parfaite. Si vous butez sur un obstacl
 
 <div class="callout">
   <h3>Ce qu’il n’y a pas</h3>
-  <p>Pas de synchronisation dans le nuage, pas d’édition collaborative, pas de compte, pas de système de greffons ; ce dernier existait dans Skribisto 2 et n’a pas été reconstruit. L’interface n’existe qu’en anglais et en français.</p>
+  <p>Pas de synchronisation dans le nuage, pas d’édition collaborative, pas de compte, pas de système de greffons ; ce dernier existait dans Skribisto 2 et n’a pas été reconstruit. L’interface existe en 24 langues, mais les articles d’aide les plus longs seulement en anglais, français, allemand, italien, espagnol, portugais et polonais ; les autres langues les affichent en anglais.</p>
 </div>

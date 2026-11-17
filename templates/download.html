@@ -17,6 +17,8 @@
     <span class="release-date">{{ trans(key="dl_published", lang=lang) }} {{ release.published_at }}</span>
   </div>
 
+  <p class="flathub">{{ trans(key="dl_flathub", lang=lang) }} <a class="btn btn-ghost" href="{{ config.extra.flathub }}">{{ trans(key="dl_flathub_link", lang=lang) }}</a></p>
+
   {% set assets = release.assets | default(value=[]) %}
   {% if assets | length > 0 %}
     <div class="dl-list">

@@ -17,7 +17,7 @@ Sur Ubuntu, Debian, Linux Mint et les distributions qui en dérivent, prenez le 
 
 Ailleurs, décompressez l’archive et lancez-la, ou prenez le Flatpak si c’est ce que votre distribution attend.
 
-Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous trouverez la **1.9.41**, datant de 2022. C’est un autre programme, d’une autre époque, qui n’est plus développé, et ce n’est pas celui-ci.
+Un avertissement. Si vous cherchez Skribisto dans votre logithèque, vous pourriez trouver la **1.9.41**, datant de 2022. C’est un autre programme, d’une autre époque, qui n’est plus développé, et ce n’est pas celui-ci.
 
 ## Windows
 

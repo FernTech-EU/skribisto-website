@@ -33,7 +33,7 @@ You can also import a book that never lived in any of these: Markdown, plain tex
 
 Being honest about a rewrite matters more than being enthusiastic about one.
 
-- **Languages.** Skribisto 2 shipped with over ten interface translations. Version 3 has English and French. The translation system is simpler than it was: plain text files, no toolchain. So this is the easiest thing in the project to help with, and the one I would most like help with. [How to translate](@/get-involved.md).
+- **Languages.** Skribisto 2 shipped with over ten interface translations. Version 3 has 24, but the longer help articles exist only in English, French, German, Italian, Spanish, Portuguese and Polish, and the other languages show them in English. The translation system is simpler than it was: plain text files, no toolchain. So this is the easiest thing in the project to help with, whether that is a help article, a missing language or a better wording, and the one I would most like help with. [How to translate](@/get-involved.md).
 - **Plugins.** The old plugin interfaces are gone, and what they provided is built in instead.
 - **Habits.** The interface is genuinely different. F1 inside the application is the fastest way through that, and the [Discord](https://discord.gg/5BSkvQmyVH) is where the awkward questions get answered.
 
