@@ -6,6 +6,39 @@
 # written ahead of its release can never render as if it had shipped.
 
 [[entries]]
+version = "3.5.1"
+date = "2026-11-26"
+type = "stable"
+released = true
+prerelease = false
+items = [
+  "Settings ▸ Editor ▸ Synopsis has a new choice, Text color. Dimmed writes synopses in the softer color they have always had, so they read as notes beside your text. Normal writes them in the same color as your text, which is easier to read for long. The corkboard keeps the normal color as before, on its cards and in a card you open",
+  "Epigraphs are now in the same color as your text. They were in the softer color of synopses, though an epigraph is part of the book. With Read as exported on, the synopses a style prints are in the text's color too, as the export shows them",
+  "In distraction-free mode, your text and the cursor are now in the text color of the theme you chose. They kept the color of the app's light or dark theme instead, so the theme's own color reached the strip at the bottom but not your words: under Midnight they were grey rather than white, and under Sepia black rather than brown. A synopsis set to Normal follows the theme's text color too",
+  "Emptying the trash no longer deletes a scene you can see. If you trashed a scene and then its chapter, undoing that or restoring the chapter brought the scene back too while it stayed in the trash, and Empty trash then deleted it. The scene now stays in the trash until you restore it, and restoring it while its chapter is still in the trash asks where to put it. The same goes for trashing a selection or a whole binder, and for restoring a chapter to another place. In a project saved by an earlier version, restoring such a scene now brings it back instead of leaving it hidden with no way to get it back",
+  "Save as folder now refuses a folder that already holds another project or other files, and says so. Hidden files, such as the .DS_Store a Mac leaves in every folder it shows, do not count. It used to write into that folder and delete the other project's binders, texts and history",
+  "A folder project whose comments, footnotes or tags file cannot be read now refuses to open and names the file. It used to open without them, and the next save deleted the file",
+  "A folder project kept in a git repository, or holding hidden files such as .DS_Store, no longer copies them into every save, backup and Save as. The whole .git folder used to be read at each autosave, and could be written back out of date",
+  "Files that a newer Skribisto or an extension keeps in a binder's folder now follow the binder when you rename or move it. They used to be deleted with the old folder",
+  "If Skribisto stops in the middle of saving a folder project, the project still opens. Renaming a scene, a note template or a picture, deleting a binder, or moving a scene to another binder, could leave a project that refused to open or had lost that scene",
+  "A file stored in a project's resources now survives when Skribisto repairs its identifier as the project opens, however many times you open the project before saving it. The project used to fail to open, and the file was deleted. Two stored files that were copies of one file are now really separate, so changing one no longer changes the other",
+  "Importing a Manuskript project folder, or an old Plume Creator project folder, no longer reads files that are links to somewhere else, or special files that could freeze the import. A link inside a project someone sent you could pull an unrelated file from your computer into your book. Each file left out is named in the import summary. This covers the project file you pick too: a link to it opens the project where the link leads",
+  "Importing a Manuskript scene that holds a long run of curly braces no longer stalls the import",
+  "Importing an OpenDocument (.odt) file whose list styles name an impossible list level now works. Such a file used to crash the app",
+  "With autosave on, your text now reaches the disk at least every 30 seconds while you type. Autosave used to wait for a pause of a second and a half, so a writer who never paused, in a sprint or in the Always forward game, could lose everything typed since the last pause in a crash",
+  "Opening a project from a terminal with a relative path while Skribisto is already running now opens the file you named. The running copy used to look for that path from its own folder, and could open another project or none",
+  "Skribisto no longer crashes at launch when it is handed a file name that is not valid Unicode. It now says it cannot open that name",
+  "With two copies of Skribisto running, a project open in one is no longer sometimes treated as closed by the other",
+  "Emptying the trash no longer deletes a row you can see. Indenting a row just below something in the trash could tuck it, out of sight, under the trashed item, and emptying the trash then deleted it with its text. Indent now places the row under the one you see above it",
+  "A save of a folder project that cannot read one of its files, for example while a sync app or an antivirus holds it, now stops with a message naming the file, which stays as it was. Saving used to carry on without it, and could delete that file",
+  "Temporary files left in a folder project by a save that was cut short are now cleaned up by a later save. They used to stay there for good",
+  "With two project windows open, opening another project in the second window now remembers the tabs that window had open. It saved the first window's tabs instead, and the second window's latest tab changes were lost",
+  "A window you close while it is maximized or full screen now gets its normal size back when you un-maximize it after relaunching Skribisto. It used to come back as large as the screen",
+  "A damaged settings file, for example after editing it by hand, is now set aside under a new name, and Skribisto starts with the default settings. It used to stop your settings from loading at every launch, and some damage silently stopped Skribisto from saving any setting, window size or recent project for the rest of the session",
+  "Opening a project made with a Skribisto older than version 3 now goes through SQLite 3.54.1. With the earlier SQLite, such a project sent to you along with a doctored companion file could fill parts of your book with stray bytes from Skribisto's memory",
+]
+
+[[entries]]
 version = "3.5.0"
 date = "2026-11-25"
 type = "stable"
