@@ -14,12 +14,12 @@ Contact : <cyril.jacquet@ferntech.eu> · Questions de marque : <trademarks@fer
 
 ## Hébergement
 
-Le site est un ensemble de fichiers statiques hébergés par **GitHub Pages** (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis). Il n’a ni base de données, ni code côté serveur, ni comptes d’utilisateurs. Voir la page [vie privée](@/privacy.md).
+Le site est un ensemble de fichiers statiques hébergés par **Cloudflare Pages**, un service de Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis, +1 650 319 8930. Il n’a ni base de données, ni code côté serveur, ni comptes d’utilisateurs. Voir la page [vie privée](@/privacy.md).
 
 ## Licences
 
 - **Skribisto** est un logiciel libre sous [licence GNU General Public License v3.0](https://github.com/jacquetc/skribisto/blob/dev/LICENSE).
-- **Les textes et images de ce site** sont © Cyril Jacquet, et sa source est publiée sous licence MIT.
+- **Les textes et images de ce site** sont © Cyril Jacquet, et [sa source](https://github.com/FernTech-EU/skribisto-website) est publiée sous licence MIT.
 - **Skribisto™** est une marque de FernTech. La GPL n’accorde aucun droit sur les marques ; voir [la note sur la marque](@/free-software.md).
 
 ## Signaler un problème sur ce site

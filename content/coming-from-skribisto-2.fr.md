@@ -2,6 +2,9 @@
 title = "Vous venez de Skribisto 2 ou de Plume Creator"
 description = "Vos anciens projets s’ouvrent. L’application autour d’eux n’a plus la même tête. Voici ce qui change."
 weight = 5
+
+[extra]
+toc = true
 +++
 
 Skribisto 3 n’est pas Skribisto 2 repeint : c’est une réécriture : nouveau langage, nouvelle interface, nouveau format de projet. Ce qui a été délibérément préservé, c’est votre travail.
@@ -16,26 +19,54 @@ Un **projet Scrivener** arrive par *Œuvre ▸ Importer depuis ▸ Scrivener*, q
 
 Vous pouvez aussi importer un livre qui n’a jamais vécu dans aucun de ces logiciels : les fichiers Markdown, texte brut, DOCX et ODT entrent par *Œuvre ▸ Importer depuis ▸ Documents*, qui vous montre chaque élément qu’il compte créer, et ce qu’il a dû deviner, avant que rien ne soit écrit.
 
-<figure class="shot">
-  <img src="/img/launcher.png" alt="Le lanceur, avec les projets récents et les exemples fournis." width="984" height="708" loading="lazy">
-</figure>
+{{<shot name="launcher" alt="Le lanceur, avec les projets récents et les exemples fournis." />}}
 
 ## Ce qui est franchement mieux
 
-- **Votre manuscrit est redevenu du texte brut.** Pas une base de données : des fichiers Djot et des manifestes lisibles, dans un zip ou dans un dossier que vous pouvez garder dans git.
-- **La structure est explicite.** Un élément est un chapitre ou une scène parce que vous l’avez dit, pas à cause de sa place dans l’arbre, et réorganiser l’arbre ne peut donc pas changer le livre.
-- **Le texte et le synopsis ne font qu’un**, partout : dans l’éditeur, dans le tableau de liège, et sous forme de flux que l’on lit d’un bout à l’autre.
-- **Commentaires, notes de bas de page, images, étiquettes, point de vue, mentions** : rien de tout cela n’existait dans la lignée 2.x.
-- **L’export est un véritable compilateur** : neuf formats, un aperçu en direct, et un aller-retour éditorial qui ramène un DOCX ou un ODT de chez votre relecteur avec ses commentaires intacts.
-- **Des sauvegardes réellement lisibles**, avec un historique des versions et une chronologie du projet construits à partir d’elles.
+<ul class="points">
+{% <point> %}
+**Votre manuscrit est redevenu du texte brut.**
+
+Pas une base de données : des fichiers Djot et des manifestes lisibles, dans un zip ou dans un dossier que vous pouvez garder dans git.
+{% </point> %}
+{% <point> %}
+**La structure est explicite.**
+
+Un élément est un chapitre ou une scène parce que vous l’avez dit, pas à cause de sa place dans l’arbre, et réorganiser l’arbre ne peut donc pas changer le livre.
+{% </point> %}
+{% <point> %}
+**Le texte et le synopsis ne font qu’un**, partout : dans l’éditeur, dans le tableau de liège, et sous forme de flux que l’on lit d’un bout à l’autre.
+{% </point> %}
+{% <point> %}
+**Commentaires, notes de bas de page, images, étiquettes, point de vue, mentions** : rien de tout cela n’existait dans la lignée 2.x.
+{% </point> %}
+{% <point> %}
+**L’export est un véritable compilateur** : neuf formats, un aperçu en direct, et un aller-retour éditorial qui ramène un DOCX ou un ODT de chez votre relecteur avec ses commentaires intacts.
+{% </point> %}
+{% <point> %}
+**Des sauvegardes réellement lisibles**, avec un historique des versions et une chronologie du projet construits à partir d’elles.
+{% </point> %}
+</ul>
 
 ## Ce qui n’y est pas
 
 Être honnête sur une réécriture importe davantage que d’en être enthousiaste.
 
-- **Les langues.** Skribisto 2 était traduit dans plus de dix langues. La version 3 en a 24, mais les articles d’aide les plus longs n’existent qu’en anglais, français, allemand, italien, espagnol, portugais et polonais, et les autres langues les affichent en anglais. Le système de traduction est plus simple qu’avant : de simples fichiers texte, aucune chaîne d’outils. C’est donc la contribution la plus facile du projet, qu’il s’agisse d’un article d’aide, d’une langue manquante ou d’une meilleure formulation, et celle dont j’ai le plus besoin. [Comment traduire](@/get-involved.md).
-- **Les greffons.** Les anciennes interfaces de greffons ont disparu ; ce qu’elles apportaient est désormais intégré.
-- **Les habitudes.** L’interface est vraiment différente. F1, dans l’application, est le chemin le plus court, et le [Discord](https://discord.gg/5BSkvQmyVH) est l’endroit où l’on répond aux questions embarrassantes.
+<ul class="points">
+{% <point> %}
+**Les langues.** Skribisto 2 était traduit dans plus de dix langues. La version 3 en a 24, mais les articles d’aide les plus longs n’existent qu’en anglais, français, allemand, italien, espagnol, portugais et polonais, et les autres langues les affichent en anglais.
+
+Le système de traduction est plus simple qu’avant : de simples fichiers texte, aucune chaîne d’outils. C’est donc la contribution la plus facile du projet, qu’il s’agisse d’un article d’aide, d’une langue manquante ou d’une meilleure formulation, et celle dont j’ai le plus besoin. [Comment traduire](@/get-involved.md).
+{% </point> %}
+{% <point> %}
+**Les greffons.** Les anciennes interfaces de greffons ont disparu ; ce qu’elles apportaient est désormais intégré.
+{% </point> %}
+{% <point> %}
+**Les habitudes.** L’interface est vraiment différente.
+
+F1, dans l’application, est le chemin le plus court, et le [Discord](https://discord.gg/5BSkvQmyVH) est l’endroit où l’on répond aux questions embarrassantes.
+{% </point> %}
+</ul>
 
 ## S’il manque quelque chose dont vous dépendiez
 

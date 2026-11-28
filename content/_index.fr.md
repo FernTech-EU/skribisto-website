@@ -73,8 +73,8 @@ coming_body = "Un projet Skribisto 2 est mis à niveau au moment de son ouvertur
 coming_link = "Ce qui change, et à quoi s’attendre"
 +++
 
-### Sous le capot
-
+{% <more label="Sous le capot"> %}
 Skribisto 3 est écrit en Rust, de bout en bout. L’interface repose sur **Teksilo**, une bibliothèque graphique entièrement en Rust : il n’y a ni Qt, ni QML, ni C++, ni moteur de navigateur dans la compilation. C’est une application de bureau native, et elle démarre comme telle. Le cœur applicatif est engendré à partir d’un seul fichier de modèle par [Qleany](https://github.com/jacquetc/qleany), ce qui explique que toutes les opérations partagent une même pile d’annulation et un même bus d’événements.
 
 L’application expose aussi un véritable arbre d’accessibilité, qu’un lecteur d’écran peut piloter ; NVDA et JAWS sont ceux utilisés pour les tests. Si vous rencontrez une lacune de ce côté, [dites-le](https://github.com/jacquetc/skribisto/issues) : c’est un bogue comme un autre.
+{% </more> %}

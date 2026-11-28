@@ -73,8 +73,8 @@ coming_body = "A Skribisto 2 project is upgraded as it loads: open it and keep w
 coming_link = "What changed, and what to expect"
 +++
 
-### Under the hood
-
+{% <more label="Under the hood"> %}
 Skribisto 3 is written in Rust, end to end. The interface is built on **Teksilo**, a pure-Rust GUI toolkit, so there is no Qt, no QML, no C++ and no browser engine in the build. It is a native desktop application that starts like one. The backend is generated from a single model file by [Qleany](https://github.com/jacquetc/qleany), which is why every operation in the application shares one undo stack and one event bus.
 
 It also exposes a real accessibility tree, so a screen reader can drive it; NVDA and JAWS are the two used for testing. If you hit a gap there, [say so](https://github.com/jacquetc/skribisto/issues): that is a bug like any other.
+{% </more> %}

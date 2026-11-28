@@ -3,12 +3,34 @@
 {% extends "base.html" %}
 {% block title %}Skribisto · {{ section.extra.tagline }}{% endblock %}
 {% block og_title %}Skribisto · {{ section.extra.tagline }}{% endblock %}
+{% block head_extra %}
+{%- set release = load_data(path="data/release.toml") %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Skribisto",
+    "description": {{ config.description | json_encode | safe }},
+    "url": {{ section.permalink | json_encode | safe }},
+    "downloadUrl": {{ get_url(path="@/download.md", lang=lang) | json_encode | safe }},
+    "softwareVersion": {{ release.version | json_encode | safe }},
+    "operatingSystem": "Linux, Windows, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "image": {{ get_url(path="img/og-cover.png", trailing_slash=false) | json_encode | safe }},
+    "author": { "@type": "Person", "name": {{ config.author | json_encode | safe }} },
+    "publisher": { "@type": "Organization", "name": "FernTech" }
+  }
+  </script>
+{%- endblock %}
 {% block content %}
 {%- set release = load_data(path="data/release.toml") -%}
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="wrap">
+    <div class="hero-copy">
       <h1>{{ section.extra.hero_title }}</h1>
       <p class="hero-lede">{{ section.extra.hero_lede }}</p>
       {%- set has_assets = (release.assets | default(value=[]) | length) > 0 -%}
@@ -19,10 +41,7 @@
       <p class="cta-note">{{ section.extra.cta_note }} <span class="muted">{{ release.version }}</span></p>
       <p class="name-note">{{ section.extra.name_note }}</p>
     </div>
-    <figure class="shot">
-      <img src="{{<url.href base={config.base_url} path="img/binder-and-editor.png" lang={config.default_language} trailing_slash={false} />}}"
-           alt="{{ section.extra.hero_shot_alt }}" width="1509" height="922" loading="eager">
-    </figure>
+    {{<shot name="binder-and-editor" dark="binder-and-editor-dark" alt={section.extra.hero_shot_alt} eager={true} />}}
   </div>
 </section>
 
@@ -62,17 +81,14 @@
       </ul>
       <p class="cta-note"><a href="{{<url.href base={config.base_url} path="@/free-software.md" lang={lang} />}}">{{ section.extra.promises_link }} →</a></p>
     </div>
-    <figure class="shot">
-      <img src="{{<url.href base={config.base_url} path="img/export-preview.png" lang={config.default_language} trailing_slash={false} />}}"
-           alt="{{ section.extra.export_shot_alt }}" width="1509" height="922" loading="lazy">
-    </figure>
+    {{<shot name="export-preview" alt={section.extra.export_shot_alt} />}}
   </div>
 </section>
 
 <section class="band band-tint">
   <div class="wrap">
     <div class="callout">
-      <h3>{{ section.extra.coming_title }}</h3>
+      <h2 class="h3">{{ section.extra.coming_title }}</h2>
       <p>{{ section.extra.coming_body }}</p>
       <p><a href="{{<url.href base={config.base_url} path="@/coming-from-skribisto-2.md" lang={lang} />}}">{{ section.extra.coming_link }} →</a></p>
     </div>

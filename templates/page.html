@@ -9,6 +9,12 @@
 <article class="wrap prose">
   <h1>{{ page.title }}</h1>
   {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+  {#- `toc = true` in a page's [extra] puts its sections in a row of links at the top. #}
+  {% if page.extra.toc | default(value=false) and page.toc | length > 2 %}
+  <nav class="chips" aria-label="{{ trans(key='toc_title', lang=lang) }}">
+    <ul>{% for h in page.toc %}<li><a href="#{{ h.id }}">{{ h.title }}</a></li>{% endfor %}</ul>
+  </nav>
+  {% endif %}
   {{ page.content | safe }}
 </article>
 {% endblock %}

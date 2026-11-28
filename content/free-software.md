@@ -2,6 +2,9 @@
 title = "Free software, and it stays that way"
 description = "Skribisto is GPLv3. Here is exactly what that guarantees you, and what it does not."
 weight = 4
+
+[extra]
+toc = true
 +++
 
 Skribisto is free software under the [GNU General Public License v3.0](https://github.com/jacquetc/skribisto/blob/dev/LICENSE). You can use it for anything, read all of it, change it, and pass it on.
@@ -29,7 +32,7 @@ Point a text editor at it. Point `git` at the folder form and get real diffs of 
 
 ## No account, no telemetry
 
-Skribisto has no account system, sends no usage data, and needs no network connection to do its work. It reaches the network for exactly one thing, when you ask it to: downloading a spelling dictionary.
+Skribisto has no account system, sends no usage data, and needs no network connection to do its work. It reaches the network for two things only: once a day at most, to check whether a newer version exists, which you can turn off; and, when you ask it to, to download a spelling dictionary. [What each of them sends](@/privacy.md).
 
 ## Contributing, and the CLA
 
@@ -37,4 +40,9 @@ Contributions are welcome, and are accepted under a [Contributor License Agreeme
 
 ## Trademark
 
-Skribisto™ is a trademark of FernTech, and the GPL grants no trademark rights. Fork the code freely, which is what the licence is for, but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.
+Skribisto™ is a trademark of FernTech, and the GPL grants no trademark rights.
+
+{% <more label="Forks, and what needs permission"> %}
+Fork the code freely, which is what the licence is for, but a fork distributed to others needs its own name and its own branding, the way Iceweasel did with Firefox. Saying "built on Skribisto", or writing about it, needs no permission at all. Anything else: <trademarks@ferntech.eu>.
+
+{% </more> %}

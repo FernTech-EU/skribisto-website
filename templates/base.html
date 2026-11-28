@@ -2,14 +2,23 @@
 {# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
 {%- set release = load_data(path="data/release.toml") -%}
 {%- set other_lang = "fr" if lang == "en" else "en" -%}
-{%- set_global alt_url = get_url(path="/", lang=other_lang) | replace(from=config.base_url, to="") -%}
-{%- if alt_url == "" -%}{%- set_global alt_url = "/" -%}{%- endif -%}
+{#- This page's address and its translation's, absolute. The 404 page has
+    neither, so it gets no canonical and no hreflang. -#}
+{%- set_global self_abs = "" -%}
+{%- set_global alt_abs = "" -%}
 {%- if page is defined -%}
-  {%- for t in page.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink | replace(from=config.base_url, to="") -%}{%- endif -%}{%- endfor -%}
+  {%- set_global self_abs = page.permalink -%}
+  {%- for t in page.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_abs = t.permalink -%}{%- endif -%}{%- endfor -%}
 {%- elif section is defined -%}
-  {%- for t in section.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_url = t.permalink | replace(from=config.base_url, to="") -%}{%- endif -%}{%- endfor -%}
+  {%- set_global self_abs = section.permalink -%}
+  {%- for t in section.translations -%}{%- if t.lang == other_lang -%}{%- set_global alt_abs = t.permalink -%}{%- endif -%}{%- endfor -%}
 {%- endif -%}
+{%- set_global alt_url = alt_abs | replace(from=config.base_url, to="") -%}
+{%- if alt_url == "" -%}{%- set_global alt_url = get_url(path="/", lang=other_lang) | replace(from=config.base_url, to="") -%}{%- endif -%}
 {%- if alt_url == "" -%}{%- set_global alt_url = "/" -%}{%- endif -%}
+{%- set here = current_path | default(value="") -%}
+{%- set home = get_url(path="/", lang=lang) | replace(from=config.base_url, to="") -%}
+{%- set home = "/" if home == "" else home -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -17,35 +26,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="{{<url.href base={config.base_url} path="main.css" lang={config.default_language} trailing_slash={false} />}}">
-  <link rel="icon" href="{{<url.href base={config.base_url} path="img/favicon.png" lang={config.default_language} trailing_slash={false} />}}" type="image/png">
-  <link rel="alternate" hreflang="{{ other_lang }}" href="{{ alt_url | safe }}">
-  <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{<url.href base={config.base_url} path="atom.xml" lang={lang} trailing_slash={false} />}}">
+  <link rel="icon" href="{{<url.href base={config.base_url} path="img/favicon.png" lang={config.default_language} trailing_slash={false} />}}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  {%- if self_abs %}
+  <link rel="canonical" href="{{ self_abs | safe }}">
+  {%- if alt_abs %}
+  {%- set en_abs = self_abs if lang == "en" else alt_abs %}
+  {%- set fr_abs = alt_abs if lang == "en" else self_abs %}
+  <link rel="alternate" hreflang="en" href="{{ en_abs | safe }}">
+  <link rel="alternate" hreflang="fr" href="{{ fr_abs | safe }}">
+  <link rel="alternate" hreflang="x-default" href="{{ en_abs | safe }}">
+  {%- endif %}
+  {%- endif %}
+  {#- One feed, in English, because the release notes it carries are written in English. #}
+  <link rel="alternate" type="application/atom+xml" title="{{ trans(key='feed_title', lang=lang) }}" href="/atom.xml">
   <meta property="og:site_name" content="Skribisto">
   <meta property="og:type" content="website">
+  {%- if self_abs %}
+  <meta property="og:url" content="{{ self_abs | safe }}">
+  {%- endif %}
   <meta property="og:locale" content="{{ 'en_GB' if lang == 'en' else 'fr_FR' }}">
+  <meta property="og:locale:alternate" content="{{ 'fr_FR' if lang == 'en' else 'en_GB' }}">
   <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock %}">
   <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
   <meta property="og:image" content="{{ get_url(path='img/og-cover.png', lang=config.default_language, trailing_slash=false) | safe }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ trans(key='og_image_alt', lang=lang) }}">
   <meta name="twitter:card" content="summary_large_image">
+  {%- block head_extra %}{% endblock %}
 </head>
 <body>
   <a class="skip" href="#content">{{ trans(key="skip_to_content", lang=lang) }}</a>
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="wordmark" href="{{<url.href base={config.base_url} path="/" lang={lang} />}}">
+      <a class="wordmark" href="{{<url.href base={config.base_url} path="/" lang={lang} />}}"{% if here == home %} aria-current="page"{% endif %}>
         <img src="{{<url.href base={config.base_url} path="img/skribisto.png" lang={config.default_language} trailing_slash={false} />}}" alt="" width="32" height="32">
         <span>Skribisto</span>
       </a>
-      <nav class="site-nav" aria-label="{{ config.title }}">
-        <a href="{{<url.href base={config.base_url} path="@/tour.md" lang={lang} />}}">{{ trans(key="nav_tour", lang=lang) }}</a>
-        <a href="{{<url.href base={config.base_url} path="@/download.md" lang={lang} />}}">{{ trans(key="nav_download", lang=lang) }}</a>
-        <a href="{{<url.href base={config.base_url} path="@/news.md" lang={lang} />}}">{{ trans(key="nav_news", lang=lang) }}</a>
-        <a href="{{<url.href base={config.base_url} path="@/free-software.md" lang={lang} />}}">{{ trans(key="nav_free", lang=lang) }}</a>
-        <a href="{{<url.href base={config.base_url} path="@/help.md" lang={lang} />}}">{{ trans(key="nav_help", lang=lang) }}</a>
-        <a class="lang-switch" href="{{ alt_url | safe }}" lang="{{ other_lang }}" aria-label="{{ trans(key='lang_switch_label', lang=lang) }}">{{ trans(key="lang_switch", lang=lang) }}</a>
+      <nav class="site-nav" aria-label="{{ trans(key='nav_main', lang=lang) }}">
+        {%- for item in [["@/tour.md", "nav_tour"], ["@/download.md", "nav_download"], ["@/news.md", "nav_news"], ["@/free-software.md", "nav_free"], ["@/help.md", "nav_help"]] %}
+        {%- set href = get_url(path=item[0], lang=lang) | replace(from=config.base_url, to="") %}
+        <a href="{{ href }}"{% if href == here %} aria-current="page"{% endif %}>{{ trans(key=item[1], lang=lang) }}</a>
+        {%- endfor %}
       </nav>
+      <a class="lang-switch" href="{{ alt_url | safe }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}">{{ trans(key="lang_switch", lang=lang) }}</a>
     </div>
   </header>
 
@@ -79,7 +110,8 @@
       <nav aria-label="{{ trans(key='footer_legal', lang=lang) }}">
         <a href="{{<url.href base={config.base_url} path="@/legal.md" lang={lang} />}}">{{ trans(key="footer_legal", lang=lang) }}</a>
         <a href="{{<url.href base={config.base_url} path="@/privacy.md" lang={lang} />}}">{{ trans(key="footer_privacy", lang=lang) }}</a>
-        <a href="{{<url.href base={config.base_url} path="atom.xml" lang={lang} trailing_slash={false} />}}">Atom</a>
+        <a href="/atom.xml" type="application/atom+xml">{{ trans(key="footer_feed", lang=lang) }}</a>
+        <a href="{{ config.extra.site_source }}">{{ trans(key="footer_site_source", lang=lang) }}</a>
       </nav>
     </div>
   </footer>

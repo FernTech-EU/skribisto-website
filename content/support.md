@@ -2,7 +2,6 @@
 title = "Support the work"
 description = "There is no way to donate at the moment, and this page will say so until there is."
 weight = 7
-aliases = ["/index.php/donate/"]
 +++
 
 ## There is nothing to give money to yet

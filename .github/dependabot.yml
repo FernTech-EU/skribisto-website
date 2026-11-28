@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Cyril Jacquet
+#
+# The workflows pin every action to a commit, so that a moved tag cannot change
+# what runs with the Cloudflare token. Dependabot keeps those pins current: one
+# grouped pull request a month.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

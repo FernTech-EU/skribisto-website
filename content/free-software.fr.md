@@ -2,6 +2,9 @@
 title = "Un logiciel libre, et qui le reste"
 description = "Skribisto est en GPLv3. Voici exactement ce que cela vous garantit, et ce que cela ne garantit pas."
 weight = 4
+
+[extra]
+toc = true
 +++
 
 Skribisto est un logiciel libre sous [licence GNU General Public License v3.0](https://github.com/jacquetc/skribisto/blob/dev/LICENSE). Vous pouvez l’utiliser pour n’importe quoi, en lire tout le code, le modifier et le transmettre.
@@ -29,7 +32,7 @@ Ouvrez-le avec un éditeur de texte. Pointez `git` sur sa forme dépliée et obt
 
 ## Pas de compte, pas de télémétrie
 
-Skribisto n’a pas de système de comptes, n’envoie aucune donnée d’usage et n’a besoin d’aucune connexion réseau pour travailler. Il ne contacte le réseau que pour une seule chose, et seulement si vous le demandez : télécharger un dictionnaire orthographique.
+Skribisto n’a pas de système de comptes, n’envoie aucune donnée d’usage et n’a besoin d’aucune connexion réseau pour travailler. Il ne contacte le réseau que pour deux choses : une fois par jour au plus, pour vérifier s’il existe une version plus récente, ce que vous pouvez désactiver ; et, si vous le demandez, pour télécharger un dictionnaire orthographique. [Ce que chacune envoie](@/privacy.md).
 
 ## Contribuer, et le CLA
 
@@ -37,4 +40,9 @@ Les contributions sont bienvenues et acceptées sous un [accord de licence de co
 
 ## Marque
 
-Skribisto™ est une marque de FernTech, et la GPL n’accorde aucun droit sur les marques. Dupliquez le code librement, c’est à cela que sert la licence, mais une version dérivée distribuée à d’autres doit porter son propre nom et sa propre identité, comme Iceweasel l’a fait vis-à-vis de Firefox. Dire « bâti sur Skribisto », ou écrire à son sujet, ne demande aucune autorisation. Pour le reste : <trademarks@ferntech.eu>.
+Skribisto™ est une marque de FernTech, et la GPL n’accorde aucun droit sur les marques.
+
+{% <more label="Les versions dérivées, et ce qui demande une autorisation"> %}
+Dupliquez le code librement, c’est à cela que sert la licence, mais une version dérivée distribuée à d’autres doit porter son propre nom et sa propre identité, comme Iceweasel l’a fait vis-à-vis de Firefox. Dire « bâti sur Skribisto », ou écrire à son sujet, ne demande aucune autorisation. Pour le reste : <trademarks@ferntech.eu>.
+
+{% </more> %}

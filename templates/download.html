@@ -7,6 +7,7 @@
 {% block og_description %}{{ page.description }}{% endblock %}
 {% block content %}
 {%- set release = load_data(path="data/release.toml") -%}
+{%- set assets = release.assets | default(value=[]) -%}
 <article class="wrap prose">
   <h1>{{ page.title }}</h1>
   <p class="lede">{{ page.description }}</p>
@@ -14,32 +15,55 @@
   <div class="release-head">
     <span class="release-version">{{ release.version }}</span>
     {% if release.prerelease %}<span class="badge">{{ trans(key="stage_badge_" ~ release.stage, lang=lang) }}</span>{% endif %}
-    <span class="release-date">{{ trans(key="dl_published", lang=lang) }} {{ release.published_at }}</span>
+    <span class="release-date">{{ trans(key="dl_published", lang=lang) }} <time datetime="{{ release.published_at }}">{{ release.published_at }}</time></span>
   </div>
 
-  <p class="flathub">{{ trans(key="dl_flathub", lang=lang) }} <a class="btn btn-ghost" href="{{ config.extra.flathub }}">{{ trans(key="dl_flathub_link", lang=lang) }}</a></p>
-
-  {% set assets = release.assets | default(value=[]) %}
   {% if assets | length > 0 %}
-    <div class="dl-list">
-      {% for asset in assets %}
-      <div class="dl-item">
-        <div>
-          <div>{{ asset.label }}</div>
-          <div class="dl-name">{{ asset.name }}</div>
-          <div class="dl-meta">{{ trans(key="dl_size", lang=lang) }} {% if lang == "fr" %}{{ asset.size_mb | replace(from=".", to=",") }}{% else %}{{ asset.size_mb }}{% endif %} {{ trans(key="dl_size_unit", lang=lang) }}</div>
-          {% if asset.sha256 %}<div class="sha">{{ trans(key="dl_sha", lang=lang) }} {{ asset.sha256 }}</div>{% endif %}
-        </div>
-        <a class="btn btn-primary" href="{{ asset.url }}">{{ trans(key="nav_download", lang=lang) }}</a>
-      </div>
-      {% endfor %}
-    </div>
+    {#- The platforms come from the page's front matter, in its order; one whose
+        release has no file attached is left out rather than shown empty. -#}
+    <nav class="chips" aria-label="{{ trans(key='dl_platforms', lang=lang) }}">
+      <ul>
+      {%- for p in page.extra.platforms %}
+        {%- set_global n = 0 %}{% for a in assets %}{% if a.platform == p.key %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
+        {%- if n > 0 %}<li><a href="#{{ p.key }}">{{ p.name }}</a></li>{% endif %}
+      {%- endfor %}
+      </ul>
+    </nav>
+
+    {% for p in page.extra.platforms %}
+    {%- set_global n = 0 %}{% for a in assets %}{% if a.platform == p.key %}{% set_global n = n + 1 %}{% endif %}{% endfor %}
+    {%- if n > 0 %}
+    <section class="platform" id="{{ p.key }}" aria-labelledby="{{ p.key }}-title">
+      <h2 id="{{ p.key }}-title">{{ p.name }}</h2>
+      {% if p.key == "linux" %}
+      <p class="flathub">{{ trans(key="dl_flathub", lang=lang) }} <a class="btn btn-ghost" href="{{ config.extra.flathub }}">{{ trans(key="dl_flathub_link", lang=lang) }}</a></p>
+      {% endif %}
+      <ul class="dl-list">
+        {% for asset in assets %}{% if asset.platform == p.key %}
+        <li class="dl-item">
+          <div class="dl-info">
+            <div class="dl-label">{{ asset.label }}</div>
+            <div class="dl-meta"><span class="dl-name">{{ asset.name }}</span> · {% if lang == "fr" %}{{ asset.size_mb | replace(from=".", to=",") }}{% else %}{{ asset.size_mb }}{% endif %}&nbsp;{{ trans(key="dl_size_unit", lang=lang) }}</div>
+            {% if asset.sha256 %}<details class="sha"><summary>{{ trans(key="dl_sha", lang=lang) }}</summary><code>{{ asset.sha256 }}</code></details>{% endif %}
+          </div>
+          <a class="btn btn-primary" href="{{ asset.url }}">{{ trans(key="dl_button", lang=lang) }}<span class="visually-hidden"> {{ asset.label }}</span></a>
+        </li>
+        {% endif %}{% endfor %}
+      </ul>
+      {{ p.notes | default(value="") | markdown | safe }}
+      {%- if p.more_label | default(value="") %}
+      <details class="more"><summary>{{ p.more_label }}</summary><div class="more-body">{{ p.more | markdown | safe }}</div></details>
+      {%- endif %}
+    </section>
+    {%- endif %}
+    {% endfor %}
+
     {% if release.checksums_url %}
       <p class="small muted"><a href="{{ release.checksums_url }}">{{ trans(key="dl_checksums", lang=lang) }} (SHA256SUMS.txt)</a></p>
     {% endif %}
   {% else %}
     <div class="callout">
-      <h3>{{ trans(key="dl_no_assets_title", lang=lang) }}</h3>
+      <h2 class="h3">{{ trans(key="dl_no_assets_title", lang=lang) }}</h2>
       <p>{{ trans(key="dl_no_assets_body", lang=lang) }}</p>
       <p class="small muted"><a href="{{ release.url }}">{{ release.tag }}</a> · <a href="{{ config.extra.github }}/releases">{{ config.extra.github }}/releases</a></p>
     </div>
@@ -47,6 +71,6 @@
 
   {{ page.content | safe }}
 
-  <p class="small muted">{{ trans(key="updated_on", lang=lang) }} {{ release.generated_at }}.</p>
+  <p class="small muted">{{ trans(key="updated_on", lang=lang) }} <time datetime="{{ release.generated_at }}">{{ release.generated_at }}</time>.</p>
 </article>
 {% endblock %}

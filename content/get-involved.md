@@ -2,7 +2,9 @@
 title = "Get involved"
 description = "Translation, documentation, code, and telling me what is broken."
 weight = 8
-aliases = ["/index.php/contribute/"]
+
+[extra]
+toc = true
 +++
 
 ## Translate it
@@ -17,6 +19,7 @@ crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates,story_bible}.ftl
 
 Copy the `en-US` folder to your language code and translate the text to the right of each `=`. Anything you have not got to yet falls back to English while you work, so a half-finished language is genuinely useful, and can be finished later or by somebody else.
 
+{% <more label="See your translation live as you save"> %}
 **You can watch your work appear as you save it.** A build you have compiled yourself will watch your folder and reload the language every time you write a file, so Skribisto stays open beside your text editor:
 
 ```
@@ -24,10 +27,13 @@ cargo run -p teksilo_ui -- --translation-dev fr-FR=crates/teksilo_ui/locales/fr-
 ```
 
 Point it at the folder, never at a single file inside it. A language is those five files taken together, and reloading one of them alone would empty the other four, which looks exactly like your translation being deleted. The flag refuses a file rather than let you find that out the hard way, and it is for development builds only.
+{% </more> %}
 
+{% <more label="Help pages, and a brand-new language"> %}
 The longer help pages are separate: ten pages per language, written in plain Djot rather than Fluent, under `crates/teksilo_ui/help/`.
 
 A brand-new language also has to be declared in three places in the source before its strings are built into the application. That is three short edits, spelled out in the [README](https://github.com/jacquetc/skribisto/blob/dev/README.md#translation), and no build system to learn.
+{% </more> %}
 
 ## Write help
 

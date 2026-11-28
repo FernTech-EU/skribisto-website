@@ -2,6 +2,9 @@
 title = "Participer"
 description = "Traduction, documentation, code, et me dire ce qui ne marche pas."
 weight = 8
+
+[extra]
+toc = true
 +++
 
 ## Traduire
@@ -16,6 +19,7 @@ crates/teksilo_ui/locales/fr-FR/{main,tooltips,tags,templates,story_bible}.ftl
 
 Copiez le dossier `en-US` sous le code de votre langue et traduisez le texte à droite de chaque `=`. Ce que vous n’avez pas encore fait retombe sur l’anglais pendant votre travail : une langue à moitié faite est donc réellement utile, et peut être terminée plus tard, ou par quelqu’un d’autre.
 
+{% <more label="Voir votre traduction en direct à chaque enregistrement"> %}
 **Vous pouvez voir votre travail apparaître au fil des enregistrements.** Une version que vous avez compilée vous-même surveille votre dossier et recharge la langue à chaque fichier écrit : Skribisto reste ouvert à côté de votre éditeur de texte.
 
 ```
@@ -23,10 +27,13 @@ cargo run -p teksilo_ui -- --translation-dev fr-FR=crates/teksilo_ui/locales/fr-
 ```
 
 Indiquez le dossier, jamais un seul fichier à l’intérieur. Une langue, ce sont ces cinq fichiers pris ensemble, et n’en recharger qu’un viderait les quatre autres, ce qui ressemble exactement à une traduction effacée. L’option refuse un fichier plutôt que de vous le laisser découvrir, et elle n’existe que dans les versions de développement.
+{% </more> %}
 
+{% <more label="Les pages d’aide, et une langue entièrement nouvelle"> %}
 Les pages d’aide, plus longues, sont à part : dix pages par langue, écrites en Djot et non en Fluent, sous `crates/teksilo_ui/help/`.
 
 Une langue entièrement nouvelle doit en outre être déclarée à trois endroits du code avant que ses textes ne soient intégrés à l’application. Ce sont trois courtes modifications, détaillées dans le [README](https://github.com/jacquetc/skribisto/blob/dev/README.md#translation), et aucun système de compilation à apprendre.
+{% </more> %}
 
 ## Écrire l’aide
 

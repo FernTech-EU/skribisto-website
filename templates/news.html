@@ -12,27 +12,38 @@
   <p class="lede">{{ page.description }}</p>
   {{ page.content | safe }}
 
+  {#- Anything not released yet, and the newest release, are shown in full.
+      Every earlier 3.x release folds down to its title and a count of its
+      changes, and opens on a click. Each has an id, which the feed links to. -#}
+  {%- set_global open_done = false %}
   {% for entry in news.entries %}
     {% set major = entry.version | split(pat=".") | first %}
     {% if major == "3" %}
-      <section class="release-entry">
+      {%- set n = entry.items | length %}
+      <section class="release-entry" id="v{{ entry.version | slugify }}">
         <h2 class="release-title">
           {{ trans(key="news_version", lang=lang) }} {{ entry.version }}
           {% if not entry.released %}<span class="badge">{{ trans(key="news_unreleased", lang=lang) }}</span>
           {% elif entry.prerelease %}<span class="badge quiet">{{ trans(key="news_prerelease", lang=lang) }}</span>{% endif %}
         </h2>
-        <p class="release-date">{{ entry.date }}</p>
+        <p class="release-date"><time datetime="{{ entry.date }}">{{ entry.date }}</time></p>
+        {%- if not entry.released or not open_done %}
         <ul>{% for item in entry.items %}<li>{{ item }}</li>{% endfor %}</ul>
+        {%- else %}
+        <details class="more"><summary>{{ n }} {{ trans(key="news_change" if n == 1 else "news_changes", lang=lang) }}</summary><div class="more-body"><ul>{% for item in entry.items %}<li>{{ item }}</li>{% endfor %}</ul></div></details>
+        {%- endif %}
+        {%- if entry.released %}{% set_global open_done = true %}{% endif %}
       </section>
     {% endif %}
   {% endfor %}
 
-  <details class="older-toggle">
+  <details class="more older-toggle">
     <summary>{{ page.extra.older_summary }}</summary>
+    <div class="more-body">
     {% for entry in news.entries %}
       {% set major = entry.version | split(pat=".") | first %}
       {% if major != "3" %}
-        <section class="release-entry">
+        <section class="release-entry" id="v{{ entry.version | slugify }}">
           <h3 class="release-title">{{ trans(key="news_version", lang=lang) }} {{ entry.version }}
             <span class="release-date">{{ entry.date }}</span>
           </h3>
@@ -40,6 +51,7 @@
         </section>
       {% endif %}
     {% endfor %}
+    </div>
   </details>
 </article>
 {% endblock %}

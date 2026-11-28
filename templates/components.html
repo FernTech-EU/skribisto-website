@@ -1,0 +1,59 @@
+{# SPDX-License-Identifier: MIT #}
+{# SPDX-FileCopyrightText: 2026 Cyril Jacquet #}
+
+{# Components are global: call them from a template or from Markdown content.
+   Zola expands them before the Markdown pass, so what they print follows the
+   CommonMark rules for HTML blocks: a blank line ends a block, and Markdown
+   resumes after it. That is why `point` and `more` leave blank lines around the
+   body they are given, and why `shot` prints everything on one line. #}
+
+{# A screenshot. The source is a PNG in assets/screenshots/, which is never
+   deployed; Zola writes it out as a lossless WebP under a content-hashed name in
+   /processed_images/, about a quarter of the PNG's weight. There is one size
+   only: a screenshot is flat colour and sharp text, and scaling it down blurs
+   both, which makes a lossless 800 px copy larger than the full-size one.
+   `dark` names a second screenshot shown when the reader's system is in dark
+   mode. `eager` is for the one image that is the largest thing on first paint. #}
+{% component shot(name: string, alt: string, dark: string = "", eager: bool = false) -%}
+{%- set src = "assets/screenshots/" ~ name ~ ".png" -%}
+{%- set meta = get_image_metadata(path=src) -%}
+{%- set img = resize_image(path=src, width=meta.width, height=meta.height, op="scale", format="webp") -%}
+<figure class="shot">
+{%- if dark -%}
+{%- set dsrc = "assets/screenshots/" ~ dark ~ ".png" -%}
+{%- set dmeta = get_image_metadata(path=dsrc) -%}
+{%- set dimg = resize_image(path=dsrc, width=dmeta.width, height=dmeta.height, op="scale", format="webp") -%}
+<picture><source media="(prefers-color-scheme: dark)" srcset="/processed_images/{{ dimg.url | split(pat='/processed_images/') | last }}" width="{{ dmeta.width }}" height="{{ dmeta.height }}">
+{%- endif -%}
+<img src="/processed_images/{{ img.url | split(pat='/processed_images/') | last }}" width="{{ meta.width }}" height="{{ meta.height }}" alt="{{ alt }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy" decoding="async"{% endif %}>
+{%- if dark %}</picture>{% endif -%}
+</figure>
+{%- endcomponent shot %}
+
+{# One item of a `<ul class="points">` list. The first paragraph of the body
+   stays on the page; whatever follows the first blank line opens under it on a
+   click. An item with a single paragraph is printed as it is, with nothing to
+   open. Keep links out of the first paragraph: it becomes the toggle. #}
+{% component point() -%}
+{%- set parts = body | trim | split(pat="\n\n") -%}
+{%- set lead = parts[0] | trim -%}
+{%- set rest = parts[1:] | join(sep="\n\n") | trim -%}
+{%- if rest %}
+<li><details class="point"><summary>{{ lead | markdown(inline=true) | safe }}</summary><div class="point-body">
+
+{{ rest | safe }}
+
+</div></details></li>
+{% else %}
+<li><p class="point">{{ lead | markdown(inline=true) | safe }}</p></li>
+{% endif -%}
+{%- endcomponent point %}
+
+{# A longer explanation, one click away under a label that says what it holds. #}
+{% component more(label: string) %}
+<details class="more"><summary>{{ label | markdown(inline=true) | safe }}</summary><div class="more-body">
+
+{{ body | trim | safe }}
+
+</div></details>
+{% endcomponent more %}

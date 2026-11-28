@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Cyril Jacquet
+#
+# Addresses of the old WordPress site, answered with a real 301, read by
+# Cloudflare Pages at deploy time. A Zola alias would have served a page that
+# redirects with a script, which a search engine treats as a weaker signal and
+# which the Content-Security-Policy in _headers would block anyway.
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+/index.php/download/           /download/       301
+/index.php/download            /download/       301
+/index.php/category/news/      /news/           301
+/index.php/category/news       /news/           301
+/index.php/donate/             /support/        301
+/index.php/donate              /support/        301
+/index.php/contribute/         /get-involved/   301
+/index.php/contribute          /get-involved/   301

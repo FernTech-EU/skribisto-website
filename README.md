@@ -8,8 +8,9 @@ in English and French, replacing the WordPress installation that still described
 Skribisto 2.
 
 The user manual and the FAQ are **not** here. They live in
-[skribisto-help-website](https://github.com/jacquetc/skribisto-help-website) and
-are served from `manual.skribisto.eu`.
+[skribisto-help-website](https://github.com/jacquetc/skribisto-help-website), meant
+to be served from `manual.skribisto.eu`. That name does not resolve yet, and
+nothing on this site links to it.
 
 ## Build it
 
@@ -40,7 +41,7 @@ three years; this is the mechanism that stops that happening to a version number
 
 ```bash
 python3 scripts/sync_release_data.py --out data     # live
-python3 -m unittest discover -s tests               # 17 tests, offline
+python3 -m unittest discover -s tests               # offline
 ```
 
 A failed fetch is fatal and leaves the existing data files untouched: a stale
@@ -54,15 +55,59 @@ site immediately.
 ## Layout
 
 ```
-config.toml         site config + every UI string, in both languages
-content/            one .md per page, plus its .fr.md translation
-data/               generated, do not edit
-sass/main.scss      the whole stylesheet
-static/img/         screenshots, icon, Open Graph card
-templates/          base, index, page, download, news, 404
-scripts/            the release-data sync
-tests/              its tests
+config.toml          site config + every UI string, in both languages
+content/             one .md per page, plus its .fr.md translation
+data/                generated, do not edit
+assets/screenshots/  screenshot sources (PNG); never deployed as they are
+sass/main.scss       the whole stylesheet
+static/img/          icon, favicon, Open Graph card
+static/_headers      security and cache headers, read by Cloudflare Pages
+static/_redirects    301s for the old WordPress addresses
+templates/           base, index, page, download, news, 404, atom.xml
+templates/components.html   shot, point and more (below)
+scripts/             the release-data sync
+tests/               its tests
 ```
+
+## Writing a page
+
+Pages stay short on screen and keep their detail one click away, with native
+`<details>`: no script, keyboard and screen readers work, and the browser's
+find-in-page opens the one that holds the match. Three components do it, called
+from the Markdown itself.
+
+A screenshot. Put the PNG in `assets/screenshots/`; the build writes it out as a
+lossless WebP, about a quarter of the weight. Add `dark="other-name"` for a
+dark-mode version.
+
+```
+{{<shot name="story-bible" alt="What the reader would see, said plainly." />}}
+```
+
+A list whose longer items open in place. The first paragraph of each item is
+always shown; anything after its first blank line opens under it. Keep links out
+of that first paragraph, which becomes the toggle.
+
+```
+<ul class="points">
+{% <point> %}
+**Version history.**
+
+What a scene said last Tuesday, read out of the backups you already have.
+{% </point> %}
+</ul>
+```
+
+A longer explanation under a label that says what it holds:
+
+```
+{% <more label="How much structure you want"> %}
+Any Markdown, over as many paragraphs as it needs.
+{% </more> %}
+```
+
+`toc = true` under `[extra]` in a page's front matter puts its sections in a row
+of links at the top.
 
 ## Adding a language
 
@@ -72,17 +117,17 @@ tests/              its tests
    included.
 3. `zola build`. Nothing else changes.
 
-## Cutover checklist
+## Hosting
 
-- [ ] Push to `FernTech-EU/skribisto-website`, default branch `main`.
-- [ ] Settings ▸ Pages ▸ Source: **GitHub Actions**.
-- [ ] Custom domain `www.skribisto.eu` (`static/CNAME` already declares it), then
-      wait for the certificate and tick *Enforce HTTPS*.
-- [ ] DNS: `www` CNAME to `ferntech-eu.github.io`, apex A/AAAA to GitHub's Pages
-      addresses (or an ALIAS to the same host) so `skribisto.eu` redirects.
-- [ ] Export and archive the WordPress content **before** decommissioning it.
-- [ ] Confirm the old URLs still resolve: `/index.php/download/`,
-      `/index.php/donate/`, `/index.php/contribute/`, `/index.php/category/news/`
-      are redirected by `aliases` in the front matter of the pages that replaced
-      them. Anything else the old site had needs an alias adding.
-- [ ] Leave `manual.skribisto.eu` alone: it is a separate deployment.
+The site is deployed to Cloudflare Pages, project `skribisto`, by
+`.github/workflows/deploy.yml`, with the secrets `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID`. `www.skribisto.eu` is the project's custom domain, and
+`skribisto.eu` answers with a 301 to it.
+
+- `static/_headers` sets the Content-Security-Policy, HSTS and the other
+  security headers, a year of caching for `/processed_images/`, and `noindex` on
+  the `pages.dev` addresses, so only `www.skribisto.eu` is indexed.
+- `static/_redirects` answers the old WordPress addresses with a 301. Any other
+  old address that turns up in the logs gets a line there.
+- The legal notice names the host. If the hosting moves, change
+  `content/legal.md` and `content/legal.fr.md` in the same commit.

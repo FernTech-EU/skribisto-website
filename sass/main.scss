@@ -70,7 +70,10 @@ code, kbd, pre { font-family: var(--mono); font-size: 0.9em; }
 code { background: var(--sunk); padding: 0.1em 0.35em; border-radius: 4px; }
 pre {
   background: var(--sunk); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 1rem 1.1rem; overflow-x: auto; line-height: 1.5;
+  padding: 1rem 1.1rem; line-height: 1.5;
+  // Wrap rather than scroll: a scrolling block cannot be scrolled from the
+  // keyboard unless it takes focus, and Markdown gives no way to make it.
+  white-space: pre-wrap; overflow-wrap: anywhere;
   code { background: none; padding: 0; }
 }
 
@@ -79,6 +82,14 @@ pre {
 .lede { font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
 .muted { color: var(--muted); }
 .small { font-size: 0.9rem; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+// The header is sticky from tablet width up; an anchor must land below it.
+@media (min-width: 48rem) { html { scroll-padding-top: 5rem; } }
 
 .skip {
   position: absolute; left: -9999px; top: 0; background: var(--accent); color: var(--accent-ink);
@@ -92,7 +103,7 @@ pre {
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 5;
 }
-.header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; flex-wrap: wrap; }
+.header-inner { display: flex; align-items: center; gap: 0.5rem 1.5rem; min-height: 4rem; flex-wrap: wrap; }
 .wordmark {
   display: flex; align-items: center; gap: 0.55rem; font-family: var(--serif);
   font-size: 1.25rem; font-weight: 700; color: var(--ink); text-decoration: none;
@@ -103,8 +114,20 @@ pre {
   font-family: var(--sans); font-size: 0.9375rem;
   a { color: var(--ink); text-decoration: none; padding: 0.25rem 0; border-bottom: 2px solid transparent; }
   a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  a[aria-current="page"] { color: var(--accent); border-bottom-color: currentColor; }
 }
-.lang-switch { color: var(--muted) !important; font-size: 0.875rem; }
+.lang-switch {
+  font-family: var(--sans); font-size: 0.875rem; color: var(--muted); text-decoration: none;
+  border: 1px solid var(--border); border-radius: 100px; padding: 0.2rem 0.7rem;
+  &:hover { color: var(--accent); border-color: var(--accent); }
+}
+@media (max-width: 47.99rem) {
+  .site-header { position: static; backdrop-filter: none; background: var(--paper); }
+  .header-inner { padding-block: 0.6rem; min-height: 0; }
+  .wordmark { order: 1; }
+  .lang-switch { order: 2; margin-left: auto; }
+  .site-nav { order: 3; flex-basis: 100%; margin-left: 0; gap: 0.35rem 1rem; }
+}
 
 // ---------------------------------------------------------------- alpha strip
 .alpha-strip {
@@ -126,12 +149,15 @@ pre {
 .hero-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
 @media (min-width: 62rem) { .hero-grid { grid-template-columns: 1.05fr 1fr; } }
 .hero h1 { text-wrap: balance; }
-.hero-lede { font-size: 1.2rem; color: var(--muted); max-width: 34rem; }
+.hero-copy { max-width: 46rem; }
+.hero-lede { font-size: 1.2rem; color: var(--muted); max-width: 40rem; }
+.hero .shot { margin-top: 2.75rem; }
 
 .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.6rem; font-family: var(--sans); }
 .btn {
   display: inline-block; padding: 0.7rem 1.3rem; border-radius: var(--radius);
-  font-weight: 600; font-size: 0.98rem; text-decoration: none; border: 1px solid transparent;
+  font-family: var(--sans); font-weight: 600; font-size: 0.98rem; line-height: 1.3;
+  text-decoration: none; border: 1px solid transparent;
 }
 .btn-primary { background: var(--accent); color: var(--accent-ink); &:hover { background: var(--accent-hover); color: var(--accent-ink); } }
 .btn-ghost { border-color: var(--border); color: var(--ink); background: var(--surface); &:hover { border-color: var(--accent); color: var(--accent); } }
@@ -144,6 +170,7 @@ figure { margin: 0; }
   background: var(--surface); overflow: hidden;
   img { display: block; width: 100%; height: auto; }
 }
+.prose .shot { margin: 2rem 0; }
 figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; }
 
 // ---------------------------------------------------------------- sections
@@ -182,6 +209,69 @@ figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); 
   h3, h2 { margin-top: 0; }
   p:last-child { margin-bottom: 0; }
 }
+// A heading that is an h2 for the outline but sized as an h3.
+h2.h3 { font-size: 1.2rem; }
+
+// ---------------------------------------------------------------- disclosures
+// The longer explanations sit one click away, under a label that says what they
+// hold. Native <details>: no script, the keyboard works, and a browser's
+// find-in-page opens the one that holds the match.
+.more {
+  margin: 0 0 1.25rem;
+  > summary {
+    display: inline-flex; align-items: baseline; gap: 0.5rem; cursor: pointer; list-style: none;
+    font-family: var(--sans); font-size: 0.95rem; font-weight: 600; color: var(--accent);
+    padding-block: 0.25rem;
+    &::-webkit-details-marker { display: none; }
+    &::before {
+      content: ""; flex: none; width: 0.45em; height: 0.45em; position: relative; top: -0.12em;
+      border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg); transition: transform 0.15s ease;
+    }
+    &:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 0.15em; }
+  }
+  &[open] > summary::before { transform: rotate(45deg); }
+  &[open] > summary { margin-bottom: 0.5rem; }
+}
+.more-body {
+  border-left: 2px solid var(--border); padding: 0.1rem 0 0.1rem 1.1rem; margin-left: 0.2rem;
+  > :last-child { margin-bottom: 0; }
+}
+
+// A ruled list whose longer items open in place. The first paragraph of an
+// item is always visible; the chevron marks the ones that have more to say.
+.points {
+  list-style: none; padding: 0; margin: 1.5rem 0 2rem; border-top: 1px solid var(--border);
+  > li { margin: 0; border-bottom: 1px solid var(--border); }
+  p.point, summary { display: block; margin: 0; padding: 0.8rem 2.25rem 0.8rem 0; }
+  summary {
+    position: relative; cursor: pointer; list-style: none;
+    &::-webkit-details-marker { display: none; }
+    &::after {
+      content: ""; position: absolute; right: 0.6rem; top: 1.2rem; width: 0.5rem; height: 0.5rem;
+      border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+      transform: rotate(45deg); transition: transform 0.15s ease;
+    }
+    &:hover strong { color: var(--accent); }
+  }
+  details[open] > summary::after { transform: rotate(-135deg); top: 1.45rem; }
+  .point-body {
+    padding: 0 2.25rem 0.9rem 0; color: var(--muted);
+    > :last-child { margin-bottom: 0; }
+  }
+}
+
+// A row of links to the sections of a page, or to the platforms of a release.
+.chips {
+  margin: 0 0 2.5rem; font-family: var(--sans); font-size: 0.9rem;
+  ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  li { margin: 0; }
+  a {
+    display: inline-block; padding: 0.35rem 0.8rem; border: 1px solid var(--border);
+    border-radius: 100px; background: var(--surface); color: var(--ink); text-decoration: none;
+    &:hover { border-color: var(--accent); color: var(--accent); }
+  }
+}
 
 // ---------------------------------------------------------------- download
 .release-head {
@@ -189,16 +279,23 @@ figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); 
   font-family: var(--sans); margin-bottom: 0.4rem;
 }
 .release-version { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; }
-.dl-list { display: grid; gap: 1rem; margin: 1.5rem 0; }
+.platform { margin-top: 2.5rem; h2 { margin-top: 0; } }
+.flathub { font-family: var(--sans); display: flex; align-items: center; gap: 0.5rem 1rem; flex-wrap: wrap; }
+.dl-list { list-style: none; padding: 0; display: grid; gap: 0.75rem; margin: 1.25rem 0 1.5rem; }
 .dl-item {
-  display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+  display: flex; gap: 0.5rem 1rem; align-items: center; flex-wrap: wrap; margin: 0;
   border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
-  padding: 1rem 1.2rem;
+  padding: 0.9rem 1.2rem;
+  .dl-info { flex: 1 1 16rem; min-width: 0; }
+  .dl-label { font-weight: 700; }
   .dl-meta { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
-  .dl-name { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); word-break: break-all; }
-  .btn { margin-left: auto; }
+  .dl-name { font-family: var(--mono); font-size: 0.8rem; word-break: break-all; }
 }
-.sha { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); word-break: break-all; }
+.sha {
+  font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;
+  summary { cursor: pointer; width: fit-content; }
+  code { display: block; margin-top: 0.3rem; font-size: 0.75rem; word-break: break-all; }
+}
 
 table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: 0.94rem; margin: 1.5rem 0; }
 th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); vertical-align: top; }
@@ -209,8 +306,8 @@ th { font-weight: 600; color: var(--muted); font-size: 0.85rem; }
 .release-entry:first-of-type { border-top: 0; }
 .release-title { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin: 0 0 0.3rem; }
 .release-date { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
-.older-toggle { font-family: var(--sans); margin-top: 2rem; }
-details summary { cursor: pointer; font-family: var(--sans); color: var(--accent); }
+.release-entry .more { margin-top: 0.4rem; }
+.older-toggle { margin-top: 2rem; .release-entry { padding-block: 1.2rem; } }
 
 // ---------------------------------------------------------------- footer
 .site-footer {
@@ -228,7 +325,7 @@ details summary { cursor: pointer; font-family: var(--sans); color: var(--accent
 }
 
 @media (max-width: 30rem) {
-  .site-nav { gap: 0.75rem 0.9rem; font-size: 0.875rem; }
-  .header-inner { padding-block: 0.5rem; }
+  .site-nav { font-size: 0.875rem; }
   .hero { padding-block: 2.5rem 1rem; }
+  .hero .shot { margin-top: 2rem; }
 }
